@@ -204,7 +204,9 @@ and local-image access. Adding the package alone does not install an extension.
 - [Changelog](changelog.md)
 
 The [API reference](https://siriusmarkdown.com/api/documentation/siriusmarkdown/)
-and guides describe the public SDK surface. For support,
+and guides describe the public SDK surface, including SDK protocol defaults.
+Native view pages link to Apple’s documentation for standard SwiftUI modifiers.
+For support,
 [open an issue](https://github.com/mikhutchinson/siriusmarkdown-commercial/issues).
 
 ## License

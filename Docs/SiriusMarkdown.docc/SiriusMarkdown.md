@@ -8,6 +8,14 @@ Import `SiriusMarkdown` for the app-facing API. The package uses `swift-markdown
 semantics, CoreText for text measurement, and native SwiftUI/AppKit/UIKit surfaces for presentation.
 It does not embed a web view to render a document.
 
+### Using this reference
+
+Topics cover SiriusMarkdown declarations and the defaults provided by its own
+protocols. Native view pages also link to Apple’s SwiftUI documentation for
+standard inherited modifiers. Those modifiers remain available on SDK views.
+
+For task-oriented examples, start with the [integration guides](https://siriusmarkdown.com/docs/).
+
 ### Render a document
 
 Create a ``SiriusMarkdownCore/MarkdownStream``, finish it, and prepare its snapshot before passing

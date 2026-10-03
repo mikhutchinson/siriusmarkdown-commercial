@@ -18,5 +18,10 @@ Start with the [package quick start](../README.md), then choose a guide:
 ## API reference
 
 Browse the [public API reference](https://siriusmarkdown.com/api/documentation/siriusmarkdown/).
+It covers SDK declarations, protocol requirements and SiriusMarkdown’s default
+implementations. Native view pages link to Apple’s
+[SwiftUI View reference](https://developer.apple.com/documentation/swiftui/view)
+for standard inherited modifiers. Those modifiers remain available on SDK views.
+
 Standard `.swiftinterface` files accompany each XCFramework platform slice.
 They describe the public declarations for that SDK version.
