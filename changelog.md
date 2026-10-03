@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.7.1 - 2026-10-02
+
+- Correct Find and fragment navigation in lazy documents using the rendered
+  destination's native geometry, including long tables and horizontal code/table
+  overflow. Preserve alignment across layout changes without polling or eager
+  whole-document rendering.
+- Reveal a sole Find match again on Next/Previous; supersede obsolete commands
+  after user interaction, dismissal, document replacement and concurrent index
+  preparation.
+- Keep host-scrolled readers at their proposed width when code has very long
+  lines. Preserve exact Find/selection source spans beside HTML character
+  references while selecting each decoded reference as one source-backed item.
+- Paint source-backed fallback text with its prepared font metrics, keeping
+  UIKit code highlights and horizontal reveal aligned with the actual glyphs.
+- Retain leaf source geometry for Find when native text selection is enabled,
+  including readers that ordinarily disable document selection.
+- Preserve source selection and active navigation while resizing an AppKit
+  window; its resize border no longer starts a document selection gesture.
+- Cancel queued native corrections when the destination view is removed, so
+  an obsolete request cannot change the viewport afterward.
+
 ## 0.7.0
 
 SiriusMarkdown 0.7.0 brings the engine improvements made since 0.6.29 into a

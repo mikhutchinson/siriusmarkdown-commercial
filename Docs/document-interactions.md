@@ -10,6 +10,11 @@ commands while your app owns source edits, revision checks and Undo.
 Find, Command-G and Shift-Command-G move between results, and Escape closes it.
 Matching uses prepared visible text across inline formatting. It excludes hidden
 HTML and the source of rasterized equations.
+Matching is literal and does not cross block or table-cell boundaries. Decoded
+semicolon-terminated HTML character references map to their complete authored
+source span; ordinary text beside them retains its exact source range. When HTML
+normalization cannot be reconciled with those spans, Find conservatively maps the
+text to its containing source node, so selection may include neighboring text.
 
 A host can share a Find controller with the renderer:
 
@@ -48,11 +53,24 @@ With inline controls suppressed, the host owns presenting Find, including
 Command-F (`find.isPresented = true`). Indexing is performed on demand. Code and
 table results also reveal content within their horizontal scrollers.
 
+Each Find command reveals the source-backed rendered occurrence, including when
+Next or Previous wraps back to the only result. Navigation keeps that destination
+aligned while lazy blocks settle, the reader resizes, or prepared content updates.
+Scrolling or selecting in the document supersedes the pending reveal. A newer
+command, closing Find, replacing the document or removing the view cancels obsolete
+navigation. A host should give independent documents independent Find controllers.
+Find uses source-backed document highlights while presented, including configurations
+that enable native leaf selection or ordinarily disable document selection.
+
 Heading links such as `#installation` reveal their matching block. Generated
 slugs are lowercase and Unicode-aware, with numeric suffixes for duplicates.
 Sanitized HTML IDs are also supported. Explicit IDs take precedence over generated
 slugs; the first duplicate wins. Fragment IDs are case-sensitive and percent-decoded.
 Empty anchors reveal their owning block without adding visible text.
+Fragment commands also supersede earlier navigation, including commands issued
+while the shared index is being built. The renderer keeps the native destination
+aligned through subsequent layout changes until reader interaction or another
+command takes over.
 
 For windowed readers, build `MarkdownDocumentAnchorIndex(snapshot:htmlPolicy:)`
 on the preparation worker once per parsed revision. Use the renderer's HTML
