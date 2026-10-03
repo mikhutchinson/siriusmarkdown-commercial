@@ -13,6 +13,18 @@ The native viewer supports PDF selection, scrolling, zoom and file export.
 `MarkdownMermaidDiagramAffordances` controls the viewport and zoom controls;
 `MarkdownCodeBlockAffordances` controls copy, export and collapse actions.
 
+Expanded diagrams use the whole canvas, with unfilled controls overlaid at its
+edges. The active view and scale mode use text weight rather than a filled
+segment or capsule. A soft canvas-edge fade keeps the controls readable when
+content pans underneath them. Fit shows the entire figure, including a chart's
+title, axes and legend, with clearance for the controls. Inline figures retain
+the reading-width fit and their height limit. Actual Size and the zoom percentage
+are relative to the figure at the host's configured text scale.
+
+Zoom preserves the current viewing position. Switching between Diagram and
+Source keeps the diagram viewport mounted, and switching appearance preserves
+its zoom, pan and PDF text selection. Source opens at the top reading edge.
+
 On UIKit, a long press selects a word and opens the native edit menu. Selection
 handles adjust the range. The expanded and inline diagram viewers export files;
 the collapsed code-style source action uses the host's code-export handler,

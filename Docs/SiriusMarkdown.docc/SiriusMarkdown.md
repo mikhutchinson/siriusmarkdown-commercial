@@ -72,6 +72,12 @@ These native diagram paths do not use JavaScriptCore or WebKit. Unsupported synt
 of drawing a partial diagram. The supported families include flowchart, sequence, class, state, ER,
 XY chart, quadrant, pie, journey, timeline, mind map and Gantt.
 
+Expanded diagrams use the whole canvas with unfilled overlay controls: Diagram/Source
+on the left, export and close on the right, and zoom along the bottom. Fit includes the
+complete figure, its labels and room for the controls. 100% uses the host's text scale
+as its baseline. Switching Source or appearance preserves pan and zoom; PDF-backed
+diagrams also retain text selection. Inline figures start at the reading edge.
+
 Code highlighting is a separate preparation step. Its default backend may use JavaScriptCore with
 highlight.js; unrecognized languages or an unavailable backend retain plain code. Hosts can replace
 the highlighter through ``SiriusMarkdownSwiftUI/MarkdownRendererConfiguration``.
@@ -82,6 +88,8 @@ Source-backed document selection is the default on macOS and touch platforms. On
 bounded AppKit event surface; native leaf selection is an explicit compatibility option. The two
 selection owners are mutually exclusive. Prepared source mappings also support Find, navigation,
 copy-as-Markdown and opt-in formatting commands.
+Find keeps the rendered destination visible as lazy layout settles after resizing,
+including navigation following readable chart export.
 
 The default inline rendering mode is `coreTextPaintedLines`. `preparedNativeLines` and `systemText`
 are explicit alternatives. ``SiriusMarkdownSwiftUI/MarkdownTheme`` supplies typography and metrics;

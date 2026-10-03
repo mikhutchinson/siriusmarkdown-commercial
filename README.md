@@ -18,7 +18,7 @@ Add the package in Xcode using its repository URL, or declare a dependency in
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/mikhutchinson/siriusmarkdown-commercial.git", from: "0.7.1")
+    .package(url: "https://github.com/mikhutchinson/siriusmarkdown-commercial.git", from: "0.7.2")
 ],
 targets: [
     .target(
@@ -31,7 +31,7 @@ targets: [
 ```
 
 The SDK is distributed as compiled XCFrameworks through Swift Package Manager.
-This repository contains the integration material for [0.7.1](release-notes/0.7.1.md).
+This repository contains the integration material for [0.7.2](release-notes/0.7.2.md).
 Public interfaces accompany each platform slice; implementation source is not
 part of this distribution. Adding a product also links and embeds its required frameworks and resources.
 
@@ -98,6 +98,8 @@ full highlighting, math rendering and inline layout preparation.
   retain a text fallback. `PlainMarkdownMathRenderer` selects source text.
 - **Diagrams and charts:** native Mermaid preparation on macOS, iOS and visionOS,
   with light/dark appearance, selection, zoom, source access and PDF/SVG exports.
+  Expanded viewers use the whole canvas with unfilled overlay controls. Fit shows
+  the complete figure; switching Source or appearance retains pan and zoom.
   See [supported families and syntax](Docs/Native-Mermaid.md).
 - **Code:** language-aware highlighting with a replaceable highlighter. Unknown
   languages and unavailable backends retain plain code.

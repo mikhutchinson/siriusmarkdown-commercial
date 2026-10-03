@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.7.2 - 2026-10-03
+
+- Expanded diagram and chart viewers use the whole canvas with unfilled controls
+  overlaid at its edges. Text weight identifies the active view or scale mode.
+- Fit includes the complete figure, titles, axes and legends with room for the
+  controls. Inline figures start at the reading edge and remain within scroll bounds.
+- PDF zoom commands and percentages consistently use the host's text scale.
+  Zoom preserves the panned region; Source and appearance changes retain pan,
+  zoom and PDF text selection.
+- Find keeps the rendered match visible through lazy layout settlement after
+  resizing, including navigation following readable chart export.
+
 ## 0.7.1 - 2026-10-02
 
 - Correct Find and fragment navigation in lazy documents using the rendered
@@ -66,5 +78,5 @@ releases and third-party licenses retain their original terms.
 
 ## Earlier releases
 
-[0.6.29 and earlier source releases](https://github.com/mikhutchinson/SiriusMarkdown/releases)
-retain their published source and original license terms.
+The 0.6.29 and earlier releases retain their original license terms.
+See [licensing](LICENSING.md) for the scope of earlier MIT grants.

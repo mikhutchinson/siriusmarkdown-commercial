@@ -1,7 +1,7 @@
 # Installation and packaging
 
 Add `https://github.com/mikhutchinson/siriusmarkdown-commercial.git` in Xcode,
-select version 0.7.1 or later, and link the `SiriusMarkdown` product. Product
+select version 0.7.2 or later, and link the `SiriusMarkdown` product. Product
 and import names match the source SDK. Narrower products are listed in the
 [architecture guide](architecture.md#choose-a-product).
 

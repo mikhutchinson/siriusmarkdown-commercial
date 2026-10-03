@@ -61,6 +61,8 @@ command, closing Find, replacing the document or removing the view cancels obsol
 navigation. A host should give independent documents independent Find controllers.
 Find uses source-backed document highlights while presented, including configurations
 that enable native leaf selection or ordinarily disable document selection.
+Readable chart export does not interrupt subsequent Find navigation; matches
+remain visible as the reader's lazy layout settles at a new width.
 
 Heading links such as `#installation` reveal their matching block. Generated
 slugs are lowercase and Unicode-aware, with numeric suffixes for duplicates.
@@ -151,7 +153,18 @@ accessibility label, when there is insufficient space to show every category tic
 
 Horizontal charts, grouped bars, lines, mixed series and explicit axis ranges
 share this presentation. Source, expansion, zoom and vector PDF/SVG export remain
-available. Readable raster PDF export captures the chart at page width; standalone
+available. The expanded viewer uses the whole canvas, with Diagram/Source at the
+upper left, export and close at the upper right, and zoom controls along the
+bottom. Controls are unfilled; text weight identifies the selected view or scale
+mode. A soft fade at the canvas edges keeps controls readable over panned content.
+
+Fit includes the complete figure and room for titles, axes, legends and controls.
+100% uses the host's text scale as the baseline, so Zoom Out reduces both the
+figure and its displayed percentage even with enlarged document text. Switching
+Source or appearance preserves pan and zoom; PDF-backed diagrams also preserve
+their text selection. Inline figures start at the reading edge.
+
+Readable raster PDF export captures the chart at page width; standalone
 vector exports retain the prepared diagram's canonical dimensions. Custom Mermaid
 renderers use their supplied PDF, SVG or ASCII representation.
 
