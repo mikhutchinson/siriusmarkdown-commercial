@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.7.3 - 2026-10-08
+
+- Preserve prepared Mermaid diagrams and formula outlines as vectors in macOS
+  text-flow document PDF exports. Share figure sizing, source-range reservation
+  and native PDF drawing with the UIKit exporter, including nested diagrams and
+  captions. Keep unsupported resources as explicit source fallbacks.
+- Mermaid LaTeX glyphs and rules remain vector outlines in PDF and SVG, including enlarged viewing and export.
+- Typeset Mermaid flowchart, state and sequence labels with the native math
+  engine using `$$…$$`, including measured label sizing and self-contained PDF/SVG
+  exports. Preserve source for invalid math and unsupported formula families.
+- Preserve punctuation inside quoted flowchart labels and LaTeX commands during
+  label normalization. Retain source for unsupported statements and unclosed
+  structures in flowchart, state, sequence, class and ER diagrams instead of
+  rendering partial diagrams.
+
 ## 0.7.2 - 2026-10-03
 
 - Expanded diagram and chart viewers use the whole canvas with unfilled controls

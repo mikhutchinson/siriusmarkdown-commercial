@@ -18,7 +18,7 @@ Add the package in Xcode using its repository URL, or declare a dependency in
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/mikhutchinson/siriusmarkdown-commercial.git", from: "0.7.2")
+    .package(url: "https://github.com/mikhutchinson/siriusmarkdown-commercial.git", from: "0.7.3")
 ],
 targets: [
     .target(
@@ -31,7 +31,7 @@ targets: [
 ```
 
 The SDK is distributed as compiled XCFrameworks through Swift Package Manager.
-This repository contains the integration material for [0.7.2](release-notes/0.7.2.md).
+This repository contains the integration material for [0.7.3](release-notes/0.7.3.md).
 Public interfaces accompany each platform slice; implementation source is not
 part of this distribution. Adding a product also links and embeds its required frameworks and resources.
 

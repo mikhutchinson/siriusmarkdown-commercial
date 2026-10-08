@@ -72,3 +72,21 @@ typesetter identity participate in the bounded preparation cache. Preserve the
 package resource bundles, including math fonts, when packaging an application.
 
 Use `PlainMarkdownMathRenderer` when your host intentionally displays LaTeX source.
+
+## Native vector outlines
+
+For custom PDF, SVG or canvas drawing, `MarkdownMathEngine.preparedVector`
+prepares immutable glyph and rule outlines with width, height, ascent and descent.
+It returns `nil` for unsupported input so a host can preserve the source.
+
+```swift
+let formula = MarkdownMathEngine.preparedVector(
+    latex: #"\frac{\eta(0)+h}{2}"#, isBlock: false, fontSize: 18
+)
+```
+
+Draw `path` as a filled CoreGraphics path in baseline-relative coordinates with
+positive Y pointing upward. `svgPath` uses the same coordinates. Apply the
+destination's coordinate transform and fill color when drawing. Preparation
+happens outside view evaluation; retain the result for resize and zoom. Native
+Mermaid uses these outlines for its PDF and SVG formula labels.

@@ -184,9 +184,16 @@ Text-flow output preserves selectable ordinary text and table-cell text, with
 link annotations. It supports nested tables, merged cells and repeating ordinary
 table headers. A spanning header joined to body rows is not repeated independently.
 
-Prepared images and math draw without additional network requests. Unresolved
-resources retain their fallback. Inspect `limitations` for oversized row-span
-groups, unsupported images, unrendered math and diagrams.
+Prepared Mermaid diagrams draw from the same native vector PDF used by the reader
+on macOS and iPadOS. The export fits complete figures to the printable page,
+preserves their captions and surrounding text, and supports diagrams nested in
+quotes and lists. Formula outlines remain vector in the exported diagram.
+
+Prepared images, math and diagrams draw without additional network requests or
+diagram parsing. Unresolved or unsupported resources retain their source fallback.
+Inspect `limitations` for oversized row-span groups, unsupported images, unrendered
+math and diagrams. A source fallback reports `.diagramsAsSourceText`; a successfully
+drawn diagram does not report code wrapping or diagram source fallback.
 
 For native raster pages on macOS or iPadOS, supply the renderer configuration and
 set `rendering: .rasterizedPages(scale: 2)`. Choose a pagination mode:

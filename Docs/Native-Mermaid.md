@@ -33,6 +33,8 @@ whose default UIKit behavior copies source.
 Preparation occurs before view presentation. Resizing and zoom reuse prepared
 resources. Diagrams do not require a web view, remote fonts, image downloads or
 document-provided scripts. SVG exports have remote font imports removed.
+SVG canvas backgrounds use CSS; native image readers can display a transparent
+canvas instead. PDF exports paint an explicit background.
 
 ## Syntax and limits
 
@@ -40,6 +42,36 @@ Supported families include flowchart, state, sequence, class, entity relationshi
 XY chart, quadrant, pie, journey, timeline, mind map and Gantt. Support covers a
 subset of Mermaid syntax. Unsupported or malformed input retains the source
 fence instead of displaying a partial diagram.
+
+Flowchart and state labels, and sequence participants, messages and notes, support
+native LaTeX enclosed in Mermaid's `$$…$$` delimiters. Plain text and formulas can
+share a label; `<br/>` separates label lines. For example:
+
+```mermaid
+flowchart LR
+    A["Curvature $$R^{TM}$$"] -->|$$\frac{\eta(0)+h}{2}$$| B["Boundary correction"]
+```
+
+Formulas use the package's native math engine. Label sizing includes the formula's
+measured width, ascent and descent. Preparation caches formula glyphs before the
+viewer opens; resizing and zooming reuse the finished PDF. SVG exports embed the
+prepared formula glyphs and their LaTeX descriptions without external resources.
+PDF and SVG formula glyphs and rules use native vector outlines, so zoom and
+export do not enlarge a formula bitmap. Ordinary PDF label text remains selectable.
+Copy Source retains the original Mermaid and LaTeX.
+
+Text-flow document PDF exports on macOS and iPadOS draw the same prepared vector
+diagram page. Complete figures fit the printable measure, captions remain text,
+and diagrams inside quotes and lists retain their indentation. An unsupported
+or unavailable diagram retains its source and reports `.diagramsAsSourceText`.
+
+Invalid or unclosed math retains the entire source fence. Math in other diagram
+families also retains source. Preparation accepts at most 256 formula spans per
+diagram and 32 KiB of source per span. Quoted flowchart labels preserve brackets,
+parentheses and semicolons; unsupported flowchart statements and unclosed
+subgraphs retain source instead of drawing an incomplete graph. State, sequence,
+class and ER diagrams also retain source for unrecognized statements and unclosed
+structures; a successfully prepared diagram does not silently omit those lines.
 
 Sequence `autonumber` accepts a start and increment, including hundredth precision;
 `autonumber off` stops numbering. Flat flowchart feedback edges retain the authored
@@ -59,8 +91,8 @@ To hide values for a particular chart, precede its header with
 categories retain spaces, commas and literal punctuation.
 
 Dense entity-relationship diagrams may place labels beside connectors or in a
-gutter. These labels have no leader lines, so their association can be ambiguous
-in crowded graphs.
+gutter. Displaced captions use dotted leader lines to identify their relationships;
+these leaders remain visually distinct from relationship connectors.
 
 A complex graph can take substantial time to prepare. Cancellation occurs
 between phases; it cannot interrupt the synchronous graph-layout call. Native
