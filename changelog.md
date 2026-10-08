@@ -15,6 +15,9 @@
   structures in flowchart, state, sequence, class and ER diagrams instead of
   rendering partial diagrams.
 
+- Preserve quoted task states, nesting, formatting and source ranges, including
+  empty tasks; align UIKit markers with the painted text baseline.
+
 ## 0.7.2 - 2026-10-03
 
 - Expanded diagram and chart viewers use the whole canvas with unfilled controls
