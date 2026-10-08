@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.7.4 - 2026-10-08
+
+- Preserve recurring prices such as `($2,400/month), ($3,100/month)` as prose
+  instead of treating the dollar signs around separate amounts as math delimiters.
+  Keep genuine numeric formulas and formulas adjacent to digits supported.
+
 ## 0.7.3 - 2026-10-08
 
 - Preserve prepared Mermaid diagrams and formula outlines as vectors in macOS
