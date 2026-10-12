@@ -29,16 +29,29 @@ Widening the view restores ordinary paragraph layout without typesetting again.
 ## Equations and structure
 
 The native engine supports fractions, roots, scripts, Greek symbols, named
-operators, accents, matrices, aligned equations, cases and nested expressions.
+operators, accents, matrices, aligned equations with multiple column pairs,
+cases and nested expressions.
 It also supports:
 
 - `\underbrace` and `\overbrace`, including labels and braces inside fractions.
 - `\overset`, `\underset` and `\stackrel`, with labels above or below the base.
+- `\xrightarrow` and `\xleftarrow`, with native extensible shafts, upper labels
+  and optional lower labels.
 - `\substack` for multiline operator limits.
 - `\dfrac`, `\tfrac`, `\dbinom` and `\tbinom` for explicit display or text style.
 - `\cfrac` for continued fractions with display-style components.
 - `\phantom` for invisible spacing and `\boldsymbol` for bold italic variables.
 - `\operatorname` and `\operatorname*` for named operators and display limits.
+- `\not` for native slash overlays, including `\not{D}`, `\not=` and `\not\in`.
+- `\lvert`, `\rvert`, `\lVert` and `\rVert` for opening and closing vertical
+  delimiters, including sized `\left` and `\right` pairs.
+- Point-valued row gaps such as `\\[3pt]` inside matrices and aligned equations.
+  Signed decimal values up to 4,096 points in magnitude are supported; other
+  units retain source fallback.
+
+Text labels retain LaTeX escaping rules: write `\text{masses \& mixing}` for a
+literal ampersand. An unescaped `&` inside `\text` is an invalid alignment tab,
+while `&` between cells in an aligned equation remains supported.
 
 See the [complex mathematics example](../Examples/Fixtures/complex-math.md)
 for complete inline and display expressions from physics, statistics and linear

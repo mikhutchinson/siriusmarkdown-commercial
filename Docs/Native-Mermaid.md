@@ -30,8 +30,18 @@ handles adjust the range. The expanded and inline diagram viewers export files;
 the collapsed code-style source action uses the host's code-export handler,
 whose default UIKit behavior copies source.
 
+When diagram content changes, selection is preserved when its label can be mapped
+unambiguously to the new diagram. Appearance updates retain selection when its
+extracted text positions are unchanged. On iOS 17 and later, an already active native
+selection display is also preserved when the remapped native text range matches
+the new PDF page. Clearing selection or replacing the logical document cancels
+that intent.
+
 Preparation occurs before view presentation. Resizing and zoom reuse prepared
-resources. Diagrams do not require a web view, remote fonts, image downloads or
+resources. Streaming native diagrams keep the current prepared vector page
+visible through PDFKit page overlays and a current-page presentation during
+overlay replacement. PDFKit retains selection and camera interaction.
+Diagrams do not require a web view, remote fonts, image downloads or
 document-provided scripts. SVG exports have remote font imports removed.
 SVG canvas backgrounds use CSS; native image readers can display a transparent
 canvas instead. PDF exports paint an explicit background.
@@ -40,8 +50,21 @@ canvas instead. PDF exports paint an explicit background.
 
 Supported families include flowchart, state, sequence, class, entity relationship,
 XY chart, quadrant, pie, journey, timeline, mind map and Gantt. Support covers a
-subset of Mermaid syntax. Unsupported or malformed input retains the source
+subset of Mermaid syntax. Completed unsupported or malformed input retains the source
 fence instead of displaying a partial diagram.
+
+While an unsealed fence is streaming, the default renderer can display native
+statements inside an open semantic container. `streamingProgress` records how
+much authored source has been interpreted and whether a frontier or container
+remains open. Source export preserves the complete authored input; PDF and SVG
+exports describe the prepared draft. ASCII uses the strict source renderer and
+can retain source while a container remains open. Finish uses strict parsing, so an
+unfinished or unsupported completed fence returns to its source fallback.
+Unfinished labeled subgraph headers stay pending. Open subgraphs and state
+groups appear in the native artwork once they own a node. Open sequence frames
+appear with their first message or note. Earlier completed nodes and actors
+remain visible while each new container's header and first child arrive.
+See [Streaming](streaming.md) for custom progressive renderer hooks.
 
 Flowchart and state labels, and sequence participants, messages and notes, support
 native LaTeX enclosed in Mermaid's `$$…$$` delimiters. Plain text and formulas can
@@ -65,12 +88,12 @@ diagram page. Complete figures fit the printable measure, captions remain text,
 and diagrams inside quotes and lists retain their indentation. An unsupported
 or unavailable diagram retains its source and reports `.diagramsAsSourceText`.
 
-Invalid or unclosed math retains the entire source fence. Math in other diagram
+Invalid or unclosed math in completed input retains the entire source fence. Math in other diagram
 families also retains source. Preparation accepts at most 256 formula spans per
 diagram and 32 KiB of source per span. Quoted flowchart labels preserve brackets,
-parentheses and semicolons; unsupported flowchart statements and unclosed
+parentheses and semicolons; completed unsupported flowchart statements and unclosed
 subgraphs retain source instead of drawing an incomplete graph. State, sequence,
-class and ER diagrams also retain source for unrecognized statements and unclosed
+class and ER diagrams also retain source for completed unrecognized statements and unclosed
 structures; a successfully prepared diagram does not silently omit those lines.
 
 Sequence `autonumber` accepts a start and increment, including hundredth precision;

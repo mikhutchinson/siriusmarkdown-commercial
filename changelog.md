@@ -1,5 +1,39 @@
 # Changelog
 
+## 0.7.5 - 2026-10-12
+
+- Typeset native slashed expressions with `\not` and named single/double vertical
+  delimiters in prose, tables and exports, preserving authored source and
+  streaming prefixes. Support escaped text ampersands and reject unescaped text
+  alignment tabs explicitly.
+- Typeset native extensible `\xrightarrow` and `\xleftarrow` relations with
+  streamed upper and lower labels, retaining native arrowhead geometry in images
+  and vector exports.
+- Apply authored point-valued row gaps such as `\\[3pt]` per equation row instead
+  of displaying the spacing instruction as text. Support multiple column pairs
+  in `aligned` while preserving existing two-column spacing.
+- Publish useful prepared prefixes during continuous streaming instead of waiting
+  for the newest append to become idle. Add coherent presentation revisions and
+  source access; preserve accepted source through cancellation and resume.
+- Prepare native Mermaid children inside open containers and native math inside
+  unfinished boxes, fractions and matrices. Retain strict finished-input parsing
+  and existing custom renderer fallbacks.
+- Preserve diagram viewport identity across streamed resources and remap PDF
+  selection through semantic labels. Keep current prepared vector scenes visible
+  through native page overlays during streaming page replacement. Decode prepared
+  math pixels before view presentation and bound cached decoded resources.
+- Draw closed empty flowchart subgraphs and state composites with their native
+  box and title in PDF-backed views and exports.
+- Wait for cancelled image loads to exit before declaring image resources idle;
+  include retiring loads in the request concurrency limit and reject their late
+  results after document or viewport replacement.
+- Preserve complete HTML subscript and superscript glyphs in compact paragraphs
+  and table cells by preparing enough line height for their combined baseline
+  offsets. Ordinary text keeps its existing line height.
+- Construct theme presets safely on ordinary worker threads while preserving
+  typography and independent value semantics. Retain the released prepared
+  artifact initializer signatures.
+
 ## 0.7.4 - 2026-10-08
 
 - Preserve recurring prices such as `($2,400/month), ($3,100/month)` as prose

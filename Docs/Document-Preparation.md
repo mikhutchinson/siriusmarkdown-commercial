@@ -74,6 +74,11 @@ session does not accept streaming appends. Call `cancel()` when a viewport
 window disappears to stop pending publication and resource loading. Initialize
 a new session if the renderer configuration changes.
 
+Cancelled image loads retain their request slots until they exit, so the image
+concurrency limit also covers retiring work. An injected asynchronous resolver
+must acknowledge cancellation for queued loads and `waitUntilImagesIdle()` to
+finish. Ordinary Markdown preparation remains independent of image completion.
+
 Session preparation checks cancellation between top-level blocks, during reuse
 indexing, and before committing the completed snapshot. A cancelled result does
 not replace the session's last completed snapshot. Reusable cache entries

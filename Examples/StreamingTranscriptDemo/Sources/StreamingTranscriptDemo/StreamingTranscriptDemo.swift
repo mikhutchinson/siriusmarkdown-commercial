@@ -1,4 +1,5 @@
 import DemoSupport
+import Combine
 import SiriusMarkdown
 import SiriusMarkdownMath
 import SwiftUI
@@ -31,8 +32,10 @@ private final class StreamingTranscriptModel: ObservableObject {
     @Published private(set) var renderCounters: MarkdownDiagnosticsCounters
     @Published private(set) var emittedStepCount = 0
     @Published private(set) var sourceByteCount = 0
+    @Published private(set) var documentEpoch = UUID()
 
-    private var stream: MarkdownStream
+    private var session: MarkdownRenderSession
+    private var observation: AnyCancellable?
     private var streamRecorder: MarkdownDiagnosticsRecorder
     private var renderRecorder: MarkdownDiagnosticsRecorder
 
@@ -45,17 +48,19 @@ private final class StreamingTranscriptModel: ObservableObject {
             mathRenderer: NativeMarkdownMathRenderer(),
             diagnosticsRecorder: renderRecorder
         )
-        let stream = MarkdownStream(diagnosticsRecorder: streamRecorder)
+        let session = MarkdownRenderSession(configuration: configuration,
+            streamDiagnosticsRecorder: streamRecorder, renderDiagnosticsRecorder: renderRecorder)
 
         self.selectedCaseID = StreamingCase.allCases[0].id
         self.streamRecorder = streamRecorder
         self.renderRecorder = renderRecorder
-        self.stream = stream
-        self.configuration = configuration
-        self.preparedSnapshot = configuration.prepare(snapshot: stream.snapshot())
+        self.session = session
+        self.configuration = session.configuration
+        self.preparedSnapshot = session.presentation.preparedSnapshot
         self.streamCounters = streamRecorder.snapshot()
         self.renderCounters = renderRecorder.snapshot()
 
+        observeSession()
         appendNextStep()
     }
 
@@ -108,14 +113,14 @@ private final class StreamingTranscriptModel: ObservableObject {
 
         switch step {
         case let .append(markdown):
-            stream.append(markdown)
+            session.append(markdown)
         case let .hostBoundary(id):
-            stream.appendHostBoundary(id: MarkdownHostBoundaryID(id))
+            session.appendHostBoundary(id: MarkdownHostBoundaryID(id))
         case .finish:
-            stream.finish()
+            session.finish()
         }
 
-        refreshPreparedSnapshot()
+        sourceByteCount = session.sourceLength
     }
 
     func appendNextSteps(_ count: Int) {
@@ -143,12 +148,17 @@ private final class StreamingTranscriptModel: ObservableObject {
 
         self.streamRecorder = streamRecorder
         self.renderRecorder = renderRecorder
-        self.stream = MarkdownStream(diagnosticsRecorder: streamRecorder)
-        self.configuration = configuration
+        session.cancel()
+        observation?.cancel()
+        self.session = MarkdownRenderSession(configuration: configuration,
+            streamDiagnosticsRecorder: streamRecorder, renderDiagnosticsRecorder: renderRecorder)
+        self.configuration = session.configuration
         self.emittedStepCount = 0
         self.isPaused = false
 
-        refreshPreparedSnapshot()
+        preparedSnapshot = session.presentation.preparedSnapshot
+        sourceByteCount = 0
+        observeSession()
         appendNextStep()
     }
 
@@ -156,11 +166,15 @@ private final class StreamingTranscriptModel: ObservableObject {
         isPaused.toggle()
     }
 
-    private func refreshPreparedSnapshot() {
-        preparedSnapshot = configuration.prepare(snapshot: stream.snapshot())
-        streamCounters = streamRecorder.snapshot()
-        renderCounters = renderRecorder.snapshot()
-        sourceByteCount = stream.sourceLength
+    private func observeSession() {
+        observation = session.$presentation.sink { [weak self] presentation in
+            guard let self else { return }
+            self.configuration = self.configuration.bindingSourceAccess(to: presentation)
+            self.documentEpoch = presentation.documentEpoch
+            self.preparedSnapshot = presentation.preparedSnapshot
+            self.streamCounters = self.streamRecorder.snapshot()
+            self.renderCounters = self.renderRecorder.snapshot()
+        }
     }
 }
 
@@ -413,7 +427,7 @@ private struct TranscriptSurface: View {
                 ) { boundary in
                     HostBoundaryMarker(boundary: boundary)
                 }
-                .id(model.selectedCaseID)
+                .id(model.documentEpoch)
                 .frame(maxWidth: 900, alignment: .leading)
             }
         }

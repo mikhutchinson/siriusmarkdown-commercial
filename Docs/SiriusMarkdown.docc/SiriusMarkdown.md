@@ -16,6 +16,13 @@ standard inherited modifiers. Those modifiers remain available on SDK views.
 
 For task-oriented examples, start with the [integration guides](https://siriusmarkdown.com/docs/).
 
+### Install the SDK
+
+Add `https://github.com/mikhutchinson/siriusmarkdown-commercial.git` in Xcode
+and select version 0.7.5 or later. Link the `SiriusMarkdown` product. The binary
+package requires Swift 6.3 and includes macOS 13, iOS/iPadOS 16 and visionOS 1
+slices; individual features have platform-specific availability.
+
 ### Render a document
 
 Create a ``SiriusMarkdownCore/MarkdownStream``, finish it, and prepare its snapshot before passing
@@ -45,7 +52,7 @@ MarkdownDocumentView(preparedSnapshot: prepared, configuration: configuration)
 Create a ``SiriusMarkdownSwiftUI/MarkdownRenderSession`` on the main actor, keep it alive in your
 host, and append incoming text. Observe the session directly so asynchronous preparation updates the view.
 Sealed regions retain their identity; the active tail changes as text arrives. Width changes reuse
-prepared measurements.
+prepared measurements. Useful prepared prefixes publish while input continues.
 
 ```swift
 import SwiftUI
@@ -76,15 +83,22 @@ input retains a deterministic source fallback.
 
 ``SiriusMarkdownSwiftUI/DefaultMarkdownMermaidRenderer`` prepares native diagrams on macOS, iOS and
 visionOS. Graph and geometry families produce prepared PDF/SVG/ASCII and accessibility descriptions.
-These native diagram paths do not use JavaScriptCore or WebKit. Unsupported syntax keeps its source instead
-of drawing a partial diagram. The supported families include flowchart, sequence, class, state, ER,
-XY chart, quadrant, pie, journey, timeline, mind map and Gantt.
+These native diagram paths do not use JavaScriptCore or WebKit. During streaming, supported native
+children appear inside unfinished containers; parser-owned draft metadata identifies their source
+and unfinished frontier. Finished unsupported syntax retains source fallback. The supported
+families include flowchart, sequence, class, state, ER, XY chart, quadrant, pie, journey,
+timeline, mind map and Gantt.
 
 Expanded diagrams use the whole canvas with unfilled overlay controls: Diagram/Source
 on the left, export and close on the right, and zoom along the bottom. Fit includes the
 complete figure, its labels and room for the controls. 100% uses the host's text scale
 as its baseline. Switching Source or appearance preserves pan and zoom; PDF-backed
 diagrams also retain text selection. Inline figures start at the reading edge.
+
+Supported native math can also display children inside unfinished boxes, fractions and matrices.
+Neither draft path adds closing syntax to authored source. Custom renderer hooks retain their
+existing behavior and can adopt the progressive protocols described in the
+[integration guides](https://siriusmarkdown.com/docs/).
 
 Code highlighting is a separate preparation step. Its default backend may use JavaScriptCore with
 highlight.js; unrecognized languages or an unavailable backend retain plain code. Hosts can replace
