@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.7.6 - 2026-10-17
+
+- Keep native paragraph and inline-math geometry stable during speculative
+  width measurement, preventing text from wrapping into a rejected narrow
+  width and overlapping the following block until another layout or reload.
+
 ## 0.7.5 - 2026-10-12
 
 - Typeset native slashed expressions with `\not` and named single/double vertical
