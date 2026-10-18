@@ -11,7 +11,7 @@ regions are reused while incoming text updates the active tail.
 ## Browser MVP
 
 [Try the interactive playground](https://siriusmarkdown.com/playground/) or
-[download browser 0.1.1](https://github.com/mikhutchinson/siriusmarkdown-commercial/releases/tag/browser-0.1.1).
+[download browser 0.1.2](https://github.com/mikhutchinson/siriusmarkdown-commercial/releases/tag/browser-0.1.2).
 The browser/WASM package is separate from the native Swift SDK below. It runs
 Markdown parsing and preparation locally in a worker, with vector equations and
 diagrams, tables, highlighted code, sanitized HTML, images and source-backed

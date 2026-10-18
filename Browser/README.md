@@ -1,16 +1,16 @@
 # SiriusMarkdown for the browser
 
-Browser 0.1.1 is the SiriusMarkdown browser/WASM MVP. It is distributed
+Browser 0.1.2 is the SiriusMarkdown browser/WASM MVP. It is distributed
 separately from the native Swift XCFramework SDK in this repository.
 
-- [Download browser 0.1.1](https://github.com/mikhutchinson/siriusmarkdown-commercial/releases/tag/browser-0.1.1)
+- [Download browser 0.1.2](https://github.com/mikhutchinson/siriusmarkdown-commercial/releases/tag/browser-0.1.2)
 - [Interactive playground](https://siriusmarkdown.com/playground/)
 - [Integration guide](https://siriusmarkdown.com/docs/browser/)
-- [Page and worker API](0.1.1/Browser-API.md)
-- [Runtime notices](0.1.1/NOTICE.md)
-- [Archive checksums](0.1.1/SHA256SUMS.txt)
+- [Page and worker API](0.1.2/Browser-API.md)
+- [Runtime notices](0.1.2/NOTICE.md)
+- [Archive checksums](0.1.2/SHA256SUMS.txt)
 
-Extract `SiriusMarkdown-browser-0.1.1.zip` and serve its `site/` directory over
+Extract `SiriusMarkdown-browser-0.1.2.zip` and serve its `site/` directory over
 HTTPS, or localhost for development. Keep `js`, `assets`, `dist` and `playground`
 together. Serve `.wasm` as `application/wasm`, module JavaScript as
 `text/javascript`, and fonts with appropriate font MIME types. Open the included
@@ -28,9 +28,10 @@ before HTTP compression. Load them when needed and cache a complete version's
 matching modules, workers, JavaScript and fonts together. Your marketing or
 navigation pages do not need to download the engines.
 
-Version 0.1.1 retains unchanged content while editing, including decoded pictures
-and vector equations and diagrams. Source positions stay current for selection,
-copy and image actions.
+Version 0.1.2 anchors contextual text and image controls to visible content and
+keeps diagram menus inside the reader. It retains unchanged content while editing,
+including decoded pictures and vector equations and diagrams. Source positions
+stay current for selection, copy and image actions.
 
 ## Browser limits
 
@@ -61,8 +62,8 @@ Preserve Commercial SDK License 1.0, prior MIT grants, third-party notices and
 font/runtime licenses. They are included in the download and retain their own
 terms. The download includes the modified ElkSwift source under
 `third-party-source/ElkSwift-WASI.tar.gz`; the release also supplies it as a
-separate `ElkSwift-WASI-0.1.1.tar.gz` asset with a source-file manifest. It is
+separate `ElkSwift-WASI-0.1.2.tar.gz` asset with a source-file manifest. It is
 available under EPL-2.0 and belongs outside the hosted `site/` directory.
 
-The [distribution manifest](0.1.1/MANIFEST.json) records every consumer-package
+The [distribution manifest](0.1.2/MANIFEST.json) records every consumer-package
 file. No engine or app Swift source is part of the browser runtime.
