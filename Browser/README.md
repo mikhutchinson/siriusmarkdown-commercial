@@ -1,16 +1,16 @@
 # SiriusMarkdown for the browser
 
-Browser 0.1.4 is the SiriusMarkdown browser/WASM MVP. It is distributed
+Browser 0.2.0 is the SiriusMarkdown browser/WASM MVP. It is distributed
 separately from the native Swift XCFramework SDK in this repository.
 
-- [Download browser 0.1.4](https://github.com/mikhutchinson/siriusmarkdown-commercial/releases/tag/browser-0.1.4)
+- [Download browser 0.2.0](https://github.com/mikhutchinson/siriusmarkdown-commercial/releases/tag/browser-0.2.0)
 - [Interactive playground](https://siriusmarkdown.com/playground/)
 - [Integration guide](https://siriusmarkdown.com/docs/browser/)
-- [Page and worker API](0.1.4/Browser-API.md)
-- [Runtime notices](0.1.4/NOTICE.md)
-- [Archive checksums](0.1.4/SHA256SUMS.txt)
+- [Page and worker API](0.2.0/Browser-API.md)
+- [Runtime notices](0.2.0/NOTICE.md)
+- [Archive checksums](0.2.0/SHA256SUMS.txt)
 
-Extract `SiriusMarkdown-browser-0.1.4.zip` and serve its `site/` directory over
+Extract `SiriusMarkdown-browser-0.2.0.zip` and serve its `site/` directory over
 HTTPS, or localhost for development. Keep `js`, `assets`, `dist` and `playground`
 together. Serve `.wasm` as `application/wasm`, module JavaScript as
 `text/javascript`, and fonts with appropriate font MIME types. Open the included
@@ -23,14 +23,15 @@ documented Mermaid subset. Images, tables, highlighted code, selection, rich
 copy, exact-source Copy Markdown and host-owned formatting use the same authored
 source. Unsupported completed diagram syntax retains its source fallback.
 
-The main reactor is about 58 MiB and the separate diagram reactor about 56 MiB
+The main reactor is about 49 MiB and the separate diagram reactor about 56 MiB
 before HTTP compression. Load them when needed and cache a complete version's
 matching modules, workers, JavaScript and fonts together. Your marketing or
 navigation pages do not need to download the engines.
 
-Version 0.1.4 anchors contextual text and image controls to visible content and
-keeps diagram menus inside the reader. It retains unchanged content while editing,
-including decoded pictures and vector equations and diagrams. Source positions
+Version 0.2.0 adds inline Markdown and HTML image editing, caption-aware figure
+wrapping and readable table print snapshots. Contextual controls stay anchored
+to visible content, and diagram menus stay inside the reader. Editing retains
+unchanged content, including decoded pictures and vector equations and diagrams. Source positions
 stay current for selection, copy and image actions.
 
 Expanded viewers preserve the diagram's inline space and restore the reader's
@@ -53,13 +54,37 @@ keeps its prepared glyph. Document-relative files require explicit host
 authorization. Do not introduce an unrestricted proxy for authored URLs.
 
 HTML is sanitized into document content. Scripts, active forms, embedded browsing
-contexts and arbitrary CSS are not enabled. Standalone Markdown images support contextual editing and host-owned drag resizing
-with Undo. Inline/HTML image editing and prepared text-wrapping controls are outside
-this release.
+contexts and arbitrary CSS are not enabled. Standalone Markdown figures support
+alignment, captions, width edits, drag resizing and prepared text wrapping. Inline
+Markdown and authorized HTML pictures support width edits; HTML pictures also
+support alternative-text editing. The host owns source transactions and Undo.
+Narrow columns place prose below wrapped figures.
 
 Browser HTML/custom clipboard formats differ from native pasteboard types.
 Use Copy Markdown to transfer exact authored source as plain text. Printing and
 PDF pagination use the browser's print system and differ from native PDF export.
+Readable print snapshots divide wide tables across column groups and pages,
+repeat identifying columns and headings, and retain the original text size. The
+live reader remains independent from the print snapshot.
+
+## Optional self-hosted image gateway
+
+The download includes an optional bounded Node resource gateway for public
+pictures and icons whose servers do not allow browser CORS requests:
+
+```sh
+node site/js/host/server.mjs --root site --port 8843
+```
+
+Open `http://127.0.0.1:8843/playground/?resources=gateway`. An existing server can
+mount the supplied handler behind its normal authentication and traffic controls.
+The browser adapter requires a same-origin endpoint. Public-address checks,
+validated redirects, TLS verification and bounded anonymous requests apply to
+each fetch. See the page API for the adapter and handler contract.
+
+The public playground stays on static hosting and uses direct browser requests,
+with the CORS limits described above. The gateway is optional for self-hosted
+integrations and does not require changes to authored Markdown.
 
 ## License and corresponding source
 
@@ -67,8 +92,8 @@ Preserve Commercial SDK License 1.0, prior MIT grants, third-party notices and
 font/runtime licenses. They are included in the download and retain their own
 terms. The download includes the modified ElkSwift source under
 `third-party-source/ElkSwift-WASI.tar.gz`; the release also supplies it as a
-separate `ElkSwift-WASI-0.1.4.tar.gz` asset with a source-file manifest. It is
+separate `ElkSwift-WASI-0.2.0.tar.gz` asset with a source-file manifest. It is
 available under EPL-2.0 and belongs outside the hosted `site/` directory.
 
-The [distribution manifest](0.1.4/MANIFEST.json) records every consumer-package
+The [distribution manifest](0.2.0/MANIFEST.json) records every consumer-package
 file. No engine or app Swift source is part of the browser runtime.
