@@ -8,6 +8,16 @@ measurement. Parse and prepare content outside view evaluation, then pass the
 prepared snapshot to a native document or streaming view. Completed streaming
 regions are reused while incoming text updates the active tail.
 
+## Browser MVP
+
+[Try the interactive playground](https://siriusmarkdown.com/playground/) or
+[download browser 0.1.0](https://github.com/mikhutchinson/siriusmarkdown-commercial/releases/tag/browser-0.1.0).
+The browser/WASM package is separate from the native Swift SDK below. It runs
+Markdown parsing and preparation locally in a worker, with vector equations and
+diagrams, tables, highlighted code, sanitized HTML, images and source-backed
+selection. See [browser integration](Browser/README.md) for hosting and platform
+limits. This is a browser MVP with an explicit supported surface.
+
 ## Installation
 
 Requires Swift 6.3 and macOS 13, iOS/iPadOS 16 or visionOS 1.
