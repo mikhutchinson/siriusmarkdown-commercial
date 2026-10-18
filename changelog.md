@@ -1,5 +1,115 @@
 # Changelog
 
+## Browser 0.2.0 - 2026-10-18
+
+- Offer a bounded same-origin resource gateway for public HTTPS pictures and
+  link icons without CORS headers, with DNS and redirect validation.
+- Export readable browser table snapshots with repeated headers and identifying
+  columns while retaining cell text, spans, loaded pictures and equation vectors.
+- Preserve document text selection when a browser code action receives keyboard
+  focus, including Firefox.
+
+- Edit inline and sanitized HTML images in the browser with source-backed
+  resize and Undo. Reserve decoded inline image boxes in prepared line layout,
+  and wrap prose around explicit Markdown figures with caption-aware clearing.
+- Preserve inline HTML image width and alignment in the shared semantic model.
+
+- The website playground reveals switched examples after prepared layout and
+  keeps its readiness indicator in step with source edits and Undo.
+- Keep the public playground on static GitHub Pages hosting with direct browser
+  resource requests. The optional gateway is supplied for self-hosted consumers;
+  cross-origin resources on the public playground still require CORS.
+
+[Release notes](release-notes/browser-0.2.0.md) · [Browser download](https://github.com/mikhutchinson/siriusmarkdown-commercial/releases/tag/browser-0.2.0). The native Swift SDK remains 0.7.6.
+
+## Browser 0.1.4 - 2026-10-18
+
+- Return expanded-viewer focus to its invoker and retain nested reader scroll
+  positions through Safari's native modal focus restoration. Reveal Find matches
+  within horizontally scrolling content.
+
+## Browser 0.1.3 - 2026-10-17
+
+- Preserve the inline diagram slot and preview scroll position while a viewer is
+  open, keep hidden Source views out of sizing, and restore the inline mode on
+  dismissal. Keep an expanded viewport in its dialog during reconciliation.
+
+## Browser 0.1.2 - 2026-10-17
+
+- Anchor browser selection and image controls to visible document content, keep
+  them inside nested readers, and dismiss or reposition them during focus,
+  scrolling and resizing. Keep diagram menus reachable within the reader.
+- Preserve selected image actions through accepted attribute edits, acknowledge
+  code copying without changing action width, and retain reader scroll positions
+  during Find, outline navigation and diagram viewer dismissal.
+
+## Browser 0.1.1 - 2026-10-17
+
+- Retain unchanged browser document subtrees through source edits, updating
+  UTF-8 and line bindings for selection, links, copy and image actions. Preserve
+  validated image dimensions during replacement and decoded image nodes when
+  asynchronous resource metadata arrives.
+
+- Keep browser image-only paragraphs atomic even when their alternate text would
+  wrap. Fit validated picture dimensions proportionally and retain the image
+  element and prepared state across width changes.
+- Preserve explicitly host-authorized local pictures through source edits, and
+  display the actual resource-policy denial when no authorization is supplied.
+
+## Browser 0.1.0 - 2026-10-17
+
+The first separate browser/WASM distribution and interactive playground.
+The native Swift SDK remains 0.7.6.
+
+- Edit standalone browser image alignment, width and captions through host-owned
+  source transactions with Undo. Keep drag previews until the edited picture
+  arrives, and preserve authorized local images across later publications.
+- Preserve authored placeholder widths and decoded standalone image proportions.
+- Let immediate editor Undo supersede an accepted image-resize preview even when
+  the intermediate prepared width has not painted.
+
+- Provide an editable browser feature gallery through the real WASM engine,
+  source-backed formatting with Undo, safe link activation and code downloads.
+- Discover browser link icons anonymously within bounded resource and cache
+  limits, retaining prepared glyphs when cross-origin access is unavailable.
+- Preserve sealed browser blocks and selection while interleaving streamed
+  publications, and reuse live prepared content when long documents resize.
+- Preserve standalone display equations after list-owned delimiters and keep
+  synthetic empty table-cell source ranges identical across streaming chunks.
+- Preserve seeded diagram ordering on wasm32 and measure mixed text/math labels
+  with the host's font advances, ascent and descent.
+- Print browser documents with readable ink, complete vector diagrams and no
+  extra page caused by the editor's viewport height.
+- Keep diagram cameras stable during accessibility mouse activation while
+  preserving primary-button drag panning.
+
+- Supply semantic plain text and structured rich HTML for browser Copy. Keep
+  exact authored source in a separate Markdown format and Copy Markdown action.
+
+- Allow direct browser drags across inline and display equation graphics to select
+  their complete source, while keeping provisional source hidden behind vectors.
+
+- Preserve authored block separators and complete-source whitespace in browser
+  clipboard Copy. Include atomic display equations when selection starts on them,
+  show selection over vector math, and release retired document interaction state.
+  Acknowledge code-body Copy after clipboard completion and report rejected writes.
+
+- Keep inline Mermaid labels readable with bounded initial downscaling, panning
+  and expansion; preserve explicit Fit for complete overviews. Route nested
+  flowchart connectors around title bands while retaining normal node entry.
+- Honor document spacing for entity-relationship diagrams without enlarging
+  caption gaps twice. Render unquoted XY chart titles and keep horizontal
+  category labels separate from signed bar values.
+- Keep quadrant point names clear of central grid lines while preserving plotted
+  coordinates.
+- Reserve space for document Find controls so they do not overlap diagram
+  actions. Avoid read-only input-geometry updates during scrolling and resizing.
+- Keep mixed-chart bar values clear of line marks and identify displaced values
+  with dotted leaders. Fit expanded browser charts within both viewport dimensions
+  so titles and legends remain clear of viewer controls in short windows.
+- Preserve partial transfer progress when the local Web server encounters bounded
+  socket backpressure while serving large Wasm modules.
+
 ## 0.7.6 - 2026-10-17
 
 - Keep native paragraph and inline-math geometry stable during speculative

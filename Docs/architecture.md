@@ -4,6 +4,11 @@ SiriusMarkdown separates parsing, preparation and presentation. Your app supplie
 Markdown and renderer configuration; SwiftUI receives prepared content that can
 be laid out again as the available width changes.
 
+The browser distribution uses the shared engine in WebAssembly workers with a
+JavaScript presentation layer. Its [web page API](web-page-api.md) describes the
+separate integration contract. The Swift products below retain their native
+SwiftUI, AppKit and UIKit presentation.
+
 ## Choose a product
 
 | Product | Use it for |

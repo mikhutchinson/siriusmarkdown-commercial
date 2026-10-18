@@ -2,9 +2,13 @@
 
 Start with the [package quick start](../README.md), then choose a guide:
 
+- [Browser package and playground](https://siriusmarkdown.com/docs/browser/): the
+  separate browser/WASM distribution, hosting and browser limits.
 - [Installation and packaging](installation.md): binaries, platform slices and resources.
 - [Preparing documents](Document-Preparation.md): reuse, windows and cancellation.
 - [Streaming](streaming.md): append text and insert native content.
+- [Web page API](web-page-api.md): worker integration, source-backed image editing,
+  prepared figure wrapping, readable table printing, resource policies and recovery.
 - [Document interactions](document-interactions.md): selection, Find, links, copy and export.
 - [Figures and video](media.md)
 - [Native mathematics](math.md): equation syntax, supported notation and raster resolution.
