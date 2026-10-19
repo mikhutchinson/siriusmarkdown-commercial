@@ -1,0 +1,130 @@
+[
+  {
+    "id": "flow",
+    "title": "Flowchart · branches, groups, feedback",
+    "source": "flowchart TD\nsubgraph Intake[Request intake]\n A([Incoming request]) --> B{Authorized?}\n B -->|Yes| C[Validate payload]\n B -->|No| X[Reject request]\nend\nsubgraph Processing[Parallel work]\n C --> D[Parse source]\n C --> E[Resolve policy]\n D --> F[Prepared document]\n E --> F\nend\nF --> G{Quality gate}\nG -->|Pass| H([Publish])\nG -->|Retry| C\nclassDef accent fill:#e6f0ff,color:#172b4d,stroke:#3478f6,stroke-width:2px\nclass A,H accent\n",
+    "note": "",
+    "sha256": "8ec083ff56e7375a914f8dc4d472304f3e54224359568a547c9b00a729922871",
+    "bytes": 430
+  },
+  {
+    "id": "xy",
+    "title": "XY · mixed bars and line",
+    "source": "xychart-beta\n title \"Quarterly production\"\n x-axis [Jan, Feb, Mar, Apr, May, Jun]\n y-axis \"Units\" 0 --> 120\n bar [38, 54, 49, 81, 94, 112]\n line [42, 50, 61, 73, 88, 105]\n",
+    "note": "",
+    "sha256": "9b76aaf3019789831d1d29e078c7a5504622682c99c0a49cbf8c744b90e648a1",
+    "bytes": 171
+  },
+  {
+    "id": "horizontal",
+    "title": "XY · signed horizontal bars",
+    "source": "xychart-beta horizontal\n title \"Regional change\"\n x-axis [Americas, Europe, Asia, Pacific]\n y-axis \"Change\" -30 --> 60\n bar [42, -18, 57, -9]\n",
+    "note": "",
+    "sha256": "12b650d372166f6bb27e75b0d596e43a0757d33821ad4e0a3b8cea0acbdf0beb",
+    "bytes": 142
+  },
+  {
+    "id": "sequence",
+    "title": "Sequence · activation, loops, alternatives",
+    "source": "sequenceDiagram\nautonumber\nparticipant U as Reader\nparticipant A as API\nparticipant W as Worker\nU->>+A: Open document\nA->>+W: Prepare source\nloop Each source chunk\n W-->>A: Prepared prefix\n A-->>U: Render update\nend\nalt Complete\n W-->>A: Final publication\nelse Cancelled\n A->>W: Revoke publication\nend\nW-->>-A: Complete\nA-->>-U: Settled\n",
+    "note": "",
+    "sha256": "d2370bb11bb8f33bc9c0f71e8c5bbc3e9bbdb4a5b2620ecac40660eca0141f49",
+    "bytes": 337
+  },
+  {
+    "id": "state",
+    "title": "State · nested states and recovery",
+    "source": "stateDiagram-v2\n[*] --> Idle\nIdle --> Streaming: start\nstate Streaming {\n [*] --> Parsing\n Parsing --> Preparing\n Preparing --> Presenting\n Presenting --> Parsing: append\n}\nStreaming --> Ready: finish\nStreaming --> Cancelled: cancel\nCancelled --> Idle: reset\nReady --> [*]\n",
+    "note": "",
+    "sha256": "1c3d394ddc7a43ff46b451f143c946882590040472e008fbaa8a12fa1a2f012a",
+    "bytes": 273
+  },
+  {
+    "id": "class",
+    "title": "Class · typed models and relationships",
+    "source": "classDiagram\nclass Document {\n +String id\n +String source\n +append(chunk)\n +finish()\n}\nclass PreparedBlock {\n +String id\n +Float naturalWidth\n +layout(width)\n}\nclass Cache {\n +Int capacity\n +lookup(key)\n +insert(value)\n}\nDocument \"1\" *-- \"many\" PreparedBlock : contains\nDocument --> Cache : reuses\n",
+    "note": "",
+    "sha256": "9040fa41a044e73a59ad0e018c8695a66becb850dfcdc186634cfb26389d2454",
+    "bytes": 298
+  },
+  {
+    "id": "er",
+    "title": "ER · keys, cardinalities, relationships",
+    "source": "erDiagram\n DOCUMENT ||--o{ BLOCK : contains\n BLOCK ||--o{ RESOURCE : references\n DOCUMENT ||--o{ REVISION : records\n DOCUMENT {\n  string id PK\n  string title\n }\n BLOCK {\n  string id PK\n  string document_id FK\n  int byte_offset\n }\n RESOURCE {\n  string id PK\n  string url\n }\n REVISION {\n  int revision PK\n  string document_id FK\n }\n",
+    "note": "",
+    "sha256": "4dc6465e90c84783d9aedd81f3285d5ae1273252107b10808e7dab40828990e4",
+    "bytes": 330
+  },
+  {
+    "id": "pie",
+    "title": "Pie · data and legend",
+    "source": "pie showData\n title Preparation budget\n \"Parsing\" : 18\n \"Layout\" : 34\n \"Math\" : 27\n \"Presentation\" : 21\n",
+    "note": "",
+    "sha256": "0b81882f761657f7625428ae1148fbfba5e48a6d79495c98411ce99a2195a44a",
+    "bytes": 104
+  },
+  {
+    "id": "quadrant",
+    "title": "Quadrant · positioned and labeled data",
+    "source": "quadrantChart\n title Portfolio priorities\n x-axis Low effort --> High effort\n y-axis Low impact --> High impact\n quadrant-1 Plan\n quadrant-2 Prioritize\n quadrant-3 Defer\n quadrant-4 Review\n Streaming: [0.25, 0.85]\n Math: [0.65, 0.92]\n Tables: [0.42, 0.57]\n Export: [0.78, 0.38]\n Search: [0.18, 0.24]\n",
+    "note": "",
+    "sha256": "535a22b656596983776508a01a1460b8e2f40b4d18f54b9037b8be153d102227",
+    "bytes": 300
+  },
+  {
+    "id": "journey",
+    "title": "Journey · sections, actors, scores",
+    "source": "journey\n title Author to reader\n section Draft\n Write source: 5: Author\n Review equations: 3: Author, Reviewer\n section Publish\n Resolve feedback: 4: Reviewer\n Read document: 5: Reader\n",
+    "note": "",
+    "sha256": "21416160520e5bdb3fc82261be80b0d80213b7d3c0efba5de49684bcdc5ffa53",
+    "bytes": 185
+  },
+  {
+    "id": "timeline",
+    "title": "Timeline · sections and multiple events",
+    "source": "timeline\n title A rendering pipeline\n section Preparation\n Source : Append UTF-8 : Seal stable regions\n Semantics : Parse Markdown : Sanitize HTML\n section Presentation\n Layout : Measure once : Relayout cheaply\n Reader : Stream vectors : Select and copy\n",
+    "note": "",
+    "sha256": "7c632af5357f385315e037fe0aeb0499a1c241dc3fa1ba4e395fca7d38a9007c",
+    "bytes": 254
+  },
+  {
+    "id": "mindmap",
+    "title": "Mind map · nested shapes and labels",
+    "source": "mindmap\n root((Renderer))\n  Semantics\n   [Markdown AST]\n   [Sanitized HTML]\n  Preparation\n   (Text shaping)\n   (Vector math)\n   (Diagram geometry)\n  Presentation\n   Native\n   Browser\n  Quality\n   Selection\n   Streaming\n   Export\n",
+    "note": "",
+    "sha256": "e1a0a636e4f17a1ad2ffe1e5e300bab3bf11921b1c030fa31c25e4b527d70413",
+    "bytes": 229
+  },
+  {
+    "id": "gantt",
+    "title": "Gantt · dependencies, states, milestones",
+    "source": "gantt\n title Renderer delivery\n dateFormat YYYY-MM-DD\n excludes weekends\n section Engine\n Semantics :done, sem, 2026-10-05, 3d\n Layout :active, layout, after sem, 4d\n section Quality\n Native review :crit, native, after layout, 3d\n Browser review :web, after layout, 4d\n Release :milestone, after web, 0d\n",
+    "note": "",
+    "sha256": "d8314b8d4120b0ade1bdcebb9a79cec7b3c4ae751874896be32201b40228b0b1",
+    "bytes": 304
+  },
+  {
+    "id": "math",
+    "title": "LaTeX · vectors inside diagram labels",
+    "source": "flowchart TD\n A[\"Posterior<br/>$$p(\\theta\\mid x)=\\frac{p(x\\mid\\theta)p(\\theta)}{p(x)}$$\"]\n A -->|\"$$\\nabla_\\theta\\log p(\\theta\\mid x)$$\"| B[\"Gradient step<br/>$$\\theta_{t+1}=\\theta_t-\\eta\\nabla L(\\theta_t)$$\"]\n B --> C{\"Converged?<br/>$$\\lVert\\nabla L\\rVert<\\varepsilon$$\"}\n C -->|No| B\n C -->|Yes| D([\"Estimate $$\\hat{\\theta}$$\"])\n",
+    "note": "Same LaTeX source is passed to each renderer.",
+    "sha256": "dc0bf68f993e31fa0b27390953c1d9be8470d7732c934ed84aaf380dfe700d51",
+    "bytes": 332
+  },
+  {
+    "id": "math-sequence",
+    "title": "LaTeX sequence · formulas in messages and notes",
+    "source": "sequenceDiagram\nparticipant A as Optimizer\nparticipant B as Model\nA->>+B: $$\\theta_t$$\nB-->>-A: $$\\nabla_\\theta L(\\theta_t)$$\nNote over A,B: $$\\theta_{t+1}=\\theta_t-\\eta\\nabla L(\\theta_t)$$\nA->>B: $$\\hat{\\theta}=\\operatorname{argmin}_{\\theta} L(\\theta)$$\n",
+    "note": "",
+    "sha256": "6c155ad686ddd04824946cd439810ce681e0a88a2edc29c3471401153c0997f5",
+    "bytes": 255
+  },
+  {
+    "id": "stream",
+    "title": "Streaming · Bayesian inference pipeline",
+    "source": "flowchart TD\nsubgraph Input[Observations and prior]\n X[\"Observations<br/>$$X=\\{x_1,\\ldots,x_n\\}$$\"]\n P[\"Gaussian prior<br/>$$p(\\theta)=\\mathcal{N}(0,I)$$\"]\n X --> L[\"Log likelihood<br/>$$\\ell(\\theta)=\\sum_{i=1}^{n}\\log p(x_i\\mid\\theta)$$\"]\n P --> Q[\"Posterior<br/>$$p(\\theta\\mid X)\\propto p(X\\mid\\theta)p(\\theta)$$\"]\n L --> Q\nend\nsubgraph Inference[Iterative inference]\n Q --> G[\"Differentiate<br/>$$g_t=\\nabla_\\theta\\log p(\\theta_t\\mid X)$$\"]\n subgraph Newton[Second-order step]\n G --> H[\"Curvature<br/>$$H_t=\\left[\\begin{matrix}a&b\\\\b&c\\end{matrix}\\right]$$\"]\n H --> N[\"Regularize<br/>$$v_t=(H_t+\\lambda I)^{-1}g_t$$\"]\n N --> S[\"Update<br/>$$\\theta_{t+1}=\\theta_t+\\eta g_t$$\"]\n end\n G -.-> S\n S --> C{\"Converged?<br/>$$\\lVert g_t\\rVert<\\varepsilon$$\"}\n C -->|No| G\nend\nsubgraph Validation[Validation and delivery]\n C -->|Yes| U[\"Uncertainty<br/>$$\\sigma=\\sqrt{\\operatorname{Var}(\\theta\\mid X)}$$\"]\n U --> E[\"Evidence<br/>$$Z=\\int p(X\\mid\\theta)p(\\theta)\\,d\\theta$$\"]\n E --> V{Checks pass?}\n V -->|Pass| O[\"Predictive<br/>$$p(y\\mid X)=\\int p(y\\mid\\theta)p(\\theta\\mid X)\\,d\\theta$$\"]\n V -->|Retry| G\n O --> R([Publish estimate])\nend\nclassDef focus fill:#e6f0ff,color:#172b4d,stroke:#3478f6,stroke-width:2px\nclass Q,S,O focus\n%% The full source, including LaTeX, is identical in all three panes.\n",
+    "note": "Nested groups, math in labels, decisions, feedback, styles. Shared 12-second source feed.",
+    "sha256": "c46b2a2609d4e33fff3ada7f33af81447af89ed0a8db72b71a0732153a9eec8c",
+    "bytes": 1295
+  }
+]

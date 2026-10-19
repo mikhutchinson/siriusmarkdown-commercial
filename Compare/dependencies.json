@@ -1,0 +1,39 @@
+{
+  "appVersion": "1.0.0",
+  "browserArchive": {
+    "bytes": 46524296,
+    "sha256": "30dd2d79708c25b6c5acf7b300bebba29c35e5f0ef44aac3f248dcb402bea388",
+    "url": "https://github.com/mikhutchinson/siriusmarkdown-commercial/releases/download/browser-0.2.1/SiriusMarkdown-browser-0.2.1.zip"
+  },
+  "browserVersion": "0.2.1",
+  "nativeArchives": {
+    "SiriusMarkdownCore": {
+      "bytes": 4199693,
+      "sha256": "32b87f4bc8800860e2c57beb725be7f074e29e3e1a7c5c794bac5123ae8a86be",
+      "url": "https://github.com/mikhutchinson/siriusmarkdown-commercial/releases/download/0.7.7/SiriusMarkdownCore.xcframework.zip"
+    },
+    "SiriusMarkdownMathEngine": {
+      "bytes": 438310,
+      "sha256": "19965015c5b5e8a86438141a0ce91d6c32bdc12283ae8c2576bc954278231c8d",
+      "url": "https://github.com/mikhutchinson/siriusmarkdown-commercial/releases/download/0.7.7/SiriusMarkdownMathEngine.xcframework.zip"
+    },
+    "SiriusMarkdownSupport": {
+      "bytes": 51958792,
+      "sha256": "6e9c06dc186b1a6b7d8925f4a0d957860589d07509a4cfb62b6aa240b4ee26c4",
+      "url": "https://github.com/mikhutchinson/siriusmarkdown-commercial/releases/download/0.7.7/SiriusMarkdownSupport.xcframework.zip"
+    },
+    "SiriusMarkdownSwiftUI": {
+      "bytes": 24411230,
+      "sha256": "36c677217ac802fa5bb2e809113aa1ced095cc273311ab40e8e3d4f904aed0b2",
+      "url": "https://github.com/mikhutchinson/siriusmarkdown-commercial/releases/download/0.7.7/SiriusMarkdownSwiftUI.xcframework.zip"
+    }
+  },
+  "nativeVersion": "0.7.7",
+  "peleModuleSHA256": "d1ebc1889f3069d7759fe5db34c4ad4b4823285edbee2b537d0ef3d505a76d8d",
+  "pelePackageSHA256": "0945cbff58d4c9c4959a15e18b1e6743c76ab40525de856fc478fdc4ed989a63",
+  "peleVersion": "1.6.0",
+  "wasmModules": {
+    "sirius-markdown.wasm": "9b399ee2f85fab349d19f0450cb8c706e24fbf27f60cc6398fa6bd8ea6ef4397",
+    "sirius-mermaid.wasm": "9c62dd422a8b3759b40d01ff970424c1df74f9c5b3dd1b5e236158db2d649631"
+  }
+}

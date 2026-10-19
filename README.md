@@ -18,6 +18,13 @@ diagrams, tables, highlighted code, sanitized HTML, images and source-backed
 selection. See [browser integration](Browser/README.md) for hosting and platform
 limits. This is a browser MVP with an explicit supported surface.
 
+## Compare the renderers
+
+[Download SiriusMarkdown Compare](https://siriusmarkdown.com/compare/download/)
+for macOS to run native Swift, Sirius WASM and official Pele with identical source,
+visible output and exportable timings. The app embeds released binaries and
+requires macOS 15 or later. [Read the app guide](Compare/README.md).
+
 ## Installation
 
 Requires Swift 6.3 and macOS 13, iOS/iPadOS 16 or visionOS 1.
