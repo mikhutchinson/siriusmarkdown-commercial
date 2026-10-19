@@ -33,13 +33,68 @@ changes request `relayout` on the prepared session; they do not append or replac
 the source. The playground demonstrates the worker, font, Mermaid, resource and
 revision wiring together.
 
-Mermaid diagrams use their separate reactor through `loadMermaid` and
-`mountMermaid`. Supply `canvasMeasurer()` for preparation with the painted font's
-advances and ascent/descent. A custom width-measuring function may expose
-`fontMetrics(size, weight)` returning `{ ascent, descent }`, or pass that function
-as the separate `fontMetrics` loading option. Install the supplied math font in
-the diagram reactor before rendering math labels. The browser uses system faces
-on Apple platforms and the supplied Inter faces on other platforms.
+For interactive Mermaid diagrams, import `MermaidWorkerClient` from
+`js/mermaid/worker-client.js` and present its results with `mountMermaid`:
+
+```js
+const diagrams = new MermaidWorkerClient({
+  wasmUrl: new URL("./dist/sirius-mermaid.wasm", location.href),
+  fontDirectory: new URL("./assets/fonts/", location.href),
+});
+await diagrams.ready;
+const diagram = await diagrams.render(block, publication, abortSignal);
+if (diagram && diagram.status !== "cancelled") mountMermaid(slot, diagram);
+```
+
+The client owns one module worker and installs its math font. Install the supplied
+document and monospace fonts in the page before creating it. Its default
+`canvasMeasurer()` uses the painted document's font resolver: system faces on
+Apple platforms and the supplied Inter faces elsewhere. A custom `measure`
+function must also expose `fontMetrics(size, weight)` returning
+`{ ascent, descent }`. Measurements run in small page-side batches; parsing,
+graph layout and SVG preparation run in the worker. SharedArrayBuffer and
+cross-origin isolation are not required for this diagram path. Provisional
+measurement passes are never presented.
+
+Requests for the same block coalesce to the latest revision. A superseded or
+aborted request resolves with `status: "cancelled"`. Call `diagrams.reset()`
+when replacing the logical document and `diagrams.dispose()` when retiring the
+host. Check that a target slot still belongs to the request before mounting an
+asynchronous result. Parser-approved unchanged drafts retain their artwork while
+their exact source and frontier metadata update. Unsupported completed input
+still retains source.
+
+For continuously arriving source, wrap the client in `MermaidRenderQueue` from
+that same module. It completes one coherent prefix while retaining only the
+newest queued update for each block, so rapid appends do not repeatedly cancel
+an expensive preparation before it can be displayed:
+
+```js
+const queue = new MermaidRenderQueue(diagrams);
+queue.render(block, publication, (diagram, preparedBlock, preparedPublication) => {
+  // Resolve the current slot for this block within the same document epoch.
+  mountMermaid(currentSlot(preparedBlock.id), diagram);
+});
+```
+
+The callback receives the source and publication that actually finished. An
+append may display an earlier coherent prefix while the latest is prepared;
+source replacement or a theme change revokes the running result. Superseded
+queued calls resolve as cancelled. Call `queue.reset()` before replacing the
+logical document or retiring its host, and keep the slot ownership checks from
+the asynchronous integration above. The ordinary client `render()` API retains
+its latest-request cancellation behavior.
+
+The worker bounds its measurement table to 16,384 entries and 8 MiB; a workload
+that exceeds these limits returns a diagnostic and source fallback. `stats()`
+reports pending requests, preparation reuse, queue/measurement-inclusive elapsed
+time, and the largest page measurement slice. The playground also reports diagram
+mounting time separately from ordinary publication application.
+
+The lower-level `loadMermaid` API remains synchronous after loading, for hosts
+that already own a preparation worker or perform noninteractive export. Supply
+`canvasMeasurer()` or equivalent width and font metrics, and install the supplied
+math font before rendering math labels. Width-only changes reuse prepared output.
 
 Large publications mount in bounded slices. `onRenderComplete({ documentEpoch,
 sourceRevision })` reports when the current publication's blocks have mounted;

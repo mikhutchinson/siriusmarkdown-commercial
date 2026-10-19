@@ -17,9 +17,11 @@ Expanded diagrams use the whole canvas, with unfilled controls overlaid at its
 edges. The active view and scale mode use text weight rather than a filled
 segment or capsule. A soft canvas-edge fade keeps the controls readable when
 content pans underneath them. Fit shows the entire figure, including a chart's
-title, axes and legend, with clearance for the controls. Inline figures retain
-the reading-width fit and their height limit. Actual Size and the zoom percentage
-are relative to the figure at the host's configured text scale.
+title, axes and legend, with clearance for the controls. Initial inline fitting
+limits downscaling to keep labels readable. Wider figures pan within the reading
+measure and offer Expand; explicit Fit can still shrink the whole figure to the
+viewport. Inline figures retain their height limit. Actual Size and the zoom
+percentage are relative to the figure at the host's configured text scale.
 
 Zoom preserves the current viewing position. Switching between Diagram and
 Source keeps the diagram viewport mounted, and switching appearance preserves
@@ -38,7 +40,13 @@ the new PDF page. Clearing selection or replacing the logical document cancels
 that intent.
 
 Preparation occurs before view presentation. Resizing and zoom reuse prepared
-resources. Streaming native diagrams keep the current prepared vector page
+resources. Streaming drafts also reuse vector artwork when the semantic parser's
+accepted statements and the renderer theme are unchanged. Authored source,
+source ranges and frontier coverage still advance independently. ASCII export
+retains its separate strict parsing behavior. The draft-artwork cache has both
+entry and stored-byte limits.
+
+Streaming native diagrams keep the current prepared vector page
 visible through PDFKit page overlays and a current-page presentation during
 overlay replacement. PDFKit retains selection and camera interaction.
 Diagrams do not require a web view, remote fonts, image downloads or
@@ -97,12 +105,15 @@ class and ER diagrams also retain source for completed unrecognized statements a
 structures; a successfully prepared diagram does not silently omit those lines.
 
 Sequence `autonumber` accepts a start and increment, including hundredth precision;
-`autonumber off` stops numbering. Flat flowchart feedback edges retain the authored
-arrow direction and reading order; compound subgraph cycles can have different
-ordering. SVG paint accepts inert named or hex colors and numeric stroke widths,
+`autonumber off` stops numbering. Flowchart feedback edges retain authored arrow
+direction and reading order in flat graphs and nested groups that share a flow
+direction. Explicit inner direction overrides keep their existing routing
+behavior. SVG paint accepts inert named or hex colors and numeric stroke widths,
 not resource-bearing paint URLs.
 
-Long geometry-family titles, journey tasks and Gantt labels wrap. XY charts adapt
+Long geometry-family titles, journey tasks and Gantt labels wrap. XY chart titles
+can be quoted or unquoted, such as `title "Monthly revenue"` or `title Revenue`.
+XY charts adapt
 category ticks to available space while retaining every data value and accessible
 label. Automatic bar-chart scales include zero for positive, negative and mixed
 values. An explicit `y-axis min --> max` overrides that scale; line-only charts
@@ -112,6 +123,13 @@ To hide values for a particular chart, precede its header with
 `%%{init: {"xyChart": {"showDataLabel": false}}}%%`. Set
 `showDataLabelOutsideBar` to `false` to place values inside the bars. Quoted
 categories retain spaces, commas and literal punctuation.
+
+Horizontal charts reserve a separate category-label column and place signed
+outside value labels at their bar ends. Resizing reuses prepared label measurements.
+In the native reader, mixed vertical charts place outside bar values clear of
+line marks and neighboring bars where space permits. Displaced values use
+dotted leaders to identify their bars; resizing reuses prepared measurements
+and series bounds.
 
 Dense entity-relationship diagrams may place labels beside connectors or in a
 gutter. Displaced captions use dotted leader lines to identify their relationships;

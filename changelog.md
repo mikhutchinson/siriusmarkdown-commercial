@@ -1,5 +1,42 @@
 # Changelog
 
+## Unreleased
+
+## Browser 0.2.1 - 2026-10-18
+
+- Prepare diagrams in a dedicated worker with batched document-font
+  measurements, coalesced revisions and cancellation. Reuse unchanged accepted
+  statements while keeping authored source and frontier metadata current.
+- Keep continuous diagram streams progressing by finishing coherent prefixes;
+  revoke obsolete work on source replacement, theme changes or reset.
+- Preserve authored reading order in grouped feedback loops that share a
+  direction, and keep class-diagram diamonds visible outside endpoint nodes.
+- Observe selection geometry only while a range is selected, retiring placement
+  work when the document resets or the host is destroyed.
+
+[Release notes](release-notes/browser-0.2.1.md) · [Browser download](https://github.com/mikhutchinson/siriusmarkdown-commercial/releases/tag/browser-0.2.1).
+
+## 0.7.7 - 2026-10-18
+
+- Paint default native inline and display mathematics from prepared glyphs and
+  rules at the destination resolution; retain PNG compatibility for custom
+  consumers and raster exports.
+- Keep initial diagram fitting readable, improve XY label/value clearance and
+  entity-relationship caption placement, and accept unquoted XY titles.
+- Preserve inline HTML image dimensions and alignment through shared
+  normalization, and update semantic parser dependencies to swift-markdown and
+  swift-cmark 0.9.0.
+- Reuse native streaming diagram vectors when accepted statements and theme are
+  unchanged, keeping authored source, source ranges and frontier metadata current.
+  Preserve strict ASCII export and completed-input fallback.
+- Preserve authored reading order through flat and grouped feedback loops that
+  share a direction, including nested groups, while retaining connection
+  endpoints, labels and arrowheads.
+- Keep class-diagram composition and aggregation diamonds visible outside their
+  endpoint nodes in SVG exports.
+
+[Release notes](release-notes/0.7.7.md).
+
 ## Browser 0.2.0 - 2026-10-18
 
 - Offer a bounded same-origin resource gateway for public HTTPS pictures and

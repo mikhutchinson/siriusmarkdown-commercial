@@ -4,7 +4,7 @@ The document and chat presets typeset inline and display mathematics by default
 on macOS, iOS and visionOS. Use `$…$` or `\(…\)` for inline equations and a
 standalone `$$` or `\[…\]` fence for display equations. The renderer preserves
 the original LaTeX for copying and prepares semantic accessibility structure
-alongside the image and its baseline metrics.
+alongside the prepared glyphs and their baseline metrics.
 
 ```markdown
 The variance is $\sigma^2 = \mathbb E[(X-\mu)^2]$.
@@ -62,9 +62,14 @@ configuration's diagnostics recorder.
 
 ## Resolution and preparation
 
-The engine draws native glyphs and rules directly at the requested raster scale.
-The default follows the platform backing scale, with a minimum of 2×. For a
-higher-resolution export, prepare with an explicit scale:
+Default inline and display surfaces paint prepared native glyphs and rules directly
+at the destination resolution. CoreText retains glyph hinting at small sizes; resizing
+does not reparse or typeset the equation.
+
+The released `MarkdownPreparedMath.image` representation also retains PNG data for
+custom consumers and raster exports. That compatibility raster follows the platform
+backing scale, with a minimum of 2×. For a higher-resolution raster export, prepare
+with an explicit scale:
 
 ```swift
 var configuration = MarkdownRendererConfiguration.document
@@ -79,9 +84,10 @@ within native text without clipping. Font sizes are bounded at 512 points, and
 individual rasters are bounded at 16,384 pixels per dimension and 16,777,216
 pixels in total. Requests outside the supported bounds retain source fallback.
 
-Typesetting, rasterization and decoding happen during preparation. Resizing a
-prepared document reuses the math image and its measured baseline. Scale and
-typesetter identity participate in the bounded preparation cache. Preserve the
+Typesetting, vector preparation, compatibility rasterization and decoding happen
+during preparation. Native painting and resizing reuse immutable glyph commands,
+rules and measured baselines. Vector storage and decoded pixels participate in the
+bounded preparation cache; scale and typesetter identity distinguish cache entries. Preserve the
 package resource bundles, including math fonts, when packaging an application.
 
 Use `PlainMarkdownMathRenderer` when your host intentionally displays LaTeX source.

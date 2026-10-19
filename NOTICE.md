@@ -7,7 +7,8 @@ replace the third-party licenses below or limit their source rights.
 
 The project relies on and credits these third-party projects:
 
-- `swift-markdown` by the Swift project and Apple Inc. provides the runtime Markdown parsing semantics. It is licensed under Apache License 2.0. The included parser is version 0.7.3.
+- `swift-markdown` by the Swift project and Apple Inc. provides the runtime Markdown parsing semantics. It is licensed under Apache License 2.0. The included parser is version 0.9.0. Its license and notice are retained at `Docs/ThirdParty/swift-markdown-LICENSE.txt` and `Docs/ThirdParty/swift-markdown-NOTICE.txt`.
+- `swift-cmark` 0.9.0 supplies the underlying cmark-gfm parser. Its licenses and notices are retained at `Docs/ThirdParty/swift-cmark-COPYING`.
 - `SwiftSoup` by Nabil Chatbi and contributors, derived from Jonathan Hedley's jsoup, provides standards-aware HTML5 tokenization and tree construction for SiriusMarkdown's sanitized native rich-content adapter. It is licensed under the MIT License. The included HTML adapter uses version 2.13.6.
 - `highlight.js` provides the embedded common-language grammar bundle used by `DefaultMarkdownCodeHighlighter`. SiriusMarkdown vendors the pinned browser build as a SwiftPM resource and uses it locally through JavaScriptCore. It is licensed under the BSD 3-Clause License; the bundled license lives at `Docs/ThirdParty/HighlightJS-BSD-3-Clause.txt`.
 - `BeautifulMermaidSwift` by Craft Docs provides native Mermaid parsing, layout adaptation, and drawing on macOS, iOS, and visionOS. The included native implementation is derived from version 1.0.4 (commit `6a23a29e91af8f5b3e9fc09945332ca193bd69ec`) under MIT. Its license is retained at `Docs/ThirdParty/BeautifulMermaid-Swift-MIT.txt`. Upstream source: https://github.com/lukilabs/beautiful-mermaid-swift/tree/1.0.4.

@@ -45,6 +45,23 @@ documents and reset their sessions.
 
 ## Diagnose your workload
 
+Browser selection geometry observation is active only while a document range is
+selected. Clearing or replacing the document retires its selection placement work.
+
+For streaming diagrams, accepted semantic statements identify reusable vector
+artwork independently of source offsets and an unfinished frontier. Native draft
+reuse preserves PDF/SVG resources while refreshing source-backed metadata; ASCII
+retains its strict export behavior. Completed unsupported input still falls back
+to source. A changed label, structure or theme requires preparation again.
+
+Browser hosts should use `MermaidWorkerClient` for interactive diagrams and
+`MermaidRenderQueue` when source arrives continuously. The queue completes a
+coherent prefix while coalescing pending appends; measure input-to-callback time
+to include that wait. The client keeps graph preparation off the UI thread and measures the actual document font in
+bounded batches. Measure its queue-inclusive elapsed time and final mounting as
+well as ordinary publication application; the latter does not include later
+asynchronous diagram work. See the [browser integration guide](web-page-api.md).
+
 Use `MarkdownDiagnosticsRecorder` with the stream and layout APIs. The
 `MarkdownStream.diagnosticsCounters` and
 `InlineLayoutEngine.diagnosticsCounters` properties expose their counters.
