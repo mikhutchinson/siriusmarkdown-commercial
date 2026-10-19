@@ -57,7 +57,8 @@ canvas instead. PDF exports paint an explicit background.
 ## Syntax and limits
 
 Supported families include flowchart, state, sequence, class, entity relationship,
-XY chart, quadrant, pie, journey, timeline, mind map and Gantt. Support covers a
+XY chart, quadrant, pie, journey, timeline, mind map, Gantt, Sankey, GitGraph,
+radar and treemap. Support covers a
 subset of Mermaid syntax. Completed unsupported or malformed input retains the source
 fence instead of displaying a partial diagram.
 
@@ -105,10 +106,13 @@ class and ER diagrams also retain source for completed unrecognized statements a
 structures; a successfully prepared diagram does not silently omit those lines.
 
 Sequence `autonumber` accepts a start and increment, including hundredth precision;
-`autonumber off` stops numbering. Flowchart feedback edges retain authored arrow
-direction and reading order in flat graphs and nested groups that share a flow
-direction. Explicit inner direction overrides keep their existing routing
-behavior. SVG paint accepts inert named or hex colors and numeric stroke widths,
+`autonumber off` stops numbering. Flat and grouped flowchart feedback edges retain
+the authored arrow direction and source reading order. Flowchart subgraphs whose
+child nodes connect outside inherit their parent's direction, following
+[Mermaid's subgraph direction rule](https://mermaid.js.org/syntax/flowchart.html#direction-in-subgraphs).
+Closed subgraphs retain their own explicit direction, including inheritance by
+nested groups. Connecting to the subgraph itself preserves that local direction.
+SVG paint accepts inert named or hex colors and numeric stroke widths,
 not resource-bearing paint URLs.
 
 Long geometry-family titles, journey tasks and Gantt labels wrap. XY chart titles
@@ -143,9 +147,11 @@ entry limits do not impose a total byte budget on arbitrary diagram content.
 ## Geometry families
 
 The native renderer accepts the following syntax for `quadrantChart`, `pie`,
-`journey`, `timeline`, `mindmap` and `gantt`. Unsupported input returns `nil`
+`journey`, `timeline`, `mindmap`, `gantt`, `sankey`, `gitGraph`, `radar-beta`
+and `treemap`. Unsupported input returns `nil`
 from the renderer and leaves the source visible. Headers must stand alone or
-be followed by whitespace.
+be followed by whitespace. GitGraph and radar also accept the documented colon
+after their headers.
 
 | Family | Accepted | Refused |
 | --- | --- | --- |
@@ -155,6 +161,10 @@ be followed by whitespace.
 | `timeline` | `title`; `section Name`; `Period : Event[ : Event]`; a following `: Event` line joins the period above; a period without `:` has no events. | A body with no period; a continuation with no period above; an empty event. |
 | `mindmap` | An indented tree; `text`, `[rectangle]`, `(rounded)`, `((circle))`, optionally with an id prefix (`root((Sirius))`). Children alternate right/left by source order; indentation defines the tree. | `::icon(...)`, `:::class`, backtick Markdown strings, an outdent to or past the root (a second root), an empty tree, mismatched brackets. |
 | `gantt` | `title`; `dateFormat` with only `YYYY`, `MM`, `DD` tokens and literal separators; `excludes weekends`; `section Name`; `name :[tags,] [id,] start, end` where tags are `milestone`, `done`, `active`, `crit`; start is a date or `after id [id…]`; end is a date or `Nd`. `axisFormat`, `todayMarker`, `tickInterval`, `weekday`, `inclusiveEndDates`, `topAxis` lines are ignored. | Durations in other units (`1w`, `4h`); an unknown `after` id; other `dateFormat` tokens (`HH`, `mm`, `x`); an end before its start; a first task with no start; no task; any other line. |
+| `sankey`, `sankey-beta` | Three CSV fields per flow: source, target, positive finite weight. Quoted labels support commas, doubled quotes and embedded newlines. Repeated flows stay distinct. | Cycles, self-loops, malformed rows, nonpositive weights, overflowing totals and configuration directives. |
+| `gitGraph` | Default/LR, TB or BT orientation; `commit`, `branch` with optional `order`, `checkout`/`switch`, `merge` and `cherry-pick`. Quoted IDs, tags, messages and branch names; NORMAL, REVERSE and HIGHLIGHT commit types. | Unknown references, duplicate IDs/branches, self-merges, invalid cherry-pick parents, arbitrary configuration and unsupported commands. |
+| `radar-beta` | Ordered axis IDs with optional labels; named curves with positional or axis-keyed values; `min`, `max`, integral `ticks`, `graticule circle`/`polygon` and `showLegend true`/`false`. Entries can span lines. | Fewer than three axes; duplicate or unknown IDs; missing/extra values; negative/nonfinite data; invalid options or values outside the scale. |
+| `treemap`, `treemap-beta` | Single/double quoted section and leaf labels; indented hierarchy or multiple roots; colon/comma followed by a positive decimal weight, including grouped thousands commas. Inert `classDef` and `:::class` styles as described below. | Empty completed sections, children of leaves, a dedent without an authored ancestor, malformed weights, unknown classes and unsupported styles/configuration. |
 
 Geometry diagrams wider or taller than 11,000 layout points retain their source
 instead of producing an oversized PDF. A bare `title` directive sets no title.
@@ -166,6 +176,86 @@ starts at `start + N days`; each weekend day strictly after the start and up to
 the moving end extends it by one day. For example, Saturday `2026-09-26` plus
 `2d` ends on `2026-09-29`. A weekend start remains as authored. Dependency
 arrows are not drawn.
+
+Sankey ribbons and node bars share a quantitative scale. Node height represents
+the larger of incoming and outgoing totals; the renderer does not invent flows
+to balance a node. Labels retain complete names and numeric values. The limits
+are 1,024 nodes, 4,096 flows and 256 KiB of source.
+
+```mermaid
+sankey-beta
+Solar,Electricity,28
+Wind,Electricity,32
+Electricity,Homes,35
+Electricity,Industry,25
+```
+
+GitGraph maintains branch heads and commit ancestry in authored command order.
+Cherry-pick requires an existing current head and a commit originating on another
+branch; picking a merge commit requires an immediate parent. Solid connectors
+show ancestry and dashed connectors show cherry-pick references. Commands end
+at newlines or unquoted semicolons. Streaming publishes delimited commands;
+strict completion also accepts a valid final command without a delimiter.
+The limits include 512 commits, 64 branches, 4,096 statements and 256 KiB of source.
+
+```mermaid
+gitGraph
+commit id:"start"
+branch feature
+commit id:"implementation"
+checkout main
+commit id:"maintenance"
+merge feature tag:"v1.0"
+```
+
+Radar curves retain every value without smoothing or clamping. An external scale
+ruler keeps numeric labels clear of the plot. Series use marker shapes and line
+patterns alongside color. Automatic scales start at zero and end at the data
+maximum; all-zero data uses `0...1`. Supported bounds are 3–32 axes, 1–16 curves,
+1–32 ticks, 32,768 tokens and 256 KiB of source. A curve must provide exactly one
+value for every axis, whether positional or keyed.
+
+```mermaid
+radar-beta
+title Release readiness
+axis speed["Responsiveness"], reliability["Reliability"], access["Accessibility"]
+curve native["Native"]{92,95,90}
+curve browser["Browser"]{86,93,88}
+max 100
+graticule polygon
+```
+
+Treemap sibling tile areas are proportional to their weights. Nested sections
+reserve local header and padding space before partitioning their child region.
+Small tiles keep their true areas; labels that cannot fit as complete words
+appear with their values and full hierarchy paths in a measured key. A numbered
+marker identifies the tile when it has room. Wide, shallow leaves can place a
+name and value on one line. Source, accessibility and ASCII preserve the hierarchy
+and all values.
+
+Treemap styles consume `fill`, `color`, `stroke` and `stroke-width`. Colors accept
+three/six-digit hex, the basic CSS named colors and orange; stroke width accepts
+`0...8` with optional `px`. URLs, arbitrary CSS, repeated properties and unknown
+classes retain the entire source fence. For example:
+
+```mermaid
+treemap-beta
+title Delivery investment
+"Engineering"
+    "Core product": 420:::blue
+    "Infrastructure": 180
+"Operations"
+    "Customer support": 120
+classDef blue fill:#E1EDFF,color:#183C68,stroke:#5D83B8,stroke-width:2;
+```
+
+Each indentation character, including a tab, counts as one indentation unit.
+A common initial body indent is a margin; no parent is fabricated. Streaming
+shows complete leaves under their authored parents while a trailing section
+chain remains open. Finish refuses an empty section. Bounds are 2,048 nodes,
+32 hierarchy levels and 256 KiB of source. Quantitative geometry that underflows
+or cannot represent distinct positive extents retains source in Sankey, radar
+and treemap.
 
 ## Platforms and dependencies
 

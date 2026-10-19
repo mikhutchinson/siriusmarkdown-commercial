@@ -19,7 +19,7 @@ For task-oriented examples, start with the [integration guides](https://siriusma
 ### Install the SDK
 
 Add `https://github.com/mikhutchinson/siriusmarkdown-commercial.git` in Xcode
-and select version 0.7.7 or later. Link the `SiriusMarkdown` product. The binary
+and select version 0.7.8 or later. Link the `SiriusMarkdown` product. The binary
 package requires Swift 6.3 and includes macOS 13, iOS/iPadOS 16 and visionOS 1
 slices; individual features have platform-specific availability.
 
@@ -87,7 +87,7 @@ These native diagram paths do not use JavaScriptCore or WebKit. During streaming
 children appear inside unfinished containers; parser-owned draft metadata identifies their source
 and unfinished frontier. Finished unsupported syntax retains source fallback. The supported
 families include flowchart, sequence, class, state, ER, XY chart, quadrant, pie, journey,
-timeline, mind map and Gantt.
+timeline, mind map, Gantt, Sankey, GitGraph, radar and treemap.
 
 Expanded diagrams use the whole canvas with unfilled overlay controls: Diagram/Source
 on the left, export and close on the right, and zoom along the bottom. Fit includes the

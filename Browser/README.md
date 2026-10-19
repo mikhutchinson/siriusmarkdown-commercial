@@ -1,16 +1,16 @@
 # SiriusMarkdown for the browser
 
-Browser 0.2.1 is the SiriusMarkdown browser/WASM MVP. It is distributed
+Browser 0.2.2 is the SiriusMarkdown browser/WASM MVP. It is distributed
 separately from the native Swift XCFramework SDK in this repository.
 
-- [Download browser 0.2.1](https://github.com/mikhutchinson/siriusmarkdown-commercial/releases/tag/browser-0.2.1)
+- [Download browser 0.2.2](https://github.com/mikhutchinson/siriusmarkdown-commercial/releases/tag/browser-0.2.2)
 - [Interactive playground](https://siriusmarkdown.com/playground/)
 - [Integration guide](https://siriusmarkdown.com/docs/browser/)
-- [Page and worker API](0.2.1/Browser-API.md)
-- [Runtime notices](0.2.1/NOTICE.md)
-- [Archive checksums](0.2.1/SHA256SUMS.txt)
+- [Page and worker API](0.2.2/Browser-API.md)
+- [Runtime notices](0.2.2/NOTICE.md)
+- [Archive checksums](0.2.2/SHA256SUMS.txt)
 
-Extract `SiriusMarkdown-browser-0.2.1.zip` and serve its `site/` directory over
+Extract `SiriusMarkdown-browser-0.2.2.zip` and serve its `site/` directory over
 HTTPS, or localhost for development. Keep `js`, `assets`, `dist` and `playground`
 together. Serve `.wasm` as `application/wasm`, module JavaScript as
 `text/javascript`, and fonts with appropriate font MIME types. Open the included
@@ -19,11 +19,12 @@ modules using the page API above.
 
 The browser uses the actual SiriusMarkdown engine for Markdown/GFM structure,
 streamed documents, sanitized rich HTML, native-engine vector equations and the
-documented Mermaid subset. Images, tables, highlighted code, selection, rich
+documented Mermaid subset, including Sankey, GitGraph, radar and treemap. Images,
+tables, highlighted code, selection, rich
 copy, exact-source Copy Markdown and host-owned formatting use the same authored
 source. Unsupported completed diagram syntax retains its source fallback.
 
-The main reactor is about 49 MiB and the separate diagram reactor about 56 MiB
+The main reactor is about 58 MiB and the separate diagram reactor about 57 MiB
 before HTTP compression. Load them when needed and cache a complete version's
 matching modules, workers, JavaScript and fonts together. Your marketing or
 navigation pages do not need to download the engines.
@@ -88,7 +89,7 @@ integrations and does not require changes to authored Markdown.
 
 ## Diagram preparation
 
-Version 0.2.1 prepares interactive diagrams in a dedicated worker. Continuous
+Interactive diagrams prepare in a dedicated worker. Continuous
 streams finish coherent prefixes while coalescing queued appends, and unchanged
 accepted statements reuse preparation. Source replacement, theme changes and
 reset revoke obsolete diagram work. See the page API for worker ownership and
@@ -100,8 +101,8 @@ Preserve Commercial SDK License 1.0, prior MIT grants, third-party notices and
 font/runtime licenses. They are included in the download and retain their own
 terms. The download includes the modified ElkSwift source under
 `third-party-source/ElkSwift-WASI.tar.gz`; the release also supplies it as a
-separate `ElkSwift-WASI-0.2.1.tar.gz` asset with a source-file manifest. It is
+separate `ElkSwift-WASI-0.2.2.tar.gz` asset with a source-file manifest. It is
 available under EPL-2.0 and belongs outside the hosted `site/` directory.
 
-The [distribution manifest](0.2.1/MANIFEST.json) records every consumer-package
+The [distribution manifest](0.2.2/MANIFEST.json) records every consumer-package
 file. No engine or app Swift source is part of the browser runtime.

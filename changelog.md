@@ -2,6 +2,34 @@
 
 ## Unreleased
 
+## Browser 0.2.2 - 2026-10-19
+
+- Add shared WASM Sankey, GitGraph, radar and treemap parsing, quantitative layout,
+  vector SVG, accessibility and progressive source-backed preparation.
+- Preserve whole-word label wrapping across native and browser output. Resolve
+  compound flow directions by child connections and retain authored feedback
+  edges; move obstructed flow labels with identifying dotted leaders.
+- Keep positive Sankey and treemap geometry precise through SVG serialization;
+  refuse unrepresentable quantities instead of changing their meaning.
+
+[Release notes](release-notes/browser-0.2.2.md).
+
+## 0.7.8 - 2026-10-19
+
+- Add native Sankey, GitGraph, radar and treemap diagrams with selectable vector
+  PDF, light/dark SVG, accessibility summaries, strict source fallback and
+  parser-owned progressive drafts. Document each supported subset and bounds.
+- Preserve proportional ribbons and tiles, full labels and quantitative values;
+  use a path/value key when a treemap tile cannot contain its label.
+- Respect Mermaid's subgraph direction rule without mutating the parsed model
+  or changing authored arrow endpoints. Keep displaced flow labels clear of
+  nodes with distinct identifying leaders.
+- Share label wrapping and Double preparation geometry with the browser engine.
+- Reuse native selection clipping geometry until fragment frames or containing
+  viewports change, preserving source mappings as tables grow.
+
+[Release notes](release-notes/0.7.8.md).
+
 ## Browser 0.2.1 - 2026-10-18
 
 - Prepare diagrams in a dedicated worker with batched document-font

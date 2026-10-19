@@ -907,8 +907,8 @@ private struct MarkdownExample: Identifiable, Hashable {
         MarkdownExample(
             id: "diagram-families",
             title: "Diagram Families",
-            summary: "Quadrant, pie, journey, timeline, mindmap, and gantt prepared natively.",
-            detail: "Six geometry families beyond flowcharts, each parsed, laid out, and drawn during preparation as light/dark vector PDF with SVG and ASCII exports. No ElkSwift, no JavaScript; a body outside the documented subset keeps its source.",
+            summary: "Native charts, flows, Git history, radar profiles, and treemaps.",
+            detail: "Ten diagram families with light and dark artwork, selectable PDF, SVG and ASCII exports. Complete labels and values remain available, including a key for tiny treemap cells. Unrecognized completed input keeps its source.",
             systemImage: "chart.pie",
             badge: "Mermaid",
             markdown: """
@@ -977,6 +977,45 @@ private struct MarkdownExample: Identifiable, Hashable {
                     Quadrant         :after a1, 1d
                 section Charts
                     Gantt            :milestone, m1, 2026-09-28, 0d
+            ```
+
+            ```mermaid
+            sankey-beta
+            Solar,Electricity,28
+            Wind,Electricity,32
+            Electricity,Homes,35
+            Electricity,Industry,25
+            ```
+
+            ```mermaid
+            gitGraph
+            commit id:"start"
+            branch feature
+            commit id:"implementation"
+            checkout main
+            commit id:"maintenance"
+            merge feature tag:"v1.0"
+            ```
+
+            ```mermaid
+            radar-beta
+            title Release readiness
+            axis speed["Responsiveness"], reliability["Reliability"], access["Accessibility"]
+            curve native["Native"]{92,95,90}
+            curve browser["Browser"]{86,93,88}
+            max 100
+            graticule polygon
+            ```
+
+            ```mermaid
+            treemap-beta
+            title Delivery investment
+            "Engineering"
+                "Core product": 420:::blue
+                "Infrastructure": 180
+            "Operations"
+                "Customer support": 120
+            classDef blue fill:#E1EDFF,color:#183C68,stroke:#5D83B8,stroke-width:2;
             ```
 
             A body outside the subset is not painted. This one keeps its source because `1w` is not a day duration:
