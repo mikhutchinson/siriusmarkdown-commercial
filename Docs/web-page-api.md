@@ -230,7 +230,9 @@ configured picture limits.
 ## Readable table export
 
 `await view.createReadablePrint({ width: 720, height: 960 })` creates an
-independent document snapshot for preview and browser printing. Dimensions
+independent document snapshot for preview and browser printing. Prepared diagrams
+retain their own canvas as vector paint, keeping title and legend contrast in
+both appearances, including when CSS printing backgrounds is disabled. Dimensions
 describe the printable content area in CSS pixels, at 96 pixels per inch;
 the defaults fit Letter paper with half-inch margins. Each dimension must be
 between 96 and 16384 pixels. Append the returned `root` to the host's preview

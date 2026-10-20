@@ -2,17 +2,21 @@
 
 ## Unreleased
 
-## Browser 0.2.3 - 2026-10-20
+## Browser 0.2.4 - 2026-10-20
 
 - Expand shared diagram syntax, Gantt scheduling, GitGraph topology, quadrant
   styling and XY series/label preparation through the native/WASM engine.
 - Add pie donuts, complete positioned legends, truthful precise quantities,
   strict quoted/multiline labels and authored accessibility metadata.
 - Preserve exact source, logical-label Find, readable vector paint and exports.
+- Keep the prepared diagram canvas with its ink in readable previews and PDFs,
+  preserving title and legend contrast in both appearances without resizing.
+- Keep cloned SVG markers, clips and gradients independent from hidden reader
+  definitions, preserving printed arrowheads and vector geometry.
 - Match native sRGB surface tints and avoid redundant synchronous glyph layout
   while mounting dense SVG figures.
 
-[Release notes](release-notes/browser-0.2.3.md).
+[Release notes](release-notes/browser-0.2.4.md).
 
 ## 0.7.9 - 2026-10-20
 

@@ -1,4 +1,4 @@
-# SiriusMarkdown browser 0.2.3
+# SiriusMarkdown browser 0.2.4
 
 October 20, 2026
 
@@ -13,6 +13,12 @@ rows retain their values. Precise quantities and totals beyond the floating-poin
 sum range preserve truthful shares. Quoted and escaped strings, multiline labels,
 comments and authored accessibility metadata share strict completed-input and
 progressive parsing. Metadata stays separate from painted labels and Find.
+
+Readable previews and PDF export preserve each prepared diagram’s canvas with
+its text and palette. Dark titles and legends retain their intended contrast,
+including when printing backgrounds is disabled; diagram dimensions and fonts
+remain unchanged. Cloned SVG fragments also keep independent marker, clipping
+and gradient references, so hiding the live reader cannot remove arrowheads.
 
 Prepared SVG remains vector through zoom and export. Complete logical labels,
 exact source panes and source-backed Find survive wrapping and streaming updates.

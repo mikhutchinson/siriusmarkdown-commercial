@@ -4,8 +4,8 @@
   "files": [
     {
       "path": "Browser-API.md",
-      "bytes": 21086,
-      "sha256": "55fb1aefef698e65717e74105345f6b64860f61707e86603c1a9b9b7f082d112"
+      "bytes": 21253,
+      "sha256": "f40b6c7cf829d236de15ff11bd78fcdd1f634744eea94799e6ff6ed09e309aff"
     },
     {
       "path": "NOTICE.md",
@@ -264,8 +264,8 @@
     },
     {
       "path": "site/js/mermaid/mount.js",
-      "bytes": 32183,
-      "sha256": "538f21b15b7ca9aa7bb4b062978ae44813ac9aa13484f59aa6969a953cf6f8b1"
+      "bytes": 31523,
+      "sha256": "0d37b0a288e3318f9d4389c16fe6ea635c2f19e7509227ae06e5e9e020826da2"
     },
     {
       "path": "site/js/mermaid/publication.js",
@@ -281,6 +281,11 @@
       "path": "site/js/mermaid/sanitize-style.js",
       "bytes": 12736,
       "sha256": "c3976b89760821b5c1bfea5de2156c9fda967af2ed4e3f5d0ff15fb18cf1da53"
+    },
+    {
+      "path": "site/js/mermaid/svg-references.js",
+      "bytes": 1503,
+      "sha256": "dafee7fb8a690847893a75e99787454680432878c172a61dd4baeb9b9adbce63"
     },
     {
       "path": "site/js/mermaid/value-label-layout.js",
@@ -359,8 +364,8 @@
     },
     {
       "path": "site/js/render/readable-print.js",
-      "bytes": 12443,
-      "sha256": "1fe5029a1cdc8b4d1c98c341bb9504a0b205efce16cf06bafa1bfdad8b39c48b"
+      "bytes": 13846,
+      "sha256": "a4c69f95eec7ba7107f7ec9b8d17c6da3f480c0d0e9ca7808d0341cd216ee62a"
     },
     {
       "path": "site/js/render/relocation.js",
@@ -575,7 +580,7 @@
     {
       "path": "third-party-source/ElkSwift-WASI.tar.gz",
       "bytes": 408317,
-      "sha256": "658fef715f3c05bfce7eff346d4c6a2fdb78ccf77951c65ef314cf4632fb679a"
+      "sha256": "533c8179b820d10b6029a1395f35bf0dfb6bb4a01d3bc1dbb8d2c3ff23471728"
     }
   ]
 }
