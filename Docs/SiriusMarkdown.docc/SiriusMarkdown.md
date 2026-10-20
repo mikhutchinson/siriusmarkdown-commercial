@@ -19,7 +19,7 @@ For task-oriented examples, start with the [integration guides](https://siriusma
 ### Install the SDK
 
 Add `https://github.com/mikhutchinson/siriusmarkdown-commercial.git` in Xcode
-and select version 0.7.8 or later. Link the `SiriusMarkdown` product. The binary
+and select version 0.7.9 or later. Link the `SiriusMarkdown` product. The binary
 package requires Swift 6.3 and includes macOS 13, iOS/iPadOS 16 and visionOS 1
 slices; individual features have platform-specific availability.
 

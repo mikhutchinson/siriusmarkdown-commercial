@@ -41,7 +41,7 @@ that intent.
 
 Preparation occurs before view presentation. Resizing and zoom reuse prepared
 resources. Streaming drafts also reuse vector artwork when the semantic parser's
-accepted statements and the renderer theme are unchanged. Authored source,
+accepted statements, consumed configuration and the renderer theme are unchanged. Authored source,
 source ranges and frontier coverage still advance independently. ASCII export
 retains its separate strict parsing behavior. The draft-artwork cache has both
 entry and stored-byte limits.
@@ -69,9 +69,13 @@ remains open. Source export preserves the complete authored input; PDF and SVG
 exports describe the prepared draft. ASCII uses the strict source renderer and
 can retain source while a container remains open. Finish uses strict parsing, so an
 unfinished or unsupported completed fence returns to its source fallback.
+An empty header or unfinished first statement retains source until the parser
+owns drawable content.
 Unfinished labeled subgraph headers stay pending. Open subgraphs and state
-groups appear in the native artwork once they own a node. Open sequence frames
-appear with their first message or note. Earlier completed nodes and actors
+groups appear in the native artwork once they own a node. Sequence frames can
+contain messages, notes, activity lifetimes or nested frames. An open frame waits
+for an owned child; a completed empty frame with known participants retains its
+measured header and body. Earlier completed nodes and actors
 remain visible while each new container's header and first child arrive.
 See [Streaming](streaming.md) for custom progressive renderer hooks.
 
@@ -105,8 +109,23 @@ subgraphs retain source instead of drawing an incomplete graph. State, sequence,
 class and ER diagrams also retain source for completed unrecognized statements and unclosed
 structures; a successfully prepared diagram does not silently omit those lines.
 
+Flowchart links do not require spaces around their operators: `A-->B[Browser]`
+keeps two nodes and one edge. Embedded labels such as `A--Review required-->B`
+retain their text, and identifiers such as `release-2026` remain intact.
+An unfinished edge opener remains a streaming frontier; it does not become a
+node whose name includes the arrow or label.
+
 Sequence `autonumber` accepts a start and increment, including hundredth precision;
-`autonumber off` stops numbering. Flat and grouped flowchart feedback edges retain
+`autonumber off` stops numbering. Standalone `activate Participant` and
+`deactivate Participant` commands and message shortcuts such as `A->>+B` and
+`B-->>-A` preserve chronological, nested activity lifetimes. Notes can precede
+the first message and remain on their authored side of each activity boundary.
+A later participant alias updates the existing participant without reordering
+it. Deactivating an inactive participant retains the entire completed source
+fence. An activity still open at the end extends to the figure's end; it does
+not invent a closing command or count as an open structural frame.
+
+Flat and grouped flowchart feedback edges retain
 the authored arrow direction and source reading order. Flowchart subgraphs whose
 child nodes connect outside inherit their parent's direction, following
 [Mermaid's subgraph direction rule](https://mermaid.js.org/syntax/flowchart.html#direction-in-subgraphs).
@@ -155,27 +174,172 @@ after their headers.
 
 | Family | Accepted | Refused |
 | --- | --- | --- |
-| `quadrantChart` | `title`; `x-axis low --> high` or `x-axis low`; `y-axis` likewise; `quadrant-1`…`quadrant-4`; `Name: [x, y]` with both in `0...1`. `classDef` lines, `:::class` suffixes, and point-style tails after `]` are ignored. | A coordinate outside `0...1`; an empty body; any other line. |
-| `pie` | `pie`, `pie showData`, `pie title X`; `title X`; `"Label" : number` and `Label : number`. Zero and negative values are dropped. `showData` appends `[value]` to legend labels; percentages label slices ≥ 4%. | No positive value; a non-numeric value; any other line. |
+| `quadrantChart` | `title`; `x-axis low --> high` or `x-axis low`; `y-axis` likewise; `quadrant-1`…`quadrant-4`; `Name: [x, y]` with both in `0...1`. Direct point styles and forward `classDef`/`:::class` assignments for radius, fill and stroke; family layout configuration and theme colors, as described below. | A coordinate outside `0...1`; an empty body; malformed or unsupported point styles; any other line or unimplemented configuration. |
+| `pie` | `pie`, `pie showData`, `pie title X`; `title X`; single/double quoted labels with escapes and embedded newlines, and unquoted `Label : number` rows. Outside-string `%%` comments; `accTitle:` and single-line or braced multiline `accDescr`. Duplicate and zero rows retain their labels and values; zero rows have no sector area. `showData` appends `[value]` to legend labels. Small and precise quantities retain their value, and finite totals may exceed the floating-point sum range. | Malformed quoted rows; negative or non-numeric values; no positive value; an unrepresentable positive share or sector; text containing characters invalid in XML; any other line. |
 | `journey` | `title`; `section Name`; `Task: score`, `Task: score: Actor[, Actor]` with an integer score `1...5`. | A score outside `1...5` or non-integer; a task with no score; any other line. |
 | `timeline` | `title`; `section Name`; `Period : Event[ : Event]`; a following `: Event` line joins the period above; a period without `:` has no events. | A body with no period; a continuation with no period above; an empty event. |
 | `mindmap` | An indented tree; `text`, `[rectangle]`, `(rounded)`, `((circle))`, optionally with an id prefix (`root((Sirius))`). Children alternate right/left by source order; indentation defines the tree. | `::icon(...)`, `:::class`, backtick Markdown strings, an outdent to or past the root (a second root), an empty tree, mismatched brackets. |
-| `gantt` | `title`; `dateFormat` with only `YYYY`, `MM`, `DD` tokens and literal separators; `excludes weekends`; `section Name`; `name :[tags,] [id,] start, end` where tags are `milestone`, `done`, `active`, `crit`; start is a date or `after id [id…]`; end is a date or `Nd`. `axisFormat`, `todayMarker`, `tickInterval`, `weekday`, `inclusiveEndDates`, `topAxis` lines are ignored. | Durations in other units (`1w`, `4h`); an unknown `after` id; other `dateFormat` tokens (`HH`, `mm`, `x`); an end before its start; a first task with no start; no task; any other line. |
+| `gantt` | `title`, `section`, UTC date/time formats, decimal durations in `ms`/`s`/`m`/`h`/`d`/`w`/`M`/`y`, forward `after` and `until` dependencies, implicit subsequent starts, task tags, calendar exclusions/includes, configured axes, markers and compact rows. See below. | Invalid or cyclic references; impossible dates; ends before starts; a first task without a start; unknown directives/styles/configuration; resource or page bounds exceeded. |
 | `sankey`, `sankey-beta` | Three CSV fields per flow: source, target, positive finite weight. Quoted labels support commas, doubled quotes and embedded newlines. Repeated flows stay distinct. | Cycles, self-loops, malformed rows, nonpositive weights, overflowing totals and configuration directives. |
-| `gitGraph` | Default/LR, TB or BT orientation; `commit`, `branch` with optional `order`, `checkout`/`switch`, `merge` and `cherry-pick`. Quoted IDs, tags, messages and branch names; NORMAL, REVERSE and HIGHLIGHT commit types. | Unknown references, duplicate IDs/branches, self-merges, invalid cherry-pick parents, arbitrary configuration and unsupported commands. |
+| `gitGraph` | Default/LR, TB or BT orientation; `commit`, `branch` with optional `order`, `checkout`/`switch`, `merge` and `cherry-pick`. Quoted IDs, tags, messages and branch names; NORMAL, REVERSE and HIGHLIGHT commit types. YAML frontmatter title and the `gitGraph` controls described below. | Unknown references, duplicate IDs/branches, self-merges, invalid cherry-pick parents, unimplemented configuration settings and unsupported commands. |
 | `radar-beta` | Ordered axis IDs with optional labels; named curves with positional or axis-keyed values; `min`, `max`, integral `ticks`, `graticule circle`/`polygon` and `showLegend true`/`false`. Entries can span lines. | Fewer than three axes; duplicate or unknown IDs; missing/extra values; negative/nonfinite data; invalid options or values outside the scale. |
 | `treemap`, `treemap-beta` | Single/double quoted section and leaf labels; indented hierarchy or multiple roots; colon/comma followed by a positive decimal weight, including grouped thousands commas. Inert `classDef` and `:::class` styles as described below. | Empty completed sections, children of leaves, a dedent without an authored ancestor, malformed weights, unknown classes and unsupported styles/configuration. |
 
-Geometry diagrams wider or taller than 11,000 layout points retain their source
+Pie percentages use compact whole-number labels. A positive share below 1% is
+reported as `<1%`, and a partial share that would round to 100% is reported as
+`>99%`. Unconfigured full-circle labels sit at the centre. Exact quantity text
+remains in the legend when `showData` is enabled and in accessibility descriptions. ASCII bar
+lengths round to terminal cells; zero rows never gain an invented filled cell.
+
+Pie quoted labels decode escapes once, including escaped quotes, backslashes,
+`\n`, `\r` and `\t`. Display entities such as `&quot;` decode after string parsing.
+Literal `%%` inside a quoted label or braced description stays authored text.
+Accessibility metadata supplies the spoken title and description without
+replacing the visual title or hiding slice values. Repeated metadata uses the
+last authored value. During streaming, an open braced description can accompany
+already parsed slices; completed input requires the closing brace.
+
+Pie YAML `config.pie` accepts `donutHole` from 0 to 0.9 and `textPosition`
+from 0 to 1, measured from the centre to the outer radius. Donuts use true inner
+contours in SVG and PDF, preserving transparent holes. Without an authored text
+position, donut labels sit in the ring. `legendPosition` accepts `right` (the
+native preset), `left`, `top`, `bottom` and `center`. Preparation wraps long key
+labels and balances dense keys into measured columns, retaining complete logical
+labels, authored order and font size. Centred donut keys reserve a measured hole;
+the circle may grow while preserving its authored hole ratio and data shares.
+A centred plain-pie key overlays the plotted data as requested, with a text halo
+and percentages moved into keys when needed to avoid collisions.
+
+`config.themeVariables` accepts `pie1` through `pie12`, `pieTitleTextColor`,
+`pieSectionTextColor`, `pieLegendTextColor`, `pieStrokeColor` and
+`pieOuterStrokeColor` as hexadecimal paints. Text sizes (`pieTitleTextSize`,
+`pieSectionTextSize`, `pieLegendTextSize`) and stroke widths (`pieStrokeWidth`,
+`pieOuterStrokeWidth`) accept nonnegative numbers or pixel strings. `pieOpacity`
+accepts a number or numeric string from 0 to 1. Zero stroke width removes the
+stroke. Layout reserves the full stroke extent. Percentage labels that cannot
+fit their sector, ring or neighbouring labels move into the complete legend.
+Unless `pieSectionTextColor` is authored, percentages use contrasting black or
+white ink against each sector's paint and opacity over the theme canvas.
+Other configuration retains the exact source.
+
+Diagrams wider or taller than 11,000 layout points retain their source
 instead of producing an oversized PDF. A bare `title` directive sets no title.
 A Gantt line with a task separator is treated as a task even if its name begins
 with a directive word, such as `Weekday standup :a, …`.
 
-Gantt dates use UTC Gregorian arithmetic. With `excludes weekends`, the end
-starts at `start + N days`; each weekend day strictly after the start and up to
-the moving end extends it by one day. For example, Saturday `2026-09-26` plus
-`2d` ends on `2026-09-29`. A weekend start remains as authored. Dependency
-arrows are not drawn.
+Quadrant point styles accept `radius`, `color`, `stroke-color` and
+`stroke-width`. Radii are nonnegative integers; stroke widths are nonnegative
+integers followed by `px`. Colors use three or six hexadecimal digits, with an
+optional `#`. Direct properties override the corresponding class properties;
+class definitions may follow their points. A stroke color alone does not add a
+stroke. Double-quoted point names preserve punctuation such as a colon.
+
+Point centers remain at their authored coordinates. Names stay inside the plot
+when they fit clear of other names, marks, quadrant headings and the central
+grid. Crowded charts use numeric callouts and a full name/value key below the
+plot. Coincident or very close centers can share a callout; every point and its
+coordinate values remain in the key. A large mark can move a quadrant heading
+to a numbered caption outside the plot. ASCII exports retain the complete point
+names, coordinate values and resolved paint settings. Plots that exceed the
+measured callout capacity use a lettered-column and numbered-row reference grid
+instead of leader lines across
+the distribution. A key such as `D3/42` identifies its cell and point number;
+every mark, full name and exact value remains. Long data keys use measured
+columns, and their coordinate text wraps when needed. Keys and spoken
+descriptions display coordinates without rounding them to a fixed number of
+decimal places.
+
+YAML frontmatter accepts quadrant settings under `config.quadrantChart`.
+Unspecified settings retain the native preset. Numeric settings accept finite,
+nonnegative values, including fractions, up to 11,000. A configured dimension
+must leave room for a positive plot; an impossible size retains source.
+
+| Controls | Settings |
+| --- | --- |
+| Chart and title | `chartWidth`, `chartHeight`, `titlePadding`, `titleFontSize`, `quadrantPadding` |
+| Quadrant headings and borders | `quadrantTextTopPadding`, `quadrantLabelFontSize`, `quadrantInternalBorderStrokeWidth`, `quadrantExternalBorderStrokeWidth` |
+| Axes | `xAxisLabelPadding`, `xAxisLabelFontSize`, `xAxisPosition` (`top`/`bottom`), `yAxisLabelPadding`, `yAxisLabelFontSize`, `yAxisPosition` (`left`/`right`) |
+| Points | `pointTextPadding`, `pointLabelFontSize`, `pointRadius` |
+
+Configured width and height size the base chart, including its title and axes.
+Measured callouts and full data keys may extend the figure beyond that size.
+Rectangular plots retain exact normalized point positions. Long headings and
+axes wrap before rendering. In a chart without points, headings and paired axis
+labels center within their respective halves; the x-axis can appear above the
+plot. A chart with points places the x-axis below the plot. The y-axis can appear
+on either side.
+
+`config.themeVariables` accepts `quadrant1Fill` through `quadrant4Fill`,
+`quadrant1TextFill` through `quadrant4TextFill`, `quadrantPointFill`,
+`quadrantPointTextFill`, `quadrantXAxisTextFill`, `quadrantYAxisTextFill`,
+`quadrantInternalBorderStrokeFill`, `quadrantExternalBorderStrokeFill` and
+`quadrantTitleFill`. These colors use the same hexadecimal syntax as point
+styles. Authored quadrant fills paint at full opacity. Direct and class point
+colors override the configured point fill. Other theme variables and
+unimplemented global or inherited diagram settings retain source.
+
+Zero font sizes omit the corresponding painted and searchable labels while
+retaining their source and semantic descriptions. A zero border width paints
+no border, and a zero point radius paints no mark. Positive fractional font
+sizes and radii remain positive in vector exports.
+
+Gantt dates use UTC Gregorian arithmetic with English month/day names. Supported
+`dateFormat` tokens include `YYYY`/`YY`, `Q`, `M`/`MM`/`MMM`/`MMMM`,
+`D`/`DD`/`Do`/`DDD`/`DDDD`, `H`/`HH`/`h`/`hh`, `a`/`A`, `m`/`mm`,
+`s`/`ss`, `S`/`SS`/`SSS`, `Z`/`ZZ` and Unix seconds/milliseconds `X`/`x`.
+Bracketed text is literal. Impossible dates and conflicting date components
+retain source. Offsets are converted to UTC; the authored source is unchanged.
+Time-only or partial dates use the renderer's captured reference day/year.
+`DefaultMarkdownMermaidRenderer(referenceDate:)` lets a host supply that instant;
+the default initializer captures it once per renderer. The same instant controls
+Today markers, draft preparation, exports and cache identity.
+
+Tasks accept `done`, `active`, `crit`, `milestone` and `vert` tags. A subsequent
+task may omit its start to use the preceding task's end. `after a b` uses the
+latest referenced end; `until a b` uses the earliest referenced start. References
+may point forward. Milestones appear halfway through their actual duration,
+which still participates in scheduling. Vertical tasks produce named marker
+lines without consuming task rows. Dependency arrows are not drawn.
+
+Durations accept nonnegative decimals. Calendar months and years truncate the
+fraction and clamp month ends; days round to the nearest day, and weeks round
+seven times their value. Subday durations retain millisecond precision. With
+`excludes weekends`, each excluded day strictly after the start and through the
+moving end extends duration-based tasks. For example, Saturday `2026-09-26`
+plus `2d` ends on `2026-09-29`. A weekend start remains as authored.
+`weekend friday` selects Friday/Saturday; the default is Saturday/Sunday. `excludes` also
+accepts weekday names and dates; `includes` dates override exclusions. Explicit
+end dates bypass exclusion extension. `inclusiveEndDates` includes the explicit
+end day. An excluded trailing span can remain visually empty while its full end
+continues to govern dependencies.
+
+`axisFormat` accepts UTC D3-style date/time directives and `-`, `_` or `0`
+padding. `tickInterval` accepts a positive integer followed by `millisecond`,
+`second`, `minute`, `hour`, `day`, `week` or `month`; `weekday` sets weekly
+boundaries. Automatic ticks adapt to the date span, including century schedules.
+`topAxis` adds a top axis alongside the bottom axis. `todayMarker off` hides
+Today; its consumed styles are hexadecimal `stroke`, nonnegative `stroke-width`
+with optional `px`, and `opacity` in `0...1`. `stroke:none` also hides it.
+
+YAML frontmatter accepts `config.gantt` settings for `titleTopMargin`,
+`barHeight`, `barGap`, `topPadding`, `leftPadding`, `rightPadding`,
+`gridLineStartPadding`, `fontSize`, `sectionFontSize`, `numberSectionStyles`,
+`axisFormat`, `tickInterval`, `topAxis`, `displayMode` and `weekday`. Numeric
+sizes accept finite nonnegative fractions up to 11,000; section-style count is
+an integer in `0...256`. `displayMode: compact` packs tasks only when their
+bars and full labels fit without collisions. Explicit DSL directives take
+precedence over the matching configuration. Zero sizes hide the corresponding
+ink while retaining task semantics and source.
+
+Gantt `config.themeVariables` consumes hexadecimal `sectionBkgColor`,
+`altSectionBkgColor`, `sectionBkgColor2`, `excludeBkgColor`, `taskBorderColor`,
+`taskBkgColor`, `activeTaskBorderColor`, `activeTaskBkgColor`, `gridColor`,
+`doneTaskBkgColor`, `doneTaskBorderColor`, `critBorderColor`, `critBkgColor`,
+`todayLineColor`, `vertLineColor`, `taskTextColor`, `taskTextOutsideColor` and
+`taskTextDarkColor`. Authored colors remain the same in both appearances.
+Other global/font/theme controls, string-valued font sizes, callbacks and click
+commands retain source. Preparation accepts at most 256 KiB of source, 4,096
+statements and 4,096 ticks; exclusion correction is bounded to 10,000 days.
 
 Sankey ribbons and node bars share a quantitative scale. Node height represents
 the larger of incoming and outgoing totals; the renderer does not invent flows
@@ -197,6 +361,24 @@ show ancestry and dashed connectors show cherry-pick references. Commands end
 at newlines or unquoted semicolons. Streaming publishes delimited commands;
 strict completion also accepts a valid final command without a delimiter.
 The limits include 512 commits, 64 branches, 4,096 statements and 256 KiB of source.
+
+YAML frontmatter accepts a `title` and `config.gitGraph` settings for
+`mainBranchName`, integral `mainBranchOrder`, `showBranches`, `showCommitLabel`,
+`parallelCommits` and `rotateCommitLabel`. Rotation is opt-in and reserves
+measured space for the commit label while keeping tags upright.
+Checkout and merge commands resolve the configured main branch name. Hiding
+branch names or commit labels releases their layout space while preserving the
+history, tags and spoken description. With `parallelCommits: true`, commits
+that have the same ancestry depth share a measured column or row; merges follow
+both parents. A cherry-pick reference does not create an ancestry dependency.
+Delayed first commits on a branch still visibly fork from their actual parent.
+Wrapped vector labels retain one selectable SVG text element and their exact
+authored spaces and line breaks.
+Quoted strings, folded titles and bounded YAML aliases are supported. Duplicate
+keys, invalid types, recursive aliases, custom object tags and unimplemented
+settings retain the complete source. Frontmatter is limited to 32 KiB, 64 nested
+collections, 4,096 expanded nodes and 256 KiB of expanded scalar/key text. An unfinished envelope remains literal
+source while streaming; accepted frontier offsets include the envelope bytes.
 
 ```mermaid
 gitGraph

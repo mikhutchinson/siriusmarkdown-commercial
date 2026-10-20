@@ -2,6 +2,58 @@
 
 ## Unreleased
 
+## Browser 0.2.3 - 2026-10-20
+
+- Expand shared diagram syntax, Gantt scheduling, GitGraph topology, quadrant
+  styling and XY series/label preparation through the native/WASM engine.
+- Add pie donuts, complete positioned legends, truthful precise quantities,
+  strict quoted/multiline labels and authored accessibility metadata.
+- Preserve exact source, logical-label Find, readable vector paint and exports.
+- Match native sRGB surface tints and avoid redundant synchronous glyph layout
+  while mounting dense SVG figures.
+
+[Release notes](release-notes/browser-0.2.3.md).
+
+## 0.7.9 - 2026-10-20
+
+- Add strict quoted and escaped pie labels, multiline labels, comments and
+  authored accessibility metadata through the shared native/browser parser.
+  Preserve duplicate rows, exact source, CRLF display breaks and the original
+  model initializer; keep entity quotes as data through public SVG exports.
+- Keep Journey section/score labels and Timeline period labels readable against
+  each prepared palette fill in light and dark appearances.
+- Choose contrasting pie percentage ink per sector, including sector opacity,
+  while preserving authored text colors.
+- Add all five pie legend positions with complete wrapped labels, balanced
+  columns, measured centred keys, readable vector text halos and full authored
+  stroke clearance. Keep values and percentages with their label words, and
+  preserve exact full-circle SVG bounds at fractional centres.
+- Add true pie donut contours, authored label positions and typed paint, text
+  size, stroke and opacity controls. Keep crowded percentages in complete keys.
+- Keep native Mermaid bitmap exports upright and honor transparent themes in
+  both source and prepared SVG export.
+- Preserve zero pie rows, precise quantities and positive proportions when the
+  total overflows. Draw circular sectors and retain source for negative or
+  unrepresentable data; avoid false 0%/100% labels on partial shares.
+- Preserve authored PDF palette colors and prevent native XY chart replacement
+  crashes when category sets, series and axis orientation change.
+- Preserve compact flow links and chronological sequence activities; expand
+  GitGraph topology/configuration and quadrant styling/layout controls.
+- Retain named XY series, point labels, unequal series lengths and precise
+  numeric categories. Share line styles, vector symbols and authored palettes
+  across native and browser preparation, with complete wrapped legend keys.
+- Improve dense chart caption clearance, readable zoom, vector export and
+  source-backed diagram search.
+- Expand Gantt scheduling with UTC date/time/offset formats, subday and calendar
+  durations, forward dependencies, `until`, exclusions/includes, inclusive end
+  dates, Today and vertical markers, configured axes and compact full-label rows.
+- Share a captured reference instant across native and browser Gantt preparation,
+  cache identity and exports. Preserve padded date labels in selectable SVG.
+- Resolve unsupported configuration diagnostics in deterministic key order across
+  native and WASM processes.
+
+[Release notes](release-notes/0.7.9.md).
+
 ## Browser 0.2.2 - 2026-10-19
 
 - Add shared WASM Sankey, GitGraph, radar and treemap parsing, quantitative layout,

@@ -46,6 +46,13 @@ const diagram = await diagrams.render(block, publication, abortSignal);
 if (diagram && diagram.status !== "cancelled") mountMermaid(slot, diagram);
 ```
 
+For date-dependent Gantt diagrams, the client captures `referenceTime` once as
+Unix milliseconds. Supply `referenceTime` in the constructor for reproducible
+preparation, or override it on a publication. Use an integer instant in years
+1 through 9999. Measurement passes, Today markers and partial dates share that
+instant. Changing it revokes a queued result from the previous context. The
+lower-level `loadMermaid` API accepts the same option and per-request override.
+
 The client owns one module worker and installs its math font. Install the supplied
 document and monospace fonts in the page before creating it. Its default
 `canvasMeasurer()` uses the painted document's font resolver: system faces on
