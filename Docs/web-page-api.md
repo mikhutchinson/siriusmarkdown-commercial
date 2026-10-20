@@ -22,6 +22,16 @@ source revision. Discard late publications and resource results from older epoch
 and superseded revisions. Call `destroy()` when removing a mounted document and release its
 worker session when the source is retired.
 
+`literalFind(root, query, options)` searches prepared document text and the
+shared diagram engine's visible logical labels. Pass its returned matches to
+`setFind(matches, currentIndex)` and `revealRange(matches[currentIndex])`.
+Diagram matches highlight their painted SVG glyphs and retain the complete
+fence as their atomic source range. Search paint is temporary and is excluded
+from SVG downloads and readable exports. Listen for the bubbling
+`sm-diagram-find-change` event to refresh an active search when an asynchronous
+diagram mounts or its responsive SVG changes; the supplied playground shows
+this wiring.
+
 Apply the matching theme with `applyTheme(root, { preset, appearance })`.
 Map its returned `paragraphFontSize` and `paragraphLineHeight` to the session's
 `themeMetrics.fontSize` and `themeMetrics.lineHeight`; pass `headings` through

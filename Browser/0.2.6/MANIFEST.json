@@ -1,0 +1,586 @@
+{
+  "formatVersion": 1,
+  "engineSourceSHA256": "93850506ea1be658bfae29f5962842bc7275e16a9402f7165bf80824e7f6397b",
+  "files": [
+    {
+      "path": "Browser-API.md",
+      "bytes": 21869,
+      "sha256": "53f1639bb1cccc0918c40c67c6daaf999f2ba4e91bf544893a88c8624e337aa5"
+    },
+    {
+      "path": "NOTICE.md",
+      "bytes": 1216,
+      "sha256": "7ed0d7f72bcfc419882c68dabcaa9ca455bf31d83651b83cd73ca842fa47d2ce"
+    },
+    {
+      "path": "site/LICENSE",
+      "bytes": 13292,
+      "sha256": "0f044c6630b3a981e2012f96ce242628abdc78abfe9a3e85f6d962d48ff9bee1"
+    },
+    {
+      "path": "site/NOTICE.md",
+      "bytes": 1216,
+      "sha256": "7ed0d7f72bcfc419882c68dabcaa9ca455bf31d83651b83cd73ca842fa47d2ce"
+    },
+    {
+      "path": "site/assets/fonts/Asana-Math.otf",
+      "bytes": 433528,
+      "sha256": "b0d9e681c08ff1f4dc6ebf085cc962585ec12cdbd25dc6225890b9f8fd12d568"
+    },
+    {
+      "path": "site/assets/fonts/Asana-Math.plist",
+      "bytes": 99277,
+      "sha256": "97ebe044f4c5bdc91ff522bdfb0425f1f88013e8b40bdecdbc9ba6c574e141fb"
+    },
+    {
+      "path": "site/assets/fonts/Euler-Math.otf",
+      "bytes": 428792,
+      "sha256": "bd07fef1faecea7fa4a89256e4e06ef94b19e23b1785db6e420229fda37c2efb"
+    },
+    {
+      "path": "site/assets/fonts/Euler-Math.plist",
+      "bytes": 50321,
+      "sha256": "7b8f745068f1583ea83a18da079bdecb94e2b7c73ba72a0e89f4edbb2c3a9f9e"
+    },
+    {
+      "path": "site/assets/fonts/FiraMath-Regular.otf",
+      "bytes": 179840,
+      "sha256": "2028cbd3dd4d8c0cf1608520eb4759956a83a67931d7b6d8e7c313520186e35b"
+    },
+    {
+      "path": "site/assets/fonts/FiraMath-Regular.plist",
+      "bytes": 74123,
+      "sha256": "b32d6388ee5769b6e68ffcc6f660dc73818ef6686ee846f041c2afd4ba6a0305"
+    },
+    {
+      "path": "site/assets/fonts/GUST-FONT-LICENSE.txt",
+      "bytes": 1456,
+      "sha256": "2bd69affc3da00715116f713f57eab9707e96daf3562ad0215987b15b9c16f73"
+    },
+    {
+      "path": "site/assets/fonts/Garamond-Math.otf",
+      "bytes": 823988,
+      "sha256": "c6161377e97084152b948f62abe874cbe27405938956346b54a4c6488a5009f1"
+    },
+    {
+      "path": "site/assets/fonts/Garamond-Math.plist",
+      "bytes": 192517,
+      "sha256": "2fe6c519cbf876e42ec601a14ca615e9bf38f51be6b92ef0bba26cf9ee45f780"
+    },
+    {
+      "path": "site/assets/fonts/Inter/Inter-Bold.ttf",
+      "bytes": 420428,
+      "sha256": "288316099b1e0a47a4716d159098005eef7c0066921f34e3200393dbdb01947f"
+    },
+    {
+      "path": "site/assets/fonts/Inter/Inter-Medium.ttf",
+      "bytes": 417300,
+      "sha256": "97ad806f526e41546d46365bb3a393145f75b7b1568913db74549ad8b8dba872"
+    },
+    {
+      "path": "site/assets/fonts/Inter/Inter-Regular.ttf",
+      "bytes": 411640,
+      "sha256": "40d692fce188e4471e2b3cba937be967878f631ad3ebbbdcd587687c7ebe0c82"
+    },
+    {
+      "path": "site/assets/fonts/Inter/Inter-SemiBold.ttf",
+      "bytes": 419744,
+      "sha256": "78a843fade9d4612a5567302fb595b56976eb5fcebf4fea5a5912d638bafcde3"
+    },
+    {
+      "path": "site/assets/fonts/Inter/LICENSE.txt",
+      "bytes": 4380,
+      "sha256": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a"
+    },
+    {
+      "path": "site/assets/fonts/JetBrainsMono/JetBrainsMono-Regular.ttf",
+      "bytes": 273900,
+      "sha256": "a0bf60ef0f83c5ed4d7a75d45838548b1f6873372dfac88f71804491898d138f"
+    },
+    {
+      "path": "site/assets/fonts/JetBrainsMono/OFL.txt",
+      "bytes": 4399,
+      "sha256": "30f0c136e3c88e422d0791acd97238870f9054a9729bc34cf2ff0d4ed8cac4ad"
+    },
+    {
+      "path": "site/assets/fonts/KpMath-Light.otf",
+      "bytes": 451008,
+      "sha256": "aa6713ae76838a7db9eefe4f503b963dad50df77555ff67a50b72eb832221660"
+    },
+    {
+      "path": "site/assets/fonts/KpMath-Light.plist",
+      "bytes": 153377,
+      "sha256": "aaca68ecef79f005f41568df36ac467ec24a2b6732336ec8c357a156e3f4e114"
+    },
+    {
+      "path": "site/assets/fonts/KpMath-Sans.otf",
+      "bytes": 293084,
+      "sha256": "a9e82575a514f10ceed193d393bf2ea6ac82980ce7eb8c81be085df159a8c253"
+    },
+    {
+      "path": "site/assets/fonts/KpMath-Sans.plist",
+      "bytes": 105024,
+      "sha256": "3db5772fa9fbf71c96ca37eccaf38d8c2d32406c9bda8343d23a3cc0c9de348e"
+    },
+    {
+      "path": "site/assets/fonts/LICENSE",
+      "bytes": 1075,
+      "sha256": "431b2cb82b8a55977323598231f1baa44f32accac1231b4781a9a393d0bc29ed"
+    },
+    {
+      "path": "site/assets/fonts/LeteSansMath.otf",
+      "bytes": 440268,
+      "sha256": "b9242115e4d41b9ccbe179340d4ddaf5598863389a23677eefb87e8950781313"
+    },
+    {
+      "path": "site/assets/fonts/LeteSansMath.plist",
+      "bytes": 131044,
+      "sha256": "b00eeb445c4f525ec53391841d8b6e75c9ede23bbfa77a34c8a720ac8b7bc408"
+    },
+    {
+      "path": "site/assets/fonts/LibertinusMath-Regular.otf",
+      "bytes": 588848,
+      "sha256": "e81bd44acbb7119c8f00128b36fecc5d980e10d2450a226ba52402ccf4da9d32"
+    },
+    {
+      "path": "site/assets/fonts/LibertinusMath-Regular.plist",
+      "bytes": 99401,
+      "sha256": "35701c3b94bea93016a9161d017bacebd0954025644456aa8b47d0145fede503"
+    },
+    {
+      "path": "site/assets/fonts/NotoSansMath-Regular.otf",
+      "bytes": 498408,
+      "sha256": "9dda7e17fa67b7e34083798f56faf5e53ac524456e730ead35c2957e4397ca28"
+    },
+    {
+      "path": "site/assets/fonts/NotoSansMath-Regular.plist",
+      "bytes": 225479,
+      "sha256": "232aced02fe2d81553a1545c551d8d5fe824aae0c8c860f18bb10af3f4145c03"
+    },
+    {
+      "path": "site/assets/fonts/OFL.txt",
+      "bytes": 5104,
+      "sha256": "a96bed88f867f6a5bbe78ced4ca52a3ce6e002475363d86edd9097b2f8206d8d"
+    },
+    {
+      "path": "site/assets/fonts/latinmodern-math.otf",
+      "bytes": 733736,
+      "sha256": "6075562b771f8b82f0c179e363389684f2dd09de30038269e2628e504bd7be0f"
+    },
+    {
+      "path": "site/assets/fonts/latinmodern-math.plist",
+      "bytes": 65067,
+      "sha256": "201e6a483783415f335328f2d02b356fe55cd478eb0cd052898236589c8cb946"
+    },
+    {
+      "path": "site/assets/fonts/texgyretermes-math.otf",
+      "bytes": 532404,
+      "sha256": "e5ce42b4fe826b7ea4c0874359decf0b294439355c511a4794107a9924e2cd5a"
+    },
+    {
+      "path": "site/assets/fonts/texgyretermes-math.plist",
+      "bytes": 58011,
+      "sha256": "57ddeac7c51e1342aeb30fb72f6beb4d2f3ee7d51bfb1e07ab9150c06f7ec3c8"
+    },
+    {
+      "path": "site/assets/fonts/xits-math.otf",
+      "bytes": 538696,
+      "sha256": "d76666cb2dc222b4a811db96c41cc1853988b91008ec44a194126b4e010a5c6c"
+    },
+    {
+      "path": "site/assets/fonts/xits-math.plist",
+      "bytes": 152248,
+      "sha256": "e64b5302d65885a302b34eb2eb1e14c6a66f4c652fcbcd4893411361baae0363"
+    },
+    {
+      "path": "site/assets/licenses/FREETYPE-LICENSE.txt",
+      "bytes": 6809,
+      "sha256": "428472f9f4a6ede5e9c17ca1bbd63d1a8be9bff0d300fe24e2374fd30d0baa5a"
+    },
+    {
+      "path": "site/dist/sirius-markdown.wasm",
+      "bytes": 61209147,
+      "sha256": "b4db7a243dafacfe68a12304ac836a7769aa5a33db3a572bfd634c6be10ace60"
+    },
+    {
+      "path": "site/dist/sirius-mermaid.wasm",
+      "bytes": 60151531,
+      "sha256": "736d8a32d4de63d6bf82182de72be1afa168349edc8897a53a0907bf2748f059"
+    },
+    {
+      "path": "site/index.html",
+      "bytes": 123,
+      "sha256": "aa7675b08666e544781de72f9da3f9f7092b9c950cd386e3e012bdca17a75f99"
+    },
+    {
+      "path": "site/js/engine.js",
+      "bytes": 5276,
+      "sha256": "66ba1bb3dd74e1538733226df1a28fc7a0d13a2d97f1e481048338dbde510420"
+    },
+    {
+      "path": "site/js/host/resource-gateway.mjs",
+      "bytes": 14659,
+      "sha256": "920246b7e5c9e4455995842195813da0af03be17b5e8f1cb9c0384d6891ca671"
+    },
+    {
+      "path": "site/js/host/server.mjs",
+      "bytes": 4869,
+      "sha256": "ee7fac8ce7ccdef6f325bfde08dcb3ee17bbb99aa8ef4a75aecab91ff18cd71c"
+    },
+    {
+      "path": "site/js/math/document-fonts.js",
+      "bytes": 1507,
+      "sha256": "a5274eb782f8f83354bf5186ec7702b2210ca35e33cf36289456da53366708c0"
+    },
+    {
+      "path": "site/js/math/ink-baseline.js",
+      "bytes": 9038,
+      "sha256": "0bb733e8b3532271e27dbeb015075e36273da4eb980550443392da888afa343d"
+    },
+    {
+      "path": "site/js/math/prepare.js",
+      "bytes": 1723,
+      "sha256": "8647f15e3ce87ae25e7491eb9a0c76ce028dbc769868774155cf112a8da69184"
+    },
+    {
+      "path": "site/js/math/slot.js",
+      "bytes": 9330,
+      "sha256": "5bbb1f7b015ded7d5b3d84150ae71319b306c9fcaae81f58454b17bf645e87dc"
+    },
+    {
+      "path": "site/js/mermaid/diagram-font.js",
+      "bytes": 3220,
+      "sha256": "8b4abdb819147d2d186d85c8343dd5d067b038c2930ac5d6a9eb095301ca53c5"
+    },
+    {
+      "path": "site/js/mermaid/load.js",
+      "bytes": 4217,
+      "sha256": "82a636e6efd56618baa4936233107628105c74ddb75d8e6238f014e5b5b49b63"
+    },
+    {
+      "path": "site/js/mermaid/markdown-presentation.js",
+      "bytes": 4346,
+      "sha256": "9c5031b90f57387989e0e06266352cb45538eb949b1c34460af46b1f981e8b7f"
+    },
+    {
+      "path": "site/js/mermaid/mount.js",
+      "bytes": 32134,
+      "sha256": "54749f77235a8044d406135efc9f4e864c9e072c787ef0437c428a5a0b8cb311"
+    },
+    {
+      "path": "site/js/mermaid/publication.js",
+      "bytes": 2761,
+      "sha256": "b0f16a1b6f0490b047b003b4628c73d25cbe1cf3f97c65c9ccc0eef386d68d79"
+    },
+    {
+      "path": "site/js/mermaid/responsive-chart.js",
+      "bytes": 22457,
+      "sha256": "2f86394170fcb079897c1a6fa87b2f8300c5320e998b421cc8b1698fc2daea30"
+    },
+    {
+      "path": "site/js/mermaid/sanitize-style.js",
+      "bytes": 12736,
+      "sha256": "c3976b89760821b5c1bfea5de2156c9fda967af2ed4e3f5d0ff15fb18cf1da53"
+    },
+    {
+      "path": "site/js/mermaid/svg-references.js",
+      "bytes": 1503,
+      "sha256": "dafee7fb8a690847893a75e99787454680432878c172a61dd4baeb9b9adbce63"
+    },
+    {
+      "path": "site/js/mermaid/value-label-layout.js",
+      "bytes": 7104,
+      "sha256": "54946837d7721218ee65250491fb60e883a5bace3935bb9c42e0d25811f6d380"
+    },
+    {
+      "path": "site/js/mermaid/worker-client.js",
+      "bytes": 9112,
+      "sha256": "87b7d3e9a62c7a10810038b5571680fe41ca72e666b69d7fdb19ad7cd168e9d1"
+    },
+    {
+      "path": "site/js/mermaid/worker.js",
+      "bytes": 5437,
+      "sha256": "25f2f596bbf88f3bad6b633ab667e9b69506d645c212c86c6ad73df90b2afd5a"
+    },
+    {
+      "path": "site/js/render/blocks.js",
+      "bytes": 18395,
+      "sha256": "223c45b29eb875168e7df4453821c3c72ed5087d24c079b7feeb84adbe08e7aa"
+    },
+    {
+      "path": "site/js/render/context-surface.js",
+      "bytes": 4484,
+      "sha256": "19cbbc6fed0c368c38706b768947ef665e8faf3260ba326ee98093a131d22fff"
+    },
+    {
+      "path": "site/js/render/diagram-find.js",
+      "bytes": 8765,
+      "sha256": "9e7dd34823dab632c8ebd1c1571f38428498852f6dbb55079069f966b1863b53"
+    },
+    {
+      "path": "site/js/render/document.js",
+      "bytes": 35701,
+      "sha256": "6d4275d937ceecea4f3e26aaa691303a62fe30179516f5f85683e842d0a5a04e"
+    },
+    {
+      "path": "site/js/render/image-interaction.js",
+      "bytes": 11977,
+      "sha256": "3e054583f51b2eb1212bd4fca8df8f5c892aa6c4f571d61918d393e3c5f38efc"
+    },
+    {
+      "path": "site/js/render/image-metadata.js",
+      "bytes": 6896,
+      "sha256": "1904f5255e358826373c731cd074fae24cfb3d6911d701a92277d9f1728494c5"
+    },
+    {
+      "path": "site/js/render/index.js",
+      "bytes": 1022,
+      "sha256": "5f8c3a491695e9475eda1a31dc2f7081c52a281aa79c4f42eb023d4a10b91134"
+    },
+    {
+      "path": "site/js/render/inlines.js",
+      "bytes": 28679,
+      "sha256": "a245916b737485db3ef82cbc939aa1795a2c14051a4223e3478f6fd61d0dd963"
+    },
+    {
+      "path": "site/js/render/link-icons.js",
+      "bytes": 8403,
+      "sha256": "ff8cb186a5241c03e164e5259a7b314f7599fd4a90e9f2149a18b63f42a7af78"
+    },
+    {
+      "path": "site/js/render/math-retention.js",
+      "bytes": 1537,
+      "sha256": "386c9350d91300f1d3e201857782fe18ffae4a9228ab89e12d8640551d07673c"
+    },
+    {
+      "path": "site/js/render/math-svg-preparation.js",
+      "bytes": 3307,
+      "sha256": "90568eb6ddf180e17c09fa07df693f3e7d0d790003c57324dbd8979de3a59c94"
+    },
+    {
+      "path": "site/js/render/model.js",
+      "bytes": 15653,
+      "sha256": "c7ad9f839556635bce0513e6e356965732f7ef0bd1f0c2b25d35b080bc023513"
+    },
+    {
+      "path": "site/js/render/readable-print.js",
+      "bytes": 13936,
+      "sha256": "c402cf183a304a029ef285b1f9f86e72588ed5a2f518c2d11b37be64513b088d"
+    },
+    {
+      "path": "site/js/render/relocation.js",
+      "bytes": 4382,
+      "sha256": "f3d9fc795de5cb478f3c27810b11c15717759facf7ab41ed6abcb8bff3745a16"
+    },
+    {
+      "path": "site/js/render/resource-gateway.js",
+      "bytes": 2100,
+      "sha256": "8595a445b158bfe8b72b6e1955617ffe984cfcae54f766e081a3a6b5dddce12e"
+    },
+    {
+      "path": "site/js/render/resources.js",
+      "bytes": 24207,
+      "sha256": "45b0e8e20b9a82f6790e1bd9cfa194feeca5cca60d6901262264fcfe0bef2edb"
+    },
+    {
+      "path": "site/js/render/selection-ranges.js",
+      "bytes": 968,
+      "sha256": "dde39df11ce7e75e219cc4f8e24b7d518799378741014ca3e82b529d2639bf0a"
+    },
+    {
+      "path": "site/js/render/selection.js",
+      "bytes": 40314,
+      "sha256": "584765200813ecbe6324f5b3d77dff81f6a3cc3adc44dbb05f5f0b8153b4e51d"
+    },
+    {
+      "path": "site/js/render/semantic-copy.js",
+      "bytes": 8685,
+      "sha256": "96900a3dcc42195520770e21ff1b8a0d4a3cf107d1e2b284699e341374c6bdcc"
+    },
+    {
+      "path": "site/js/render/source-slice.js",
+      "bytes": 1686,
+      "sha256": "74e6c4a38a566e2ca1f6a3c345c4dbbe4c4bb63d185737a460956f70595a5030"
+    },
+    {
+      "path": "site/js/render/spans.js",
+      "bytes": 292,
+      "sha256": "53dcc16d634fab1c017bded9eeb2029bc885a947b114fee86bc98f5e5ff0196d"
+    },
+    {
+      "path": "site/js/render/video.js",
+      "bytes": 2424,
+      "sha256": "eba3fde9385c3067ddbfe61f8b0bd4e7f778721856e5c12c63a181ff7b9c1932"
+    },
+    {
+      "path": "site/js/theme/body-font.js",
+      "bytes": 1408,
+      "sha256": "109e04515fd6dcd5476070a3e91edbc3e7fad2886975347b7362d0533bec1a0b"
+    },
+    {
+      "path": "site/js/theme/inter-fonts.js",
+      "bytes": 1083,
+      "sha256": "7c71cb9f993ceef709cff24e2644001ce30d3e695dc67f1eab6d75c9bc0fe071"
+    },
+    {
+      "path": "site/js/theme/jetbrains-mono.js",
+      "bytes": 758,
+      "sha256": "b62618ef4c73bd99b04c3a3f8d7f87f3236819228f8f2e4542f60f2aaabc11f9"
+    },
+    {
+      "path": "site/js/theme/theme.css",
+      "bytes": 29647,
+      "sha256": "c7e4727c65408aa9b94ad6606ee376ee245a75bd9b9afce5aad84b1f08a5acce"
+    },
+    {
+      "path": "site/js/theme/tokens.js",
+      "bytes": 6763,
+      "sha256": "c29c9a343665f44897d4690366ede49e3bb6e4707695e4273556f7f46d1d01f0"
+    },
+    {
+      "path": "site/js/wasi-shim.js",
+      "bytes": 3398,
+      "sha256": "13416f9bdaa6d8636338b94c8242cfcbdf3753596ffcb7a6fc530fb294f1a3e0"
+    },
+    {
+      "path": "site/js/worker/highlight.js",
+      "bytes": 4676,
+      "sha256": "0613e52973a5a3d782438f5e835402672f9318522095fd9934decec1f6097c75"
+    },
+    {
+      "path": "site/js/worker/measure-deterministic.js",
+      "bytes": 2312,
+      "sha256": "0abd772e128847935a0670be1057f8c9eb263eb4cf0c8a0a589aadbc94f1c2a3"
+    },
+    {
+      "path": "site/js/worker/measure.js",
+      "bytes": 5481,
+      "sha256": "a0170938e83a92046b34db55c444075d4e4abef62c79c59d29c91c81c043d9e0"
+    },
+    {
+      "path": "site/js/worker/mermaid-session.js",
+      "bytes": 1602,
+      "sha256": "246f528054344492a5be28c535d46d6798f8f88ebd7d695b8d12502e2a616d5e"
+    },
+    {
+      "path": "site/js/worker/script-runner.js",
+      "bytes": 1601,
+      "sha256": "fe94075d7790001fc70839e5a250ecaa4149b78ba70f7fccf66b3f11ef165618"
+    },
+    {
+      "path": "site/js/worker/session.js",
+      "bytes": 9532,
+      "sha256": "70982fb0cc75dd149f43463a2b68342d0d38c61ea147f91aedc2922cbbb50f99"
+    },
+    {
+      "path": "site/licenses/BeautifulMermaid-Swift-MIT.txt",
+      "bytes": 1067,
+      "sha256": "f05f5a4009eae7fadfd4a55f77ffe10948f621982d56076667e68afbb54de894"
+    },
+    {
+      "path": "site/licenses/ElkSwift-EPL-2.0.txt",
+      "bytes": 14198,
+      "sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303"
+    },
+    {
+      "path": "site/licenses/FreeType.txt",
+      "bytes": 6809,
+      "sha256": "428472f9f4a6ede5e9c17ca1bbd63d1a8be9bff0d300fe24e2374fd30d0baa5a"
+    },
+    {
+      "path": "site/licenses/HighlightJS-BSD-3-Clause.txt",
+      "bytes": 1759,
+      "sha256": "9f6a083c5547a7e3e64db2c0dde4e0b8ce87e046bd3f793625507c4561a25804"
+    },
+    {
+      "path": "site/licenses/LibYAML-MIT.txt",
+      "bytes": 1101,
+      "sha256": "c40112449f254b9753045925248313e9270efa36d226b22d82d4cc6c43c57f29"
+    },
+    {
+      "path": "site/licenses/MIT-previous-releases.txt",
+      "bytes": 1080,
+      "sha256": "c29f7e1bdcbacf6e3c938da1a061999f400966f25e2752afe9acfe071659010f"
+    },
+    {
+      "path": "site/licenses/Swift.txt",
+      "bytes": 11751,
+      "sha256": "770af8291f708538d8ff885a0bbc4e045cd700531741c4f99528d435c14d7f55"
+    },
+    {
+      "path": "site/licenses/SwiftMath-MIT.txt",
+      "bytes": 1078,
+      "sha256": "75c39d3db0d038a4966dfb86e4703748ee56434e188959e4423cfc91a54a93af"
+    },
+    {
+      "path": "site/licenses/SwiftSoup-LICENSE",
+      "bytes": 1152,
+      "sha256": "6d9f121428f5571c4e20362fa91186c552f82648c0161dacc12e239b1544d49d"
+    },
+    {
+      "path": "site/licenses/swift-cmark-COPYING",
+      "bytes": 7567,
+      "sha256": "c22e885f33b821bddb24cf007145e5540655b6c0f403e49e6c76a93c28e6d9a9"
+    },
+    {
+      "path": "site/licenses/swift-markdown-LICENSE.txt",
+      "bytes": 11753,
+      "sha256": "167beb36f181bd163c93c6feb45c68e5f9462fe1af55b278f7bfd1df20e673a3"
+    },
+    {
+      "path": "site/licenses/swift-markdown-NOTICE.txt",
+      "bytes": 1368,
+      "sha256": "ee7da43afcac4a52196a2141024573ec2ceb84b14e74dfed38522d94586fbc52"
+    },
+    {
+      "path": "site/playground/assets/sample-figure.svg",
+      "bytes": 462,
+      "sha256": "c0bc63a209b2febc1d46ffa318db9e44a538e17bdbfb44707ba0be4c22ef95ea"
+    },
+    {
+      "path": "site/playground/editing.js",
+      "bytes": 4545,
+      "sha256": "19e31b93ce87a7201f1225c10e10c788d02205d4b2a20a171b63033e9ae9b1d6"
+    },
+    {
+      "path": "site/playground/image-editing.js",
+      "bytes": 6160,
+      "sha256": "6a99b8257869c31aaac5f9fe7a038a1a1652f1f7ef89ef6b9f0816bcb39ff246"
+    },
+    {
+      "path": "site/playground/index.html",
+      "bytes": 2646,
+      "sha256": "14fe7ccdc417c2d65c96c8e18f07f0a60e6cea69c096af1009c2886f5c76bfb4"
+    },
+    {
+      "path": "site/playground/main.js",
+      "bytes": 45049,
+      "sha256": "7edaa7a44a0c5ad75f285d4ecda4fc76d13fefc43a1f79a824abfa6cfbb5e5bb"
+    },
+    {
+      "path": "site/playground/playground.css",
+      "bytes": 5292,
+      "sha256": "99941c2c9afe9561d182476015fba00ce7e578ce1a3d94bf3426388991238716"
+    },
+    {
+      "path": "site/playground/samples.js",
+      "bytes": 6176,
+      "sha256": "f159fc9a7bdb603c4967f686237cc10ff8bbf65a5d2e83bedf4f68ebef848665"
+    },
+    {
+      "path": "site/playground/worker.js",
+      "bytes": 5095,
+      "sha256": "b89ca83b2b11f44f3c68a9e2172392882e2c8a3ccb655c4875269f7c1c9420b7"
+    },
+    {
+      "path": "third-party-source/ElkSwift-SOURCES.json",
+      "bytes": 96898,
+      "sha256": "3ad7f8e3f675b41bfa18fcdf4d07c5bb684c974bf77dc44ab841159e9c5982bd"
+    },
+    {
+      "path": "third-party-source/ElkSwift-WASI.tar.gz",
+      "bytes": 408317,
+      "sha256": "53d96fcf856caeaf79cc33d10fdbe43d87a6c1f1337438d30dc2c5e24cd12fc6"
+    }
+  ]
+}

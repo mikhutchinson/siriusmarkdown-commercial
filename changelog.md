@@ -2,8 +2,11 @@
 
 ## Unreleased
 
-## Browser 0.2.5 - 2026-10-20
+## Browser 0.2.6 - 2026-10-20
 
+- Highlight matching diagram-label glyphs in browser Find, including Safari,
+  and reveal individual labels with Next/Previous. Exclude search paint from
+  SVG downloads, readable snapshots and printed documents.
 - Expand shared diagram syntax, Gantt scheduling, GitGraph topology, quadrant
   styling and XY series/label preparation through the native/WASM engine.
 - Add pie donuts, complete positioned legends, truthful precise quantities,
@@ -18,7 +21,7 @@
 - Match native sRGB surface tints and avoid redundant synchronous glyph layout
   while mounting dense SVG figures.
 
-[Release notes](release-notes/browser-0.2.5.md).
+[Release notes](release-notes/browser-0.2.6.md).
 
 ## 0.7.9 - 2026-10-20
 
