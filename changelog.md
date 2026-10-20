@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+## Browser 0.2.7 - 2026-10-20
+
+- Retain the active Find result through delayed image loading and prepared
+  relayout. Rebind highlights after text replacement, preserve the surrounding
+  page position, and respect subsequent user scrolling or selection.
+- Reuse existing Find highlights for geometry-only updates in large searches.
+
+[Release notes](release-notes/browser-0.2.7.md).
+
 ## Browser 0.2.6 - 2026-10-20
 
 - Highlight matching diagram-label glyphs in browser Find, including Safari,

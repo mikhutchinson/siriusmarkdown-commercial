@@ -32,6 +32,12 @@ from SVG downloads and readable exports. Listen for the bubbling
 diagram mounts or its responsive SVG changes; the supplied playground shows
 this wiring.
 
+After `revealRange` reveals the active result, the mounted document keeps that
+same source match visible through prepared relayout and delayed image sizing.
+Manual scrolling, touch navigation or text selection stops following. Existing
+matches rebind to new text nodes without reparsing source. `clearFind()` and
+document teardown release Find's geometry observation.
+
 Apply the matching theme with `applyTheme(root, { preset, appearance })`.
 Map its returned `paragraphFontSize` and `paragraphLineHeight` to the session's
 `themeMetrics.fontSize` and `themeMetrics.lineHeight`; pass `headings` through
