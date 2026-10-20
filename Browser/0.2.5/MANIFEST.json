@@ -309,8 +309,8 @@
     },
     {
       "path": "site/js/render/context-surface.js",
-      "bytes": 3806,
-      "sha256": "cb7051b58d93142ca43588a8ee81f31b8d4350233dcfcfacaf070e0d1a559fe4"
+      "bytes": 4484,
+      "sha256": "19cbbc6fed0c368c38706b768947ef665e8faf3260ba326ee98093a131d22fff"
     },
     {
       "path": "site/js/render/diagram-find.js",
@@ -389,8 +389,8 @@
     },
     {
       "path": "site/js/render/selection.js",
-      "bytes": 38063,
-      "sha256": "b7527dbf67be7e7cb88a86c92e945a685726e851705d29f4ad9696691cd2bb54"
+      "bytes": 39190,
+      "sha256": "adb9b55f027ae09b521ae9c1b620b0b6f0cc5c2bcf9d32f401107f5071d9da62"
     },
     {
       "path": "site/js/render/semantic-copy.js",
@@ -554,8 +554,8 @@
     },
     {
       "path": "site/playground/main.js",
-      "bytes": 44268,
-      "sha256": "73e917d2c1b9b72b5c82c01938757147a61bd09466d7e232e640fbe67bb5a4e5"
+      "bytes": 44787,
+      "sha256": "6055fbffd08706dabac9086f3aded6505da0296a165939ef7608452f8c7c8f7b"
     },
     {
       "path": "site/playground/playground.css",
@@ -580,7 +580,7 @@
     {
       "path": "third-party-source/ElkSwift-WASI.tar.gz",
       "bytes": 408317,
-      "sha256": "533c8179b820d10b6029a1395f35bf0dfb6bb4a01d3bc1dbb8d2c3ff23471728"
+      "sha256": "1771e842d746fa8be37868a0383679224c0a99d68ac637acb2569d01641a774e"
     }
   ]
 }

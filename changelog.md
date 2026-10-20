@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-## Browser 0.2.4 - 2026-10-20
+## Browser 0.2.5 - 2026-10-20
 
 - Expand shared diagram syntax, Gantt scheduling, GitGraph topology, quadrant
   styling and XY series/label preparation through the native/WASM engine.
@@ -13,10 +13,12 @@
   preserving title and legend contrast in both appearances without resizing.
 - Keep cloned SVG markers, clips and gradients independent from hidden reader
   definitions, preserving printed arrowheads and vector geometry.
+- Highlight complete Unicode Find matches and reveal the active result inside
+  the visible reader; search while typing in the downloadable playground.
 - Match native sRGB surface tints and avoid redundant synchronous glyph layout
   while mounting dense SVG figures.
 
-[Release notes](release-notes/browser-0.2.4.md).
+[Release notes](release-notes/browser-0.2.5.md).
 
 ## 0.7.9 - 2026-10-20
 

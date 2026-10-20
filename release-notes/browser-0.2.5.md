@@ -1,4 +1,4 @@
-# SiriusMarkdown browser 0.2.4
+# SiriusMarkdown browser 0.2.5
 
 October 20, 2026
 
@@ -27,6 +27,10 @@ Browser surface tints match native PDF colors, and dense figures avoid redundant
 synchronous layout during mounting.
 See the [diagram guide](../Docs/Native-Mermaid.md) for supported controls and limits;
 unsupported completed input retains source rather than silently dropping data.
+
+Find highlights complete text after multibyte characters, preserves whole Unicode
+scalars and reveals the active result inside the visible reader. The downloadable
+playground searches while typing and starts each new query at its first match.
 
 Upgrade consumer JavaScript, workers, fonts and both WASM modules together. The
 public playground stays on static hosting with direct browser requests and its
