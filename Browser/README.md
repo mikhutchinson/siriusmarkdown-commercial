@@ -1,16 +1,16 @@
 # SiriusMarkdown for the browser
 
-Browser 0.2.9 is the SiriusMarkdown browser/WASM MVP. It is distributed
+Browser 0.2.10 is the SiriusMarkdown browser/WASM MVP. It is distributed
 separately from the native Swift XCFramework SDK in this repository.
 
-- [Download browser 0.2.9](https://github.com/mikhutchinson/siriusmarkdown-commercial/releases/tag/browser-0.2.9)
+- [Download browser 0.2.10](https://github.com/mikhutchinson/siriusmarkdown-commercial/releases/tag/browser-0.2.10)
 - [Interactive playground](https://siriusmarkdown.com/playground/)
 - [Integration guide](https://siriusmarkdown.com/docs/browser/)
-- [Page and worker API](0.2.9/Browser-API.md)
-- [Runtime notices](0.2.9/NOTICE.md)
-- [Archive checksums](0.2.9/SHA256SUMS.txt)
+- [Page and worker API](0.2.10/Browser-API.md)
+- [Runtime notices](0.2.10/NOTICE.md)
+- [Archive checksums](0.2.10/SHA256SUMS.txt)
 
-Extract `SiriusMarkdown-browser-0.2.9.zip` and serve its `site/` directory over
+Extract `SiriusMarkdown-browser-0.2.10.zip` and serve its `site/` directory over
 HTTPS, or localhost for development. Keep `js`, `assets`, `dist` and `playground`
 together. Serve `.wasm` as `application/wasm`, module JavaScript as
 `text/javascript`, and fonts with appropriate font MIME types. Open the included
@@ -39,6 +39,13 @@ Expanded viewers preserve the diagram's inline space and restore the reader's
 scroll position and previous Diagram or Source mode when dismissed. Safari returns
 focus to the invoking Expand button without moving the reader. Find reveals
 matches inside horizontally scrolling content.
+
+Diagram menus also export Unicode or ASCII text through the worker. Both preserve
+authored labels and numeric data; text layouts omit color and typography. The
+worker API's `exportText()` accepts the format, source revision context and abort
+signal. Downloads are cancelled when their diagram changes. Unsupported or
+oversized text exports retain source and report a diagnostic. See the page API
+for terminal-cell geometry and limits.
 
 ## Browser limits
 
@@ -101,8 +108,8 @@ Preserve Commercial SDK License 1.0, prior MIT grants, third-party notices and
 font/runtime licenses. They are included in the download and retain their own
 terms. The download includes the modified ElkSwift source under
 `third-party-source/ElkSwift-WASI.tar.gz`; the release also supplies it as a
-separate `ElkSwift-WASI-0.2.9.tar.gz` asset with a source-file manifest. It is
+separate `ElkSwift-WASI-0.2.10.tar.gz` asset with a source-file manifest. It is
 available under EPL-2.0 and belongs outside the hosted `site/` directory.
 
-The [distribution manifest](0.2.9/MANIFEST.json) records every consumer-package
+The [distribution manifest](0.2.10/MANIFEST.json) records every consumer-package
 file. No engine or app Swift source is part of the browser runtime.
