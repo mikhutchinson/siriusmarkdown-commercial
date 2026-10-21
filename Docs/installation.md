@@ -1,7 +1,7 @@
 # Installation and packaging
 
 Add `https://github.com/mikhutchinson/siriusmarkdown-commercial.git` in Xcode,
-select version 0.7.10 or later, and link the `SiriusMarkdown` product. Product
+select version 0.7.11 or later, and link the `SiriusMarkdown` product. Product
 and import names match the source SDK. Narrower products are listed in the
 [architecture guide](architecture.md#choose-a-product).
 
@@ -23,7 +23,7 @@ The [public playground](https://siriusmarkdown.com/playground/) uses static
 hosting and direct browser requests. Cross-origin resources require readable
 CORS responses. The optional Node gateway in the download is for self-hosted
 integrations. Browser tags do not update the native XCFrameworks or Swift package
-version, which is 0.7.10.
+version, which is 0.7.11.
 
 ## Resources
 

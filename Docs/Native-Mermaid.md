@@ -117,10 +117,14 @@ accessibility descriptions and native text exports retain namespace labels and
 membership. Static and abstract member classifiers retain their underline or
 italic presentation.
 
-PDF text extraction can normalize composed Unicode. Some color emoji lose
-joiners or modifiers in copied PDF text, although their painted appearance is
-retained. Source and SVG preserve the authored Unicode; use Copy Source when
-exact source text is required.
+Native PDF exports retain source mappings for shaped characters, emoji joiners,
+modifiers, variation selectors and alternate Unicode spellings. Text-flow
+document exports retain these mappings when embedding a prepared diagram.
+Neutral text carries a leading Unicode direction mark so PDF readers preserve
+its order beside right-to-left labels. That mark can appear in copied PDF text;
+readers can also normalize Unicode and line breaks or infer a different reading
+order for mixed-direction words. Use Copy Source for exact authored text. PDF
+glyphs, color emoji and vector geometry are unchanged.
 
 Flowchart links do not require spaces around their operators: `A-->B[Browser]`
 keeps two nodes and one edge. Embedded labels such as `A--Review required-->B`

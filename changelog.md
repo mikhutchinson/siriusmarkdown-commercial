@@ -1,5 +1,42 @@
 # Changelog
 
+## 0.7.11
+
+Native diagram PDFs retain shaped Unicode, composed and decomposed spellings,
+emoji joiners, skin-tone modifiers, variation selectors, flags and keycaps in
+selectable text. Text-flow document exports retain these mappings when they
+embed prepared diagrams. Glyph paint, color emoji and vector geometry stay the
+same, and PDF streams retain lossless compression.
+
+Neutral PDF labels include a leading Unicode direction mark to preserve their
+order beside right-to-left labels. That mark can appear in copied text. PDF
+readers may also infer different word order or line breaks; Copy Source and SVG
+retain the authored text without an added direction mark.
+
+Native diagram text exports also preserve multiline pie labels, explicit XY
+data-label suppression and wide Unicode cell alignment.
+
+Swift Package products and minimum platforms are unchanged: macOS 13,
+iOS/iPadOS 16 and visionOS 1. The separate browser package remains at 0.2.11.
+
+## Browser 0.2.11 - 2026-10-21
+
+- Preserve multiline pie labels and align their bars and values in text exports.
+- Honor explicit XY data-label suppression in text exports.
+- Normalize CRLF and tabs before terminal measurement, including wide CJK and
+  composed emoji, while retaining the exact source.
+
+[Release notes](release-notes/browser-0.2.11.md).
+
+## Browser 0.2.10 - 2026-10-21
+
+- Export Unicode or ASCII diagram text from the shared parser and preparation
+  worker, with revision-safe downloads and explicit source fallback.
+- Preserve wide labels, reverse directions, class multiplicities, ER comments,
+  every XY-series value, exact pie quantities and Gantt dependency identities.
+
+[Release notes](release-notes/browser-0.2.10.md).
+
 ## Browser 0.2.9 - 2026-10-21
 
 - Align diagram Find highlights with painted text baselines in Firefox, including
