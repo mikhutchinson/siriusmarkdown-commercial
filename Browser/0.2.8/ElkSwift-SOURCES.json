@@ -1,0 +1,1658 @@
+[
+  {
+    "path": "ElkSwift/LICENSE",
+    "sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303"
+  },
+  {
+    "path": "ElkSwift/Package.swift",
+    "sha256": "10bf69888539358dc2313644c6d0dd51b02ee0758f9139a7abc0ec8249af964f"
+  },
+  {
+    "path": "ElkSwift/README.md",
+    "sha256": "f0e8c55ffa8eef086487b43ea204dc99e69f07b6d3b6c6e230d5f3cb5a65748c"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/Bridge/ELK.swift",
+    "sha256": "0ce5536c2819f77c9ae6f5c18a1faf487034814caab510eb542377a545f17664"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/Bridge/ElkGraphImpl.swift",
+    "sha256": "2ce0d5b0e194071324d238fcd25a48305f18d2a1d6d531bac9e5c58980ace672"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/Bridge/ElkGraphUtil.swift",
+    "sha256": "12153066e6ec6031aa7e8980077b2493641523c43546a8121a4ab5f8ac975fb5"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/Bridge/JavaCompat.swift",
+    "sha256": "3370e9ef6988c664955262cf7e2f5d6a646dd4c0bd668cf683fd0e214332b3f0"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/Bridge/JavaNumbers.swift",
+    "sha256": "24718888b7bd47c054328a439f796bddb2cf2839e967c99c0c2f4bcd3f4f71b3"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/Bridge/JsonExporter.swift",
+    "sha256": "2ed033a13c417b3da79073a65ab5f547afbd8aae7e27b08dbf7c13dcc1157d5f"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/Bridge/JsonImporter.swift",
+    "sha256": "b18faa4d3d33b3f8ecce909aba2d139226c6d6835262c182276df41336b48d15"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/Bridge/TypeAliases.swift",
+    "sha256": "ecebbdfa43950a1569f70606ac0c38a486370def0f71d2a3cebfea557a779529"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/ArrayDeque.swift",
+    "sha256": "05c75c9660799ce3d02ad3c4c9e57c31e05e651d5973f2640c1de1f43a42713a"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/compaction/oned/org_eclipse_elk_alg_common_compaction_oned_CGraph.swift",
+    "sha256": "d731446b3401d5ebd413974ee19ab31457ca8b83fc35b8d3b4c0c46eb8f68de0"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/compaction/oned/org_eclipse_elk_alg_common_compaction_oned_CGroup.swift",
+    "sha256": "a3d32889f735d25b362a3ffaaa9aed2c35ad89723a9094cc7937441c506568fe"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/compaction/oned/org_eclipse_elk_alg_common_compaction_oned_CNode.swift",
+    "sha256": "2662a426efd2eedf33c951143d541387eabd5066b6129511be71ac5356e31ea5"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/compaction/oned/org_eclipse_elk_alg_common_compaction_oned_CompareFuzzy.swift",
+    "sha256": "bd6c12ce2ed79fe8ec117ab3ec43f0a9c69ab797d1ef4f044b2e0e0e66f338e9"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/compaction/oned/org_eclipse_elk_alg_common_compaction_oned_ICompactionAlgorithm.swift",
+    "sha256": "7511d95db0423b61e2fee7eea860438f721347078baca7b40be8e9c1a345512f"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/compaction/oned/org_eclipse_elk_alg_common_compaction_oned_IConstraintCalculationAlgorithm.swift",
+    "sha256": "3d046d9ea33b78d949fb30cda6b01a0c14b33e7dc41a3caeda4d7f378df0aaf1"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/compaction/oned/org_eclipse_elk_alg_common_compaction_oned_ILockFunction.swift",
+    "sha256": "678e35b0a83a0909eabbca2fd6fdf16f6f3a4f5a658d39ff06d4284e73108fce"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/compaction/oned/org_eclipse_elk_alg_common_compaction_oned_ISpacingsHandler.swift",
+    "sha256": "c1a37a03cf39d96d78e6a3df18a3357a6713f24392f9bc3904e02bdf3ed6c7db"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/compaction/oned/org_eclipse_elk_alg_common_compaction_oned_LongestPathCompaction.swift",
+    "sha256": "cd10222b6af30227679ae2b28f319cb86c5c0d19f33c10851a330e4e6b6c0b58"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/compaction/oned/org_eclipse_elk_alg_common_compaction_oned_OneDimensionalCompactor.swift",
+    "sha256": "91dd22c496e7b592e18ac6247352a4f4ca549f0f8539e79ae474678e53e4d588"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/compaction/oned/org_eclipse_elk_alg_common_compaction_oned_QuadraticConstraintCalculation.swift",
+    "sha256": "faaf6562213955ff27ecd3a2800dd6abaf460693a47a0fbc13b71cf218f7cd3b"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/compaction/oned/org_eclipse_elk_alg_common_compaction_oned_Quadruplet.swift",
+    "sha256": "d449a2ca4ade221f31bf91c2900248ccbff3b3539d8ae58eabba52e4f99e6d75"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/compaction/oned/org_eclipse_elk_alg_common_compaction_oned_ScanlineConstraintCalculator.swift",
+    "sha256": "12417e1b27d8df1b263c1731a2b0d440f568b792af3747fe1e71a45b80a957e9"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/compaction/options/org_eclipse_elk_alg_common_compaction_options_HighLevelSortingCriterion.swift",
+    "sha256": "7297224fdf8fd986d80e8d7c875caa32fc105e554504e8ac10ad9469a35c7d81"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/compaction/options/org_eclipse_elk_alg_common_compaction_options_LowLevelSortingCriterion.swift",
+    "sha256": "3864bf52fa296bd99879a2c549754401cbff93d963c12d01e152721311a1492a"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/compaction/options/org_eclipse_elk_alg_common_compaction_options_TraversalStrategy.swift",
+    "sha256": "f6c7029a905832fe9bf7518322fd8a1c57d2a304e50c6f4c64d4b2a501214960"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/compaction/org_eclipse_elk_alg_common_compaction_Scanline.swift",
+    "sha256": "59bf1ee00beeca538177daf10bae957159d650e7650586bc43ddbcdb0227a007"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/networksimplex/org_eclipse_elk_alg_common_networksimplex_NEdge.swift",
+    "sha256": "9bc53c520bfd619617528f9bcc6ec379e04510d212cc2ea2e92c0bb73d68f60c"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/networksimplex/org_eclipse_elk_alg_common_networksimplex_NGraph.swift",
+    "sha256": "e3c5c1ccd8e68b37bce1fc2be0944dc160eeb3f5c7c5d9e23fbcafad9e6aeeca"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/networksimplex/org_eclipse_elk_alg_common_networksimplex_NNode.swift",
+    "sha256": "2404e6bc0c7738517b47da38a0fd2f80e22f82dcb87491016871062a23dde6e2"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/networksimplex/org_eclipse_elk_alg_common_networksimplex_NetworkSimplex.swift",
+    "sha256": "f31f065709bb4bbdaa19aeb2adead2dd4baf1d2a195367b1c0d1585c37fcaf5e"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/nodespacing/cellsystem/org_eclipse_elk_alg_common_nodespacing_cellsystem_AtomicCell.swift",
+    "sha256": "ca0937c08d50d7afaf6411f9f700ea82d50ceabea287f731c77d876d6ae46fa8"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/nodespacing/cellsystem/org_eclipse_elk_alg_common_nodespacing_cellsystem_Cell.swift",
+    "sha256": "97d133540c521b07e2ab26fe20dd73f8827b96301e52fd3715adb830a03d4980"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/nodespacing/cellsystem/org_eclipse_elk_alg_common_nodespacing_cellsystem_ContainerArea.swift",
+    "sha256": "5c92cc2aeb30e32fcd1b9f8bc4cb443ed67346e2323bf7b190c45b456d940c54"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/nodespacing/cellsystem/org_eclipse_elk_alg_common_nodespacing_cellsystem_ContainerCell.swift",
+    "sha256": "25ba6c4636e6e94c985a3b3ca0e8073835e5123f55c7f5b284a58f1396999b69"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/nodespacing/cellsystem/org_eclipse_elk_alg_common_nodespacing_cellsystem_GridContainerCell.swift",
+    "sha256": "da7a61b5c2fba53b6ebe265b24da328c6c04394492b741785de297467940f1a6"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/nodespacing/cellsystem/org_eclipse_elk_alg_common_nodespacing_cellsystem_HorizontalLabelAlignment.swift",
+    "sha256": "9724dd6dfa825726deff6efc2a3965a595249f77b0824093895857afc30325e4"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/nodespacing/cellsystem/org_eclipse_elk_alg_common_nodespacing_cellsystem_LabelCell.swift",
+    "sha256": "6d19f2a0602f7750fd7138ce21e40fe82b494af6e8a78e3295860406e87bd2e5"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/nodespacing/cellsystem/org_eclipse_elk_alg_common_nodespacing_cellsystem_StripContainerCell.swift",
+    "sha256": "14387a90be5d7ada12b6fce98ed6e428dc96a95c426285a622c3d7d0a49a773b"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/nodespacing/cellsystem/org_eclipse_elk_alg_common_nodespacing_cellsystem_VerticalLabelAlignment.swift",
+    "sha256": "1dc53a8abbd85cf01290991de8d7144915c094bcee10c3cee88565671c810871"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/nodespacing/internal/algorithm/org_eclipse_elk_alg_common_nodespacing_internal_algorithm_CellSystemConfigurator.swift",
+    "sha256": "28ef6e0a932b2ff21a1105b69fc01966ff324b10542e6c1c09aa1f0a2080cbbc"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/nodespacing/internal/algorithm/org_eclipse_elk_alg_common_nodespacing_internal_algorithm_HorizontalPortPlacementSizeCalculator.swift",
+    "sha256": "b37ec1c04de11e810071b1135a052b95a78c5e9d684bd2b29711efab2e1e43e2"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/nodespacing/internal/algorithm/org_eclipse_elk_alg_common_nodespacing_internal_algorithm_InsidePortLabelCellCreator.swift",
+    "sha256": "9916a058550fb9756e4c2800d713b50a1b527972f11129cfdf1ce44ef9dd2ed3"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/nodespacing/internal/algorithm/org_eclipse_elk_alg_common_nodespacing_internal_algorithm_LabelPlacer.swift",
+    "sha256": "b094f3e3305093a5a52ef0f60b737c51a529fd0d9efa8d7a7b11e692fadd8eb2"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/nodespacing/internal/algorithm/org_eclipse_elk_alg_common_nodespacing_internal_algorithm_NodeLabelAndSizeUtilities.swift",
+    "sha256": "d3b74d83928969135caec1f236b6171d5a7e61dfdf76fa5ef00ea21d16fda1c8"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/nodespacing/internal/algorithm/org_eclipse_elk_alg_common_nodespacing_internal_algorithm_NodeLabelCellCreator.swift",
+    "sha256": "300e2e6cd169c69ee02b74710f065b6cf447458099ac161b086b347d85121cd8"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/nodespacing/internal/algorithm/org_eclipse_elk_alg_common_nodespacing_internal_algorithm_NodeSizeCalculator.swift",
+    "sha256": "e8771277f2b10d7dac03a6169999567d38ed0651c0cf431b0f3253317cce3a36"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/nodespacing/internal/algorithm/org_eclipse_elk_alg_common_nodespacing_internal_algorithm_PortContextCreator.swift",
+    "sha256": "3125668fe620125bd6bfa2fca00c674310b88abcd68eea51e9d6c235ea0a445f"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/nodespacing/internal/algorithm/org_eclipse_elk_alg_common_nodespacing_internal_algorithm_PortLabelPlacementCalculator.swift",
+    "sha256": "d3c1a96431225a34a458531836ea8809d27acba03b223fa8787cb6f89b957239"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/nodespacing/internal/algorithm/org_eclipse_elk_alg_common_nodespacing_internal_algorithm_PortPlacementCalculator.swift",
+    "sha256": "9bf941c5f19706c43001c44c8993312906e4ff4904bb9c36c74540a2aab09f97"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/nodespacing/internal/algorithm/org_eclipse_elk_alg_common_nodespacing_internal_algorithm_VerticalPortPlacementSizeCalculator.swift",
+    "sha256": "b56bc4bb4d184a855c3fefbebb989829731938cbd072c1e503c9f2ba5a69150c"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/nodespacing/internal/org_eclipse_elk_alg_common_nodespacing_internal_NodeContext.swift",
+    "sha256": "5624932fbaa29f365c95202ee0edc53e503b01dfbed70729f4863d676fa68fdb"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/nodespacing/internal/org_eclipse_elk_alg_common_nodespacing_internal_NodeLabelLocation.swift",
+    "sha256": "d8195ff5bd972faf56d35cc9608864412abddb51880b74ca10369c2790eb4f57"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/nodespacing/internal/org_eclipse_elk_alg_common_nodespacing_internal_PortContext.swift",
+    "sha256": "7311f29aae4df06b625555a78d01f8b88cd95d32d43c20e77b4d1037b39e32c0"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/nodespacing/internal/org_eclipse_elk_alg_common_nodespacing_internal_PortContextMultimap.swift",
+    "sha256": "4fbcbb550e6862652d1da5402ff96ac468d036756c4e88e85a1da6190bcc66d3"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/nodespacing/org_eclipse_elk_alg_common_nodespacing_NodeDimensionCalculation.swift",
+    "sha256": "616485d56cc9b2f7c12c3a557e69688c0dabcdcd699b09fb588528f9ba1e1a9f"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/nodespacing/org_eclipse_elk_alg_common_nodespacing_NodeLabelAndSizeCalculator.swift",
+    "sha256": "e0910a917cb91072704154ad61a475bcdc8cbeef2741bb96cec21e4afe212961"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/nodespacing/org_eclipse_elk_alg_common_nodespacing_NodeMarginCalculator.swift",
+    "sha256": "3fd51769dd34b98fef0f400b001681f379824367f507cf04441ff75f03a83f02"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/org_eclipse_elk_alg_common_NodeMicroLayout.swift",
+    "sha256": "8abcc91b35da09d1b5c043eeff20c87226545f51257af5a5c5fc7a9e46e271ee"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/org_eclipse_elk_alg_common_Point.swift",
+    "sha256": "6075654631cf0e39f89813123b54bdf59f3f6072484d2009e7e7a532613da03e"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/org_eclipse_elk_alg_common_RectilinearConvexHull.swift",
+    "sha256": "2492029fef444f841589f2d5d5e0e229ec8578b8acf7163583f48fec87b3c32a"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/overlaps/org_eclipse_elk_alg_common_overlaps_GreedyRectangleStripOverlapRemover.swift",
+    "sha256": "b9b4908853cfe695d642bd1391179bc33a8a3714cb2837d4a30e9d8337bbda76"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/overlaps/org_eclipse_elk_alg_common_overlaps_IRectangleStripOverlapRemovalStrategy.swift",
+    "sha256": "bac9db94a0d720f634c6441deb7d93494d32d22cd324649c0e49a9ead2489946"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/overlaps/org_eclipse_elk_alg_common_overlaps_RectangleStripOverlapRemover.swift",
+    "sha256": "37be3aa8f65fae10080263677ec463d25653fc061a1eaa6efcf46af19471d0e6"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/common/utils/org_eclipse_elk_alg_common_utils_UniqueTriple.swift",
+    "sha256": "7041145978b5d1028646a2fdf4bde6a3dd62e3b1122a85e53087026b907204ce"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/compaction/components/org_eclipse_elk_alg_layered_compaction_components_ComponentsToCGraphTransformer.swift",
+    "sha256": "ecf62a7262f97c151948e0608a8b34f60e23bd87f0d45d506e9d830eac8f6971"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/compaction/components/org_eclipse_elk_alg_layered_compaction_components_IComponent.swift",
+    "sha256": "9b58aabf1387d5be5b0d85a9eb4b1baeb23d30f854a5a711099e078b2e78a822"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/compaction/components/org_eclipse_elk_alg_layered_compaction_components_IConnectedComponents.swift",
+    "sha256": "1f477ea6ac558846394d746cb2c1fae6b330af32f6cf5a382e229c5305a8a027"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/compaction/components/org_eclipse_elk_alg_layered_compaction_components_IExternalExtension.swift",
+    "sha256": "a20ced7171af96ef7096de6010b28d28d920940806b1154be05f92930ebfdb2c"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/compaction/components/org_eclipse_elk_alg_layered_compaction_components_OneDimensionalComponentsCompaction.swift",
+    "sha256": "77c03fc74d442ee97c0bcd8d3b4ddef8b4ac1ceeda40f67a16d75b3fa2dab689"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/compaction/oned/algs/org_eclipse_elk_alg_layered_compaction_oned_algs_ICompactionAlgorithm.swift",
+    "sha256": "11a45bad67f043a0b9b194bc2ee3cc55bbfef641dc4e7623a088df19ea4d1599"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/compaction/oned/algs/org_eclipse_elk_alg_layered_compaction_oned_algs_IConstraintCalculationAlgorithm.swift",
+    "sha256": "672772cc699e1cfc59ebbf96914f86994c0d29ed63791c3f5b2c0082d2c76955"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/compaction/oned/algs/org_eclipse_elk_alg_layered_compaction_oned_algs_LongestPathCompaction.swift",
+    "sha256": "c11670b72249e920fd67fa0986e577b9494e0d2f2ab6ae6d9d1c43eb6a0a739a"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/compaction/oned/algs/org_eclipse_elk_alg_layered_compaction_oned_algs_QuadraticConstraintCalculation.swift",
+    "sha256": "548b2dbcb145c228301a6cc11ba9bfc659542a568c83478d39e796a70c16170a"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/compaction/oned/algs/org_eclipse_elk_alg_layered_compaction_oned_algs_ScanlineConstraintCalculator.swift",
+    "sha256": "3d71ceaffee784ac6c3c7f09b180f05e1ed3175c788be07ec53e517915e758b7"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/compaction/oned/org_eclipse_elk_alg_layered_compaction_oned_CGraph.swift",
+    "sha256": "8aab6994ac0ad9de1acfde92538d2d457fbb1dd7911babfef56739e9924abca5"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/compaction/oned/org_eclipse_elk_alg_layered_compaction_oned_CGroup.swift",
+    "sha256": "102915d925bd9c7a689171f8d7b831c153ab1ea2849cbe183a93623c7f0b3823"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/compaction/oned/org_eclipse_elk_alg_layered_compaction_oned_CNode.swift",
+    "sha256": "743250270cb41c81b36dd623f202f088909f213a7359a4ae5e03fb000fda64fa"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/compaction/oned/org_eclipse_elk_alg_layered_compaction_oned_CompareFuzzy.swift",
+    "sha256": "e501b5557b429a8747a5f4c09b71baaaacd102d7ad4326099ab38bdda70fde58"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/compaction/oned/org_eclipse_elk_alg_layered_compaction_oned_ICGraphTransformer.swift",
+    "sha256": "0ee640a5506f04273ea8ba278e4c9a40dd8294c49ec0c313e43a27c653487079"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/compaction/oned/org_eclipse_elk_alg_layered_compaction_oned_ISpacingsHandler.swift",
+    "sha256": "1d74ed3d49b9b5ec4e6596e3c6896c23d5aecdbe8404df1b85a3cd925638dd87"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/compaction/oned/org_eclipse_elk_alg_layered_compaction_oned_OneDimensionalCompactor.swift",
+    "sha256": "830c596e373b5a18dda1fc6625702d4e1e1c0f9da05f02a88c69e2fea4b1d691"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/compaction/oned/org_eclipse_elk_alg_layered_compaction_oned_Quadruplet.swift",
+    "sha256": "d88d6dbfab5e84adea7ee86b7a31bbd7ad867623f5dfb2bbcf5fa6ba53776bda"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/components/org_eclipse_elk_alg_layered_components_AbstractGraphPlacer.swift",
+    "sha256": "a348abda67950e269dd0494291de28b5bf583533d71d54f189afdf489321a668"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/components/org_eclipse_elk_alg_layered_components_ComponentGroup.swift",
+    "sha256": "02febda30abf6f77f757cda7aa3f46d6322ab59fd651f76416066e48baa1f7a9"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/components/org_eclipse_elk_alg_layered_components_ComponentGroupGraphPlacer.swift",
+    "sha256": "26ac7915b0628d2bca52aba4516ed05cf7d4a67e591d93173e7c26cd68c547e9"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/components/org_eclipse_elk_alg_layered_components_ComponentGroupModelOrderGraphPlacer.swift",
+    "sha256": "c6d02e2e9ba1864340475800e51e208c449f3b9a36711f7b6e55374d098f96b9"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/components/org_eclipse_elk_alg_layered_components_ComponentOrderingStrategy.swift",
+    "sha256": "2a9ee431bd23252517c53eef763fa756ce24e48b15c3942fd304de93fae42937"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/components/org_eclipse_elk_alg_layered_components_ComponentsCompactor.swift",
+    "sha256": "b55a725aaa334ede1f43cad123c008795d6c93af673448c00122b1cd147827c3"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/components/org_eclipse_elk_alg_layered_components_ComponentsProcessor.swift",
+    "sha256": "1a3c04491ca482b76fd1e720117ec6becfb9d5271a286d38c804962d14953a92"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/components/org_eclipse_elk_alg_layered_components_ModelOrderComponentGroup.swift",
+    "sha256": "57cf437268dbf2c2f7cd2233e252882eefe2c19cac12942ec617d0b581a2af57"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/components/org_eclipse_elk_alg_layered_components_ModelOrderRowGraphPlacer.swift",
+    "sha256": "9da7632919cf2c3b88a0cd1889b3d8b5850094b37ac4dbd4f55ee323454e732a"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/components/org_eclipse_elk_alg_layered_components_SimpleRowGraphPlacer.swift",
+    "sha256": "874b926ab9dc058e4ed3355531ee952390f1409454d455bb63e5d60b4e29c81a"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/compound/org_eclipse_elk_alg_layered_compound_CompoundGraphPostprocessor.swift",
+    "sha256": "75091f72f96e441e6d47594a760546e434d30d22ad0bfc887319d5b7c41a820c"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/compound/org_eclipse_elk_alg_layered_compound_CompoundGraphPreprocessor.swift",
+    "sha256": "669735e923e4ebb54d6ad88cad0adffdf18d1e9900bf2fba7ad9ed1dcb5c0d8e"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/compound/org_eclipse_elk_alg_layered_compound_CrossHierarchyEdge.swift",
+    "sha256": "ed9d2e40ffd027cb2c119485553eedb62b1b105ae616721c60e965fe8c5638cd"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/compound/org_eclipse_elk_alg_layered_compound_CrossHierarchyEdgeComparator.swift",
+    "sha256": "9d2111da5833528b326143cedd061fef532f4786847800d55a15791586bbfae7"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/graph/org_eclipse_elk_alg_layered_graph_LEdge.swift",
+    "sha256": "8c44f8bcb038b13c1df606d6c3c9c1624aaebdc0a3fdbea5b4b25fbc0564f2b2"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/graph/org_eclipse_elk_alg_layered_graph_LGraph.swift",
+    "sha256": "64266c87dda8445ad227d8b0d5f809789755f2ffb7c2e45e0a1adfe617e157c5"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/graph/org_eclipse_elk_alg_layered_graph_LGraphAdapters.swift",
+    "sha256": "eed9b2081a4f09ab125418c4cfe2c5eeaa52258ef8a9a104ce12230378592712"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/graph/org_eclipse_elk_alg_layered_graph_LGraphElement.swift",
+    "sha256": "22fd06cbe79a81944fe6cd8d4ce4d47aa47826b1146992cbf8eca92592547166"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/graph/org_eclipse_elk_alg_layered_graph_LGraphUtil.swift",
+    "sha256": "9d8dd42db2881023743782bc7f7526a92ea23a9811a81687c17c1d6570f9f735"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/graph/org_eclipse_elk_alg_layered_graph_LLabel.swift",
+    "sha256": "83e5edf06c4154b07688cba9204901d5c1ef8210b1d36ead023a690dd2100b1c"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/graph/org_eclipse_elk_alg_layered_graph_LMargin.swift",
+    "sha256": "ca49b811240ca3b2c1a067f0801e4e2a45a82556d43a7e655f8ca5f723a1c9cc"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/graph/org_eclipse_elk_alg_layered_graph_LNode.swift",
+    "sha256": "88a59837ab43798479b94ba9dc0f6705ee24d5edb359596bafb21d8e53f76c65"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/graph/org_eclipse_elk_alg_layered_graph_LPadding.swift",
+    "sha256": "1d8f18e6fa667aae4fed028ac2291c7ea785344460252f7a71b6b2e3d77df266"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/graph/org_eclipse_elk_alg_layered_graph_LPort.swift",
+    "sha256": "b6ddc5c170734ab03d9cb787cfaf7914321e7bb3476c606a17dd91c6b66d4cc3"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/graph/org_eclipse_elk_alg_layered_graph_LShape.swift",
+    "sha256": "4d29e05fda4ab8078e9e4573edfe1df2688696f7227af9a2ee71e51009ac3f45"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/graph/org_eclipse_elk_alg_layered_graph_Layer.swift",
+    "sha256": "7cc1817e0cd0c1569f766afa469b95a659ca3d77c220d87b939970d92ad907e1"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/graph/org_eclipse_elk_alg_layered_graph_Tarjan.swift",
+    "sha256": "9acf176ec4993c44b80cfdfe8f1be2a521462edd0c49ebc595dbb414dc67779d"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/graph/transform/org_eclipse_elk_alg_layered_graph_transform_ElkGraphImporter.swift",
+    "sha256": "8ad22ee934d10fb80304d0a7f8fa4041816716d3ce50ebc17131106f0dd8d15b"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/graph/transform/org_eclipse_elk_alg_layered_graph_transform_ElkGraphLayoutTransferrer.swift",
+    "sha256": "9334568ac52e5d19406537f1991670376196957f5d689d9cae824684ccb68531"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/graph/transform/org_eclipse_elk_alg_layered_graph_transform_ElkGraphTransformer.swift",
+    "sha256": "fec3fc20baf13652aa6c3e7bf04c01330073a623401e16e2ea623d3fcfa491a5"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/graph/transform/org_eclipse_elk_alg_layered_graph_transform_IGraphTransformer.swift",
+    "sha256": "d9cfa711cacb27eb1302c8bf99322b955541fb093369f5b3e7e82fdae2272bcb"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/compaction/org_eclipse_elk_alg_layered_intermediate_compaction_EdgeAwareScanlineConstraintCalculation.swift",
+    "sha256": "66d1d0435e8d75c1bdb3c8b9a0077c3371bf1b119be69957c41a97d3ff1ae3fd"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/compaction/org_eclipse_elk_alg_layered_intermediate_compaction_HorizontalGraphCompactor.swift",
+    "sha256": "fd666a3ec4586f9954fbbdb4999ce5441b7da47278a3e256d00236c1f4a5754d"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/compaction/org_eclipse_elk_alg_layered_intermediate_compaction_LGraphToCGraphTransformer.swift",
+    "sha256": "f3407ad49ee86aa6a50f8a40faa580d3e4cdee9fb0d6886c76e70990c4c62000"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/compaction/org_eclipse_elk_alg_layered_intermediate_compaction_NetworkSimplexCompaction.swift",
+    "sha256": "80fdbd4fc5f558a04c66e674051ca3492b6b74c0d9bfde7f1ec93c9dc6416051"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/compaction/org_eclipse_elk_alg_layered_intermediate_compaction_VerticalSegment.swift",
+    "sha256": "7d0f130910ae4b8afffe57c93eb60e59cd626b8f4b181f615c264dd0938b71e6"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/greedyswitch/org_eclipse_elk_alg_layered_intermediate_greedyswitch_BetweenLayerEdgeTwoNodeCrossingsCounter.swift",
+    "sha256": "8cafeb00b716dc7929279b78a65681c3684cfae98c5cf226b743a7c486f7172d"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/greedyswitch/org_eclipse_elk_alg_layered_intermediate_greedyswitch_CrossingMatrixFiller.swift",
+    "sha256": "30f7a019ee72852e545c4f420771d90e8acce01b50019ca58bafaba5dbf9d320"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/greedyswitch/org_eclipse_elk_alg_layered_intermediate_greedyswitch_GreedySwitchHeuristic.swift",
+    "sha256": "97ed20b73aa2449efc2b6e72f3d067b61178da5d529eb31d2191b4273a54b7ab"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/greedyswitch/org_eclipse_elk_alg_layered_intermediate_greedyswitch_NorthSouthEdgeNeighbouringNodeCrossingsCounter.swift",
+    "sha256": "7d1c246aec39eadea9481a3e95b984c5c013f80434b9d546b5300fd7d906baec"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/greedyswitch/org_eclipse_elk_alg_layered_intermediate_greedyswitch_SwitchDecider.swift",
+    "sha256": "19528636b9466f909ad08a05c5db19073d5bcd41415d9d9ae3470d234bc6ad09"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/loops/ordering/org_eclipse_elk_alg_layered_intermediate_loops_ordering_PortRestorer.swift",
+    "sha256": "202b25445c4c2dfc24e11d0d4e51ae422358bea0bc77a5fefb8b7b346ce97a0e"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/loops/ordering/org_eclipse_elk_alg_layered_intermediate_loops_ordering_PortSideAssigner.swift",
+    "sha256": "244d28105e3e19abbfc4aae963b349bfeaa7fb3e12ea07960bb5cef736f7891b"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/loops/org_eclipse_elk_alg_layered_intermediate_loops_SelfHyperLoop.swift",
+    "sha256": "2a9f50f120dd3c7cdf4583b445924876385796a929337ed6c0aa8406336a216d"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/loops/org_eclipse_elk_alg_layered_intermediate_loops_SelfHyperLoopLabels.swift",
+    "sha256": "98e9998bc1e5e4b113d5400ee98d400cd12efc52a176c27a6db8e4cbdd86ebc7"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/loops/org_eclipse_elk_alg_layered_intermediate_loops_SelfLoopEdge.swift",
+    "sha256": "9b60ff5b75fe59f9a3437eb52dc3d7777c3981aeb7d484f7026d7e91935dfaa7"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/loops/org_eclipse_elk_alg_layered_intermediate_loops_SelfLoopHolder.swift",
+    "sha256": "36aa57b738768456880ed4345b4c58295a0b62adc1e12980f5dc984485402e3d"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/loops/org_eclipse_elk_alg_layered_intermediate_loops_SelfLoopPort.swift",
+    "sha256": "e8542f7151ae69127c22a7bc11d848c2834ae044c2c3039d4b372cc97930f1c8"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/loops/org_eclipse_elk_alg_layered_intermediate_loops_SelfLoopType.swift",
+    "sha256": "7738879411e07d74b3fb63fcf8aa9cdf923241dc37b3b763d9aab6bf86c612a3"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/loops/routing/org_eclipse_elk_alg_layered_intermediate_loops_routing_AbstractSelfLoopRouter.swift",
+    "sha256": "228ce352ac80b108d94ef4902cbc91eb2dc0c2fd2cca11041c313b5b8965b976"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/loops/routing/org_eclipse_elk_alg_layered_intermediate_loops_routing_LabelPlacer.swift",
+    "sha256": "55f26fb11a6e6045fdaae32cc5e71a7351e0691b63746cee542f23bea3f30dfe"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/loops/routing/org_eclipse_elk_alg_layered_intermediate_loops_routing_OrthogonalSelfLoopRouter.swift",
+    "sha256": "63f18974f7ac8304a90e552d5ea6eba227d29fb9ce08d747f37210a924c0c51b"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/loops/routing/org_eclipse_elk_alg_layered_intermediate_loops_routing_PolylineSelfLoopRouter.swift",
+    "sha256": "4100cd45673753eb2ff9ca709e8afe0a684ad947c70522b5f4160d7d84457641"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/loops/routing/org_eclipse_elk_alg_layered_intermediate_loops_routing_RoutingDirector.swift",
+    "sha256": "87ece77e4a6b206bbb10b4727fa83c9ca6ca79a07400f5dbbf3905085a33b362"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/loops/routing/org_eclipse_elk_alg_layered_intermediate_loops_routing_RoutingSlotAssigner.swift",
+    "sha256": "25d1fc24daa08c85fd5582d3bb980b6fd77cdc198077d370bb0f8fe769d2ac7e"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_BiLinkedHashMultiMap.swift",
+    "sha256": "1161939840842ece65e48e6fa4321f2f5aefc0ea10d18150664feaa85b918a20"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_CommentNodeMarginCalculator.swift",
+    "sha256": "a53bf7c5f5452345edc3a44cfab6a08048758330b4fa04fc0afba7bd4137802d"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_CommentPostprocessor.swift",
+    "sha256": "53fdf40a688eed1e447745b7e9b1feac9aebe2f476c78bc4d55b9ddee28b3c8c"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_CommentPreprocessor.swift",
+    "sha256": "05024de2b10e469394acadfc911bbaac21183b953669909136434a29374e9e4c"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_ConstraintsPostprocessor.swift",
+    "sha256": "3f5bff82ac7221415c2b6adcb36fbf5c2eecc3445e31db537986c0e7982221f5"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_DummySelfLoopProcessor.swift",
+    "sha256": "ec0074117b5a88e0d525d3fdada31cbb3f5a21acfc18b9c8ac3d940b73b8fc9f"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_EdgeAndLayerConstraintEdgeReverser.swift",
+    "sha256": "6fbf05ccc66d836137a7527cdc05f637623afd96cc974b38f2756b838318b4c8"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_EndLabelPostprocessor.swift",
+    "sha256": "af807ccabe7a0ecbc09e3002c11b40ab23b234b9de44b3a0fcd1aa0ab67b96e2"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_EndLabelPreprocessor.swift",
+    "sha256": "2e3a621b0338e24bc79f557aad117e1750f4cae4d0dfcc79977586a47259b076"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_EndLabelSorter.swift",
+    "sha256": "709d9565962c5dbe7a5560a591c7f1c63cd83d2e57d2afbf5ff3a18b59bf7d46"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_GraphTransformer.swift",
+    "sha256": "a2e4d2f6807b87c321973d16a6011db694ab44a71c1d40ddd1af625ba8ffc997"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_HierarchicalNodeResizingProcessor.swift",
+    "sha256": "ca211dcec10c0cd8bbcec53cd3e5ca5e3ade2645422407cd888b2e872a5b6c18"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_HierarchicalPortConstraintProcessor.swift",
+    "sha256": "26ac277090e818d8c95d70d58230c27eba0219816187daf824bdbe8edf0e06fc"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_HierarchicalPortDummySizeProcessor.swift",
+    "sha256": "c2120149cfd3179eae51a8390a6fa198699e526f9b581e85cfd2d66265fb6c00"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_HierarchicalPortOrthogonalEdgeRouter.swift",
+    "sha256": "b44b383cdd09c6980003918d5e3085fc671c4e860d4a441d8fa76d17ead75cec"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_HierarchicalPortPositionProcessor.swift",
+    "sha256": "bcf665b01135ee8fd68d5d7ec41617f8ba73abe228f81faadef8fdc694c1bb11"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_HighDegreeNodeLayeringProcessor.swift",
+    "sha256": "fc24255bf4c6903ea2c7d01f911756292ec13d9b1ed4102d6b29294696ba2661"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_HyperedgeDummyMerger.swift",
+    "sha256": "bf339cdfaba3f0bc495498ecfe1176340f4409ce5e66afc324b22e9dc165608b"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_HypernodesProcessor.swift",
+    "sha256": "cf8bb09bb8da9c23ff7dfcad62790d54dbd9da5cb845d8734a8647d773907a9b"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_InLayerConstraintProcessor.swift",
+    "sha256": "cf417a19b55ef27e86100903c3844260fbc225276e1f0720b658cb0423006a9e"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_InnermostNodeMarginCalculator.swift",
+    "sha256": "afc9d84175fe464b6c06aefffb5858ebce65d13af76d8b8f7e6a5b1720c2cfcd"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_InteractiveExternalPortPositioner.swift",
+    "sha256": "759f9d1e05245ad4086a05489dce2275d8621e74f0f7b17b36cb2f454985ac8b"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_IntermediateProcessorStrategy.swift",
+    "sha256": "4009f8c531a76f8164597bf2826fe10faf24a228bac5638d7ec66612738dcff1"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_InvertedPortProcessor.swift",
+    "sha256": "f7d551a957614536d2e5a1f2dec9b9a2ee32b4a3e3405a1867edc5a59eb0fb0c"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_LabelAndNodeSizeProcessor.swift",
+    "sha256": "f4a6503f7c33c87771ede775cd0e68d2b2b6ed157607d35e5b66d429aed3f31f"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_LabelDummyInserter.swift",
+    "sha256": "fa83d151fd7266ab3f61a998986cc1d23394394aa205dc00bcb2298286594d1a"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_LabelDummyRemover.swift",
+    "sha256": "7bb55742216aea1d1922cde46b0316da59f901a47c1864e2e99a045f44c075f6"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_LabelDummySwitcher.swift",
+    "sha256": "fb1ef7641474291ffecbd1a52471e7f6f38c4146e02456a0e89a528ed7077eff"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_LabelManagementProcessor.swift",
+    "sha256": "1792c425f422e41b3f391ec5804faeb4eb02daefab407f0fa19de82148fbf3c0"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_LabelSideSelector.swift",
+    "sha256": "268d291d60c9c06ffa0e555c5c2e05b64e97347178c034b8ce292a870668df22"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_LayerConstraintPostprocessor.swift",
+    "sha256": "fcd5e5ed644243cb2152927392f9143cd7ad32240a3bcac17e4ac3a3ff331207"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_LayerConstraintPreprocessor.swift",
+    "sha256": "5279c7eb45ace9deaf4d7972d4c7b3289029fe03245420937664e22fecdac4b7"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_LayerSizeAndGraphHeightCalculator.swift",
+    "sha256": "1986f1a9dbecf136acadadd90fb78922bd136e25ef3e2263f6c041566bacb3d4"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_LongEdgeJoiner.swift",
+    "sha256": "7f95e0982c0dd74769019a4b1a624fb2d02dd9a58fb34f80b49342b9534aff0d"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_LongEdgeSplitter.swift",
+    "sha256": "ec16faf07aa0d7ab72717334ef77fc6760a17605c4be49ccb30eff5c73c78e94"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_NodePromotion.swift",
+    "sha256": "5bc3892c2f6656dcbd15befe0e0ef308a63cfc397ef77b4e327b290b908df7d4"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_NorthSouthPortPostprocessor.swift",
+    "sha256": "379757d05296da62109f1aa8e3d244ec799d5feafc24ea8a76cb6788b16510e4"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_NorthSouthPortPreprocessor.swift",
+    "sha256": "173c35a98a6da7ba4b6d7298f552f5c0481d17fdb0452094c4c2fefc99266a9e"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_PartitionMidprocessor.swift",
+    "sha256": "4c485c841007f29ec9df0c0c0be3ada4a082c26b4d992b3617fdaca930dfb167"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_PartitionPostprocessor.swift",
+    "sha256": "a0d2b5ac3307ebea9bd11ed8d9cce28765258c8ab41d68fd0f4fd7f4ae790afe"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_PartitionPreprocessor.swift",
+    "sha256": "ff06ca47528cbfc0ffd2cb77865e108a745d2d68854e1827ed6c62e59a27c296"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_PortListSorter.swift",
+    "sha256": "284bb77ecd73a28b0fa07eddcf5236339bede1c5b003c1a6aebed84ee6c9487f"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_PortSideProcessor.swift",
+    "sha256": "6302e17667dbe2cd9b724dc3683ff762724e2ae125632a15b2b5e0ac357af614"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_ReversedEdgeRestorer.swift",
+    "sha256": "f5b0b9d2599a9af88d6e332eba6cdd3bdc96bc293b8c8f421c47e47a2aea82df"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_SelfLoopPortRestorer.swift",
+    "sha256": "c43aca8ac7cc495c1a5ea24a09829ac15429b54a29c3818c8b8a08f790c6405e"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_SelfLoopPostProcessor.swift",
+    "sha256": "1a34864cfa1f5b73a4ba5eef883fbd35513412df010f22b786af0b7e4afa9a6a"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_SelfLoopPreProcessor.swift",
+    "sha256": "fe0375e64c22379c29a9a0d9e7a129692982eda787cb05812b004718a7e2a71d"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_SelfLoopRouter.swift",
+    "sha256": "211a166fd53ccd4c715464140a3d4869ddbfa2dc745f4eed8b5741f2f41f86e1"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_SemiInteractiveCrossMinProcessor.swift",
+    "sha256": "a93e3a5b3636c5e1565fc49d013162b7f00a60bd31b01da5cfb64bfd3c5e89b8"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/org_eclipse_elk_alg_layered_intermediate_SortByInputModelProcessor.swift",
+    "sha256": "4f1ffe0b4e32223a329463e7ee40e511988b9cfbe204475e682374396312c41c"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/preserveorder/org_eclipse_elk_alg_layered_intermediate_preserveorder_CMGroupModelOrderCalculator.swift",
+    "sha256": "e79d4b7516e2461d6ab352798872b8fffd497d2cae640aa9b6a727d3c9aae0ff"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/preserveorder/org_eclipse_elk_alg_layered_intermediate_preserveorder_ModelOrderNodeComparator.swift",
+    "sha256": "4cee7884dd89d48d6708a9c982d948bf88e0b6028f664fd77b5577a437db5360"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/preserveorder/org_eclipse_elk_alg_layered_intermediate_preserveorder_ModelOrderPortComparator.swift",
+    "sha256": "8404d97ac14c1f8d7eead0e5f163d93d65f2f8dbd275ea046ae63793d9198d7b"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/unzipping/org_eclipse_elk_alg_layered_intermediate_unzipping_AlternatingLayerUnzipper.swift",
+    "sha256": "68dcfda889b6d8747dd1a4dd37716ce93be823d4a40dc63c1aa9a098f4d290cc"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/wrapping/org_eclipse_elk_alg_layered_intermediate_wrapping_ARDCutIndexHeuristic.swift",
+    "sha256": "34b771b74603dce1b7706bd4e1f025520443d8c7d5de25a4b5031fa6e36ab5d0"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/wrapping/org_eclipse_elk_alg_layered_intermediate_wrapping_BreakingPointInserter.swift",
+    "sha256": "c95cdf617177db6bb5206f98787cf164b86e9ae279def038cabfefb9067504f6"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/wrapping/org_eclipse_elk_alg_layered_intermediate_wrapping_BreakingPointProcessor.swift",
+    "sha256": "20bc90232cd8b36d28bd1bb1c30b647837d501b443a7dc04bed88e9f08c0d3aa"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/wrapping/org_eclipse_elk_alg_layered_intermediate_wrapping_BreakingPointRemover.swift",
+    "sha256": "9cdf2fda284ad1d93a79c2b6048fdca1b1086b540c88c9aec69c9a0e5879e17b"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/wrapping/org_eclipse_elk_alg_layered_intermediate_wrapping_CuttingUtils.swift",
+    "sha256": "1f46b8207a2c76958fc2f72dc2bb32975a505b8b421a1c46a267a2a1db559132"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/wrapping/org_eclipse_elk_alg_layered_intermediate_wrapping_GraphStats.swift",
+    "sha256": "5a3a48cc50ca54c222df59fe270422d35b33ea3f8d0cb5892b8fb179eee45c76"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/wrapping/org_eclipse_elk_alg_layered_intermediate_wrapping_ICutIndexCalculator.swift",
+    "sha256": "4036e3334555b026b0b74d526604d89a06fcb9ee30437151be4d0bafbd902971"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/wrapping/org_eclipse_elk_alg_layered_intermediate_wrapping_MSDCutIndexHeuristic.swift",
+    "sha256": "845bb4482f35be3344a7cf84aad2a8efecdfff082d3f63d4822e20f60d038281"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/intermediate/wrapping/org_eclipse_elk_alg_layered_intermediate_wrapping_SingleEdgeGraphWrapper.swift",
+    "sha256": "9ddc7340355239d6f402ae12bb22454240155a490c3f75cdaa975694e50fba36"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_CenterEdgeLabelPlacementStrategy.swift",
+    "sha256": "b3a490847b449f939f13b34d614266205c71727ec561363d8a77dcc7c072d77a"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_ConstraintCalculationStrategy.swift",
+    "sha256": "18cdf34f973c3fb91ca3769a26ede1548321d3655add451ed332043faa9c444a"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_CrossingMinimizationStrategy.swift",
+    "sha256": "61bff63fed19f16b33ffd8e0a9b92c62d4cf43a2dc9fe703daf92732b4a642c4"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_CuttingStrategy.swift",
+    "sha256": "9c4951c9455482545f353949dac16e61acfe60c601ea16d8cd45cf5619067467"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_CycleBreakingStrategy.swift",
+    "sha256": "e78170009c8d5fda1014b31753c64e46dfb12e31a944578a96412e04177dd4f5"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_DirectionCongruency.swift",
+    "sha256": "91e95d4c5c74dfa5ca8ec6867f21a4320e9c7122823c1f771b75d8ae6f646b92"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_EdgeConstraint.swift",
+    "sha256": "1f064f846a8fa3761e6aad91270bd4fbf133a96f2c0963745b95c4b3a81b3e53"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_EdgeLabelSideSelection.swift",
+    "sha256": "b3392420942912d87525cf6d5a5c3645ae8c9bcf33e5aee08f5f4a83a6924ac5"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_EdgeStraighteningStrategy.swift",
+    "sha256": "51cfc5f094a0188b847598ceb1a1640386dcab3a6ecf1598359e67de33fc52bb"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_FixedAlignment.swift",
+    "sha256": "2373d787ed5c2510ccbd428e7c66be6d7ed8a268ee5cb07fd9a41b9110a43df3"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_GraphCompactionStrategy.swift",
+    "sha256": "f07880e1a7a61119af9c5efee8e2985e6a567c732baf21da376fea53278a7e96"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_GraphProperties.swift",
+    "sha256": "99a6ce667e1b4c1355410725a36e210e710aed30a508bc2764777d87b0ba54d5"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_GreedySwitchType.swift",
+    "sha256": "7cec1c89963b1c771403e954c6ac5c5b1266475453f6b00bf2c3ff0357e346d4"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_GroupOrderStrategy.swift",
+    "sha256": "7edb6bba22cc5662ea6669fa5039d575923abd59f0443cf9c15668200b474e5e"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_InLayerConstraint.swift",
+    "sha256": "5fb4aebdbfe8bacaa30a65d4e932f8251aed263654518cf7bee2f5c65e9da056"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_InteractiveReferencePoint.swift",
+    "sha256": "d6f8e8170501bb4ab0db64c90afdfaf1ae207eb0e618bd457c87420c2bbb0974"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_InternalProperties.swift",
+    "sha256": "7bc4fad78a9db0258ecab3d091de6e8f4511a5c4250f9112f190abc966fba456"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_LayerConstraint.swift",
+    "sha256": "96189567c86c7c4a03021dedcbfeb3e331bbcd9890bad32fcba707fa9e1b6428"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_LayerUnzippingStrategy.swift",
+    "sha256": "21b06f380acaec13f43c9f937c6167028f5faca1dc449acd8dd329a75c1a4ba0"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_LayeredOptions.swift",
+    "sha256": "dd7212f964927e3bcc6e42573efa605902663a53dc794fa1182a792bfc3b3308"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_LayeredSpacings.swift",
+    "sha256": "02025e6ccebf22fb9b320416c779c7696a2db782c5021e1c9bb256694e842fda"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_LayeringStrategy.swift",
+    "sha256": "766236116f977f15e58650a8ffd3e7b441f38abcfb934f56e3800e81dc1f9790"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_LongEdgeOrderingStrategy.swift",
+    "sha256": "1f127fa07200fe06d26f520096400d5298f627c3e4b943e0383b1fbae3e4f45a"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_NodeFlexibility.swift",
+    "sha256": "24abe6e8fbec6310698802559e7cafe77ae9a037b2bf9801cc84caa7269e387e"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_NodePlacementStrategy.swift",
+    "sha256": "1499d017796d94200418353d149f8bf698a6e9918ff0eddea67d2c80c441ae07"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_NodePromotionStrategy.swift",
+    "sha256": "15a3c72cb77d8cb8d6bcb39d29c9239a1e396b9453eccd28a5655c8404577cd5"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_OrderingStrategy.swift",
+    "sha256": "80657bb44e404dc0b3e209748a7ade3364df6ce0dd46bd20ebe5b27743b98cc0"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_PortSortingStrategy.swift",
+    "sha256": "31ea816bf8e88ae1331785393eb935400a15e2b78b593943f10bbc3cf522ee01"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_PortType.swift",
+    "sha256": "52ee1c63b1097a92b974433c8af3fcb3e493dc174906c2c3f6e330e370f37bd9"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_SelfLoopDistributionStrategy.swift",
+    "sha256": "a40ce8ccbd6b80e587cd28b9d68fad14634de37c53f8e663f5bf86573d5a9b75"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_SelfLoopOrderingStrategy.swift",
+    "sha256": "375113f963fae5cfaf856db8054fe8792fbf1708945d9e4c495bb1feb7d2fe79"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_SelfLoopPlacementStrategy.swift",
+    "sha256": "25006f2cc6997c6da9e76fe37c377a3a10dc6b9e77370ac27e7e96f5d5c9f38a"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_Spacings.swift",
+    "sha256": "07a80e4b3e69812825929d9d6a64f6772692e0f810184bcb92cd933df8e8e766"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_SplineRoutingMode.swift",
+    "sha256": "19d106bbe5036f305a110ded4c513f0c949e6bbdc212f7faa825f934d5847023"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_ValidifyStrategy.swift",
+    "sha256": "6603be6c8c7bb3c66a1032914ff440ccc97be4bfcc2b649d70b9d9c771ce22f6"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/options/org_eclipse_elk_alg_layered_options_WrappingStrategy.swift",
+    "sha256": "84095023517dfe46be6be7b16a516ef8b96041df260d1afd164d5bf02e0a438f"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/org_eclipse_elk_alg_layered_ElkLayered.swift",
+    "sha256": "4c37eea1f23ebaa6f5e454248e144e8262a452f6f0db7d808f3e7c21a58f10dd"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/org_eclipse_elk_alg_layered_GraphConfigurator.swift",
+    "sha256": "26bbf6debab4a47c6a837713d95ab7f919a4840b6c4a8d32e8645b6539c48747"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/org_eclipse_elk_alg_layered_IHierarchyAwareLayoutProcessor.swift",
+    "sha256": "52ab44d05ee39d28a0138d89003dddf5c209aa838a7defb6e37f215cfedb8510"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/org_eclipse_elk_alg_layered_LayeredLayoutProvider.swift",
+    "sha256": "6ab0ff1a2b66b85de4bcbf708499b245dd3a0f7c8a8d6ffe763fe6c70b35e14a"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/org_eclipse_elk_alg_layered_LayeredPhases.swift",
+    "sha256": "42c5aaceaf00ce2a9538ea9a1f24560390c2276ebb2f042d81789b3a1bdc1af1"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p1cycles/org_eclipse_elk_alg_layered_p1cycles_BFSNodeOrderCycleBreaker.swift",
+    "sha256": "12be0cf8e98913c8d176e3b9d7f0bf41bb94144d79d7e03197a09ba5b83322a0"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p1cycles/org_eclipse_elk_alg_layered_p1cycles_DFSNodeOrderCycleBreaker.swift",
+    "sha256": "5ffd0694e63c388f0b3c4c6013d9685221cac390a156dfef0e93994dc5e9d346"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p1cycles/org_eclipse_elk_alg_layered_p1cycles_DepthFirstCycleBreaker.swift",
+    "sha256": "91db6a2d80a8a4115d6c6b39cc2f56bdf1554f3861546638132b78201b0225c1"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p1cycles/org_eclipse_elk_alg_layered_p1cycles_GreedyCycleBreaker.swift",
+    "sha256": "e283cb5fe81ffcee5b50ac8574e0e9a9365075667e77ed5258ddc8337325edb7"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p1cycles/org_eclipse_elk_alg_layered_p1cycles_GreedyModelOrderCycleBreaker.swift",
+    "sha256": "e5918c658519e04730d8625459e24e4e83332e20588083ad465ec91f3c2df457"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p1cycles/org_eclipse_elk_alg_layered_p1cycles_GroupModelOrderCalculator.swift",
+    "sha256": "7a7e49721c5156be228033e907138366a60e390acc9b342b3852a69758e43836"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p1cycles/org_eclipse_elk_alg_layered_p1cycles_InteractiveCycleBreaker.swift",
+    "sha256": "ed80af262363c62410397130961673b4d21b73250704bb404b018d39e612576e"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p1cycles/org_eclipse_elk_alg_layered_p1cycles_ModelOrderCycleBreaker.swift",
+    "sha256": "b082ef3f47ea90c1069d65c509601f1484f13319a45d4a6be21ab83a87e88995"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p1cycles/org_eclipse_elk_alg_layered_p1cycles_SCCModelOrderCycleBreaker.swift",
+    "sha256": "cb92d8734e534f16096418b10cfdbbe13411ac8849083f278c7352e55130e7a6"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p1cycles/org_eclipse_elk_alg_layered_p1cycles_SCCNodeTypeCycleBreaker.swift",
+    "sha256": "9f2fbf120741b7d00718fd40546b5edadb8868435895e2d9ea9ff0846f75a732"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p1cycles/org_eclipse_elk_alg_layered_p1cycles_SCConnectivity.swift",
+    "sha256": "d9e60d98d15954195523896b12b08d6750bdba65584c4785eb08cf3f1039cdc7"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p2layers/org_eclipse_elk_alg_layered_p2layers_BreadthFirstModelOrderLayerer.swift",
+    "sha256": "814f719623f3d7e2abe8ac608222a345933c76f6b1b637ccf0d91e0d521eb35a"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p2layers/org_eclipse_elk_alg_layered_p2layers_CoffmanGrahamLayerer.swift",
+    "sha256": "63f347ba108a5742cd4ef627f316525fe916706becf0c959135a3a686472d806"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p2layers/org_eclipse_elk_alg_layered_p2layers_DepthFirstModelOrderLayerer.swift",
+    "sha256": "6678f7007893384a9d8d2ba504ab09096ca62d4ce992d48427fb4e610424ca5e"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p2layers/org_eclipse_elk_alg_layered_p2layers_InteractiveLayerer.swift",
+    "sha256": "b94bd15f7fd4159edde219175b3dc50cee5f359737cc3a78c6b01f78f2111b50"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p2layers/org_eclipse_elk_alg_layered_p2layers_LongestPathLayerer.swift",
+    "sha256": "2be1a720e7ee958fed9c9648d809818bf2934de93d418dd69fa10a7e2d78f5de"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p2layers/org_eclipse_elk_alg_layered_p2layers_LongestPathSourceLayerer.swift",
+    "sha256": "0f0faa923afcc80c94b3ea872b790d08e07318cca57e58c13748e9bd9df11027"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p2layers/org_eclipse_elk_alg_layered_p2layers_MinWidthLayerer.swift",
+    "sha256": "150bc934b4429a16e3b741a60cb82d5a65440a92b0bb87f749df088b4eb855ad"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p2layers/org_eclipse_elk_alg_layered_p2layers_NetworkSimplexLayerer.swift",
+    "sha256": "2ff234ae78d8df13e9c41ecf8f5571e3dc85b734e38ce8603ff536fe8ed661e6"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p2layers/org_eclipse_elk_alg_layered_p2layers_StretchWidthLayerer.swift",
+    "sha256": "1d15d7d83e9b51efcf5b4e3937f6461363c248ba1ed1eeade87f212100125000"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p3order/counting/SharedIntArray.swift",
+    "sha256": "4e7ba313a06fc5079fbb0fd73d1ef6871b0365c44e382fdf2650689408ef4831"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p3order/counting/org_eclipse_elk_alg_layered_p3order_counting_AllCrossingsCounter.swift",
+    "sha256": "583962b5b16fb9fe4166009b5c0b894e51deb8076e9a74dfd80391b801947b59"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p3order/counting/org_eclipse_elk_alg_layered_p3order_counting_BinaryIndexedTree.swift",
+    "sha256": "17b15f2ee96a1a2f69726ca4f258c5b241d57e2b33605e46e26a1d4645c921b9"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p3order/counting/org_eclipse_elk_alg_layered_p3order_counting_CrossMinUtil.swift",
+    "sha256": "054bf2001afeb4c2d6d271afc580d77ec03354f27e65fd4b79dc35dea59d2b4f"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p3order/counting/org_eclipse_elk_alg_layered_p3order_counting_CrossingsCounter.swift",
+    "sha256": "106c71831e6b015fa9f14634ce49df83ba7a7ab0f628f8b137d017454d608daa"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p3order/counting/org_eclipse_elk_alg_layered_p3order_counting_HyperedgeCrossingsCounter.swift",
+    "sha256": "daa639fd48c6ea9e9dc9f9707568d6c31f9c9c8b92201d03641040b996d21eae"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p3order/counting/org_eclipse_elk_alg_layered_p3order_counting_IInitializable.swift",
+    "sha256": "99245aa7e2c2300ddc16bb2781dc728c198d7160ac05dec074114ff91bc4ab23"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p3order/org_eclipse_elk_alg_layered_p3order_AbstractBarycenterPortDistributor.swift",
+    "sha256": "b4bc5a52d131e30fe650ef81c7ffed38688fce00903a64e546673c52e9dca19e"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p3order/org_eclipse_elk_alg_layered_p3order_BarycenterHeuristic.swift",
+    "sha256": "9c793f8792c286a3cf5b9d72499e59220a3aed60758a2a77e4b773bba6d33dd9"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p3order/org_eclipse_elk_alg_layered_p3order_ForsterConstraintResolver.swift",
+    "sha256": "bc98f96d2419286ba4ce2adeb2d4c7997b8b3082abb4d23a1ce60a945fa760fe"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p3order/org_eclipse_elk_alg_layered_p3order_GraphInfoHolder.swift",
+    "sha256": "9344ce32a4507cc18c03a28d32e14595e7cc67cd81535ab0fd9b409986b8f783"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p3order/org_eclipse_elk_alg_layered_p3order_GreedyPortDistributor.swift",
+    "sha256": "c55ef3fa60889c6f70fbdd7d94af7c8a2cea04a8460b6f5c05730e5e8be940e7"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p3order/org_eclipse_elk_alg_layered_p3order_ICrossingMinimizationHeuristic.swift",
+    "sha256": "3f798f2365c47f086de38084110a66716f6f7a1fff8f9e19ce79b8fc97235150"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p3order/org_eclipse_elk_alg_layered_p3order_ISweepPortDistributor.swift",
+    "sha256": "27d8dbaa8115c0894d8592ae0bfc89e38a896e068b3603a30fde991e1bfa2a51"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p3order/org_eclipse_elk_alg_layered_p3order_InteractiveCrossingMinimizer.swift",
+    "sha256": "8b55ba84b0c89e9ac804fb4aa5069dd5a62f890e4701b1045527ade4e00b86a4"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p3order/org_eclipse_elk_alg_layered_p3order_LayerSweepCrossingMinimizer.swift",
+    "sha256": "bd9dc9110596dc9d60e743ba3cac1e2b2c59110310f5ae9380650e443f8ca535"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p3order/org_eclipse_elk_alg_layered_p3order_LayerSweepTypeDecider.swift",
+    "sha256": "2db7e035dd52156fde64fb5c7a7f6a69c8757e30d3818287c27f909e2cd4f7bf"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p3order/org_eclipse_elk_alg_layered_p3order_LayerTotalPortDistributor.swift",
+    "sha256": "61943eff8055cc36e4c9b9190b59c6fd8714cfa761fb627833dd594d1849b18a"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p3order/org_eclipse_elk_alg_layered_p3order_MedianHeuristic.swift",
+    "sha256": "5f5e232f4ec92c26e5df8c75e3fc21b3ece9ef3d932a2ed98b6dcc7d6ee239e9"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p3order/org_eclipse_elk_alg_layered_p3order_ModelOrderBarycenterHeuristic.swift",
+    "sha256": "1b792c8c023c73ff8fc9cccc22a758c4d1fae98b2c8746cc4820e88c9032b722"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p3order/org_eclipse_elk_alg_layered_p3order_NoCrossingMinimizer.swift",
+    "sha256": "7fb6ef2e8d58f0ad31e670ee664a28f5b816975763e92778f69827f549346572"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p3order/org_eclipse_elk_alg_layered_p3order_NodeRelativePortDistributor.swift",
+    "sha256": "eb2293ed4bd1eefe217809f8dd470373fe61618556796d6caf2b58e79dd72acf"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p3order/org_eclipse_elk_alg_layered_p3order_SweepCopy.swift",
+    "sha256": "d93700dfe2c89b9aa1c379f0d786697ed953474a4e2d1dfa0f4766703cc6d466"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p4nodes/bk/org_eclipse_elk_alg_layered_p4nodes_bk_BKAlignedLayout.swift",
+    "sha256": "f7e2d33e1525634866616d6b125d007c1697f1707c3208e3d4495af526df9f83"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p4nodes/bk/org_eclipse_elk_alg_layered_p4nodes_bk_BKAligner.swift",
+    "sha256": "bff9bd23393c20dc92fbb493ae8622026039e814aa47482a1c7848956035510c"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p4nodes/bk/org_eclipse_elk_alg_layered_p4nodes_bk_BKCompactor.swift",
+    "sha256": "844e519b92f8a0c25fd0b29de4d7c991a04106877c9ab630b21e0341ad97448d"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p4nodes/bk/org_eclipse_elk_alg_layered_p4nodes_bk_BKNodePlacer.swift",
+    "sha256": "2e748076c72b46b70911ad05ed5551de5beb62af0e865d0c0bb2674e514caf41"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p4nodes/bk/org_eclipse_elk_alg_layered_p4nodes_bk_ICompactor.swift",
+    "sha256": "7f5d24c480829d6e7928550e195a33a0486763b3aaf2a76e9aec2322a6c7eb23"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p4nodes/bk/org_eclipse_elk_alg_layered_p4nodes_bk_NeighborhoodInformation.swift",
+    "sha256": "6cf5d60477792136b52509ef9f5621328b2751a452931c48359e7b3edcc2ac18"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p4nodes/bk/org_eclipse_elk_alg_layered_p4nodes_bk_ThresholdStrategy.swift",
+    "sha256": "854c57c41715c846025deb1c420409d637f84a76a29ca07852567804bf3d160f"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p4nodes/org_eclipse_elk_alg_layered_p4nodes_InteractiveNodePlacer.swift",
+    "sha256": "0e2aba07d630c6918daeb058abbd50312e4ce8593f23d2f9f04b9fd9fffeaa9d"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p4nodes/org_eclipse_elk_alg_layered_p4nodes_LinearSegmentsNodePlacer.swift",
+    "sha256": "83ac0806d929a1ede89bcfaf374ab45e83fae6fd5379ec660810b0d7ed40945d"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p4nodes/org_eclipse_elk_alg_layered_p4nodes_NetworkSimplexPlacer.swift",
+    "sha256": "df7caa8ebe154c97ae264ddea2a6325aa9d7d92592bd5ed7ad7cf4ff6343369f"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p4nodes/org_eclipse_elk_alg_layered_p4nodes_SimpleNodePlacer.swift",
+    "sha256": "3f3ff580ebeba7aba39bb98d6f5d1fc2c321b284f51252c11dc4a73ae5a6a516"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p5edges/org_eclipse_elk_alg_layered_p5edges_EdgeRouterFactory.swift",
+    "sha256": "e17a9eb8e0b60a03b42c1f498e1e4ba5f9de6af952da661db3e74e3b5c1f149b"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p5edges/org_eclipse_elk_alg_layered_p5edges_OrthogonalEdgeRouter.swift",
+    "sha256": "704eb575c1659fa4e0bd41cb73b6bf7557ed76f03924f4ecf371130aaba9f7b8"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p5edges/org_eclipse_elk_alg_layered_p5edges_PolylineEdgeRouter.swift",
+    "sha256": "8ce2cc53f940835bbf81b31fee288396e9002a9e3da726a3e2701374f3c61549"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p5edges/orthogonal/direction/org_eclipse_elk_alg_layered_p5edges_orthogonal_direction_BaseRoutingDirectionStrategy.swift",
+    "sha256": "e2a5ab67b48a18f60f764bc3555d91c7ff252a146fdd3a12cf411b488cbf54de"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p5edges/orthogonal/direction/org_eclipse_elk_alg_layered_p5edges_orthogonal_direction_NorthToSouthRoutingStrategy.swift",
+    "sha256": "e2c871d215d03ecae6b0c90e1fe04bad309aa1d8b741b23c95a6b3224dccf8b7"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p5edges/orthogonal/direction/org_eclipse_elk_alg_layered_p5edges_orthogonal_direction_RoutingDirection.swift",
+    "sha256": "c3b92e297f33982cbd713c77c593c4600d88f80adb4bcd1972e11bfb02f19621"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p5edges/orthogonal/direction/org_eclipse_elk_alg_layered_p5edges_orthogonal_direction_SouthToNorthRoutingStrategy.swift",
+    "sha256": "de470b362a91129203661670e67e03c7fb3a72f237475676b7d667054abe708c"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p5edges/orthogonal/direction/org_eclipse_elk_alg_layered_p5edges_orthogonal_direction_WestToEastRoutingStrategy.swift",
+    "sha256": "609e2c9d8bf8d4381fb4df5f8b0e3c02584871bccc3820172eb4f6ed57001145"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p5edges/orthogonal/org_eclipse_elk_alg_layered_p5edges_orthogonal_HyperEdgeCycleDetector.swift",
+    "sha256": "b041643b33e98f37ead88196e0f4ea1f6595fc1e76180faefc9af8c9a9dbce02"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p5edges/orthogonal/org_eclipse_elk_alg_layered_p5edges_orthogonal_HyperEdgeSegment.swift",
+    "sha256": "25e5f9672696915c27615e9fad2646e38ea5c5129ee9bec85ababef64ea79c3b"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p5edges/orthogonal/org_eclipse_elk_alg_layered_p5edges_orthogonal_HyperEdgeSegmentDependency.swift",
+    "sha256": "9020183f7722041adbc2283b0fcbef14e36425f08f92067f29fcdc1f88be5c82"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p5edges/orthogonal/org_eclipse_elk_alg_layered_p5edges_orthogonal_HyperEdgeSegmentSplitter.swift",
+    "sha256": "933d01aa9dbd8946c82ce1003ea40c1a33ed9f98ce29bebbc449d27f03a79997"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/alg/layered/p5edges/orthogonal/org_eclipse_elk_alg_layered_p5edges_orthogonal_OrthogonalRoutingGenerator.swift",
+    "sha256": "bfdb36d85bd5fdc596746551d3127dce8ae4fb7ff0ff33a226f7288746daa3d6"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/alg/org_eclipse_elk_core_alg_AlgorithmAssembler.swift",
+    "sha256": "d14172e5b9fc3ab26d7fd02db614fcc6001db3d3ebe168827cba30484f03fd67"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/alg/org_eclipse_elk_core_alg_EnumBasedFactoryComparator.swift",
+    "sha256": "7cce1fd25559ab662bc6180355f907b110688bf43f6c12caeccfe6ac0788ea2f"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/alg/org_eclipse_elk_core_alg_ILayoutPhase.swift",
+    "sha256": "387944cdb3219fc15d3bc41ddbe23ad89759b7bdac67fda8323885730f3d3ed3"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/alg/org_eclipse_elk_core_alg_ILayoutPhaseFactory.swift",
+    "sha256": "3733f9bc111e81db6183bd0af4f65b1d06aab8133b28e457c293053335f2407c"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/alg/org_eclipse_elk_core_alg_ILayoutProcessor.swift",
+    "sha256": "b100b895cd19a2b49777eeca65aa7d2d6dac9906ab875d50494f7ee34f01eec6"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/alg/org_eclipse_elk_core_alg_ILayoutProcessorFactory.swift",
+    "sha256": "15be388d82dc91d2de85f17578916668198dc7f7db1fdd06e398bd69f4e270e8"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/alg/org_eclipse_elk_core_alg_LayoutProcessorConfiguration.swift",
+    "sha256": "526782da55efca93ea4cfb080b9312454691efd8250d363fea92096581b5620b"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/data/org_eclipse_elk_core_data_DeprecatedLayoutOptionReplacer.swift",
+    "sha256": "5b5779ddb5c9fd1e2b58504be166b1bf3237debbf1c28d69b6c51116f69b9cbf"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/data/org_eclipse_elk_core_data_ILayoutMetaData.swift",
+    "sha256": "187d718a617b155001829f1fdbf3fa66e383ebddd3c28b395c54957b64eb4641"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/data/org_eclipse_elk_core_data_ILayoutMetaDataProvider.swift",
+    "sha256": "585afa03ee1ed93257faf116737653c1983151cc2ebee43d5780ecb8829d74e4"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/data/org_eclipse_elk_core_data_LayoutAlgorithmData.swift",
+    "sha256": "269514465081b6d524a93d876454302bdfa74ff639cb333ae2af3743e7a09e51"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/data/org_eclipse_elk_core_data_LayoutAlgorithmResolver.swift",
+    "sha256": "db36d2fdb46df13eed12324490731cdda284c5172f42cbd8e3083a981121d4ea"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/data/org_eclipse_elk_core_data_LayoutCategoryData.swift",
+    "sha256": "9164bc570948e2e68e4329eeec20f429ef8d8292f4984dbf2d946a8d9037e6e2"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/data/org_eclipse_elk_core_data_LayoutMetaDataService.swift",
+    "sha256": "b8865229cb403e117c63b2f53d969fcbcdd9c99116ace95a1e88c93e49515056"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/data/org_eclipse_elk_core_data_LayoutOptionData.swift",
+    "sha256": "8284a9c90f0d53d42f0577fdfd58029af9cba2f8dbfc2054056e67138fb8634c"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/labels/org_eclipse_elk_core_labels_ILabelManager.swift",
+    "sha256": "3298e76b9cad80a6a783f293e554fb04662f90c67bc40ff1b4c86b1b4210bc55"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/math/org_eclipse_elk_core_math_BezierSpline.swift",
+    "sha256": "2968a588fdc38ed30c778b0942bfc783a4bba5ede0e9e23da8a0a61a4a7fb02d"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/math/org_eclipse_elk_core_math_CubicSplineInterpolator.swift",
+    "sha256": "bbdc9d03e00f694cf0550a2853c8439981778655c98d84f55821bb92e6dfe635"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/math/org_eclipse_elk_core_math_ElkMargin.swift",
+    "sha256": "4ed5d76ab4a2a4a88ed9ade48681c2b367c9479d0a0ead6da984d27c6f7d3b46"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/math/org_eclipse_elk_core_math_ElkMath.swift",
+    "sha256": "2f93730b1e53c4c2c16658191b73ad8cf92a4272f597ef7658049650aa021aa2"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/math/org_eclipse_elk_core_math_ElkPadding.swift",
+    "sha256": "3fca4f5e81faabc354ad757efa6e41a763c8621e664768e3d8e2e28728a07576"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/math/org_eclipse_elk_core_math_ElkRectangle.swift",
+    "sha256": "b1953b74c4d4a1665b20f22d8607ecdf8188dbe6d963e4878f6105f108d36fd2"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/math/org_eclipse_elk_core_math_ISplineInterpolator.swift",
+    "sha256": "9b4d49f5e64b6ca86c09e1b75643aedd8c5a45e3107c3fd9eec374c455cc011d"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/math/org_eclipse_elk_core_math_KVector.swift",
+    "sha256": "70aad4395c792ef6066fa8c84ecdec2f1f33f0409b85bf603908d9e0bca1c27c"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/math/org_eclipse_elk_core_math_KVectorChain.swift",
+    "sha256": "7dcddebccf624e2e6bf3ec8ec2e9eb4f4f44e1faab2f5f474c950a05cd898a3e"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/math/org_eclipse_elk_core_math_Spacing.swift",
+    "sha256": "d179983ec67c14a3a805291aa1ae7071b16a2a2c7f8bfcd03cf2fd1fa13bf1a5"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/options/org_eclipse_elk_core_options_Alignment.swift",
+    "sha256": "ec7dbb479a43dddd722cf7c3d09981b0aeff4f16a8f1c99500c7a7d739829cf5"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/options/org_eclipse_elk_core_options_ContentAlignment.swift",
+    "sha256": "9203482b9a9679565f369a49e59a0b56cc4dd62cf54bb56b6ca461b0f56239bb"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/options/org_eclipse_elk_core_options_CoreOptions.swift",
+    "sha256": "7298e5b394c2d20c8abc3f3b35ae46a99e3e5788d3dacd72062823c9734478a7"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/options/org_eclipse_elk_core_options_Direction.swift",
+    "sha256": "ea6980b77ec609cecb11b02a3069f3ac8acc0c73ef7dd0622cbda5493af3c7d8"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/options/org_eclipse_elk_core_options_EdgeCoords.swift",
+    "sha256": "bb455d8c8a395472f69c314ebf69788b07fe280d254f1ea6561109ab826e72e4"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/options/org_eclipse_elk_core_options_EdgeLabelPlacement.swift",
+    "sha256": "e368c846a269686d66b809ee2d775a54f53a6d1ce439f63b8bbc0765eff8459e"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/options/org_eclipse_elk_core_options_EdgeRouting.swift",
+    "sha256": "a015efba80b7b52ec9f279c93f8667ec932a4b162ab7927d95f7af9beee30c8d"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/options/org_eclipse_elk_core_options_EdgeType.swift",
+    "sha256": "0446f0178c7c4eef6c36ce1a0bc167e71a10f6a73427f147d025ec51c407bba5"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/options/org_eclipse_elk_core_options_HierarchyHandling.swift",
+    "sha256": "2cfd0d9c782977a2a0566534f77427fa1cd7cc3764bfa00ec97ec521afad08b6"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/options/org_eclipse_elk_core_options_ITopdownSizeApproximator.swift",
+    "sha256": "8b1eef2c67a0e84f340055f9db4b34ebfbbb01cc25b0994b52b4ea08aa690582"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/options/org_eclipse_elk_core_options_LabelSide.swift",
+    "sha256": "0adc490f870ca3f680cdc0c4b5e3debb9cd80d9688431372f93d7137ed7eac25"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/options/org_eclipse_elk_core_options_NodeLabelPlacement.swift",
+    "sha256": "953cd1dc44a1d318908f16b21ab08e7922d2a749d0abacf826947f1b038360dc"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/options/org_eclipse_elk_core_options_PortAlignment.swift",
+    "sha256": "44d86f3b2c1c083837a61d51ac86f4160498e9ebb491c3eb003abeefff8c80f5"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/options/org_eclipse_elk_core_options_PortConstraints.swift",
+    "sha256": "91a5612bb97115d4fa85c18d3d8bb41750068316dcd45c859ed31ef0778cd72e"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/options/org_eclipse_elk_core_options_PortLabelPlacement.swift",
+    "sha256": "96647cc096ead5f656a53b6c3e480f6f1af4034cabfe03b37989305700490bd0"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/options/org_eclipse_elk_core_options_PortSide.swift",
+    "sha256": "68cbd702eb337ca76985fcb6596ef4a63f48224540b30eb7cb76517256dfd5d7"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/options/org_eclipse_elk_core_options_ShapeCoords.swift",
+    "sha256": "1b328b4a055ae4e42c1d3d2896f77ecac715f1e3393a7590db9f387180f253f7"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/options/org_eclipse_elk_core_options_SizeConstraint.swift",
+    "sha256": "670bf5115bb45b2ea2e519454f2690e204fa4f5b56cd60c3406fdf050db4a236"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/options/org_eclipse_elk_core_options_SizeOptions.swift",
+    "sha256": "e2f8b58172099612420056ce6b8a2fff6752cd2f269d8a56949d1b9bd7349c8f"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/options/org_eclipse_elk_core_options_TopdownNodeTypes.swift",
+    "sha256": "2f62cc1ba6bae82320425a1fa3efb2713f5adb1eb9bb0a1d176473df6d1dc417"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/options/org_eclipse_elk_core_options_TopdownSizeApproximator.swift",
+    "sha256": "7318c4ba284ccf505fe872d8d7de4ad2ef4acc8cb6485bc0e22c679ccef5e13d"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/options/org_eclipse_elk_core_options_TopdownSizeApproximatorUtil.swift",
+    "sha256": "e3b9db852397e4d5d8c03f17a1e60b6f2b60e0c115fb474e969aa0b8a21f414e"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/org_eclipse_elk_core_AbstractLayoutProvider.swift",
+    "sha256": "083d33702dac4653b23f90287be4e5bf9bdb3d688d4a59822319c1c1402b6cea"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/org_eclipse_elk_core_IGraphLayoutEngine.swift",
+    "sha256": "756830c443c2bcecba5cbc27c5aec3ee439646bd2088130663e2f2ced051c95c"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/org_eclipse_elk_core_ITopdownLayoutProvider.swift",
+    "sha256": "53a7066632d6ddd5df1867acfcdbe83d78f8337efad16c1f76bc4603a6c6a189"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/org_eclipse_elk_core_LayoutConfigurator.swift",
+    "sha256": "9620b597db761f86c751d78ddcd521cae86f741ee47ac0195d0ddd3540e2a23b"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/org_eclipse_elk_core_RecursiveGraphLayoutEngine.swift",
+    "sha256": "9f832fb447dda2679247c650c0175e36a2b46426bc5c48b03bbc445c6a734efa"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/org_eclipse_elk_core_UnsupportedConfigurationException.swift",
+    "sha256": "44ff060b96d22f3e576441aed3d739201c05ac2cc2f9b583b243a0f5114916e8"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/org_eclipse_elk_core_UnsupportedGraphException.swift",
+    "sha256": "d596a8de5858f81557fefdb8f2ded1401792c2137c25cff389392f05876fe498"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/util/adapters/org_eclipse_elk_core_util_adapters_ElkGraphAdapters.swift",
+    "sha256": "f71a093588fb5b80d07a36b47eea5e6feafdccd6356c5eb65a7754b7991c998d"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/util/adapters/org_eclipse_elk_core_util_adapters_GraphAdapters.swift",
+    "sha256": "31539bcb9da1d164ed8d23d1cf979db8fd582af600acc44b05f5562d153443b9"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/util/internal/org_eclipse_elk_core_util_internal_LayoutOptionProxy.swift",
+    "sha256": "e9ac79ea7ae4416bbc2c8f2c32f48755c4f400d64581a7f6342df6eebfb3caf8"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/util/org_eclipse_elk_core_util_AbstractRandomListAccessor.swift",
+    "sha256": "44b1aa2761cd641225cb234f9572ba465b802c7361d3152dd2deec67892234f2"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/util/org_eclipse_elk_core_util_AlgorithmFactory.swift",
+    "sha256": "eb59d8e88802dbeb9182a84b2f528042d2275673cbd7a903edbaed70ce7a4f4e"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/util/org_eclipse_elk_core_util_BasicProgressMonitor.swift",
+    "sha256": "c2a034733298a38193ece57c5939f0f574bb66c968fec5ffd68b0033373c5f92"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/util/org_eclipse_elk_core_util_DefaultFactory.swift",
+    "sha256": "204309915ae8f377e447d088eef6b160028f7b30ee52b3107bdf5b0bdb7103b4"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/util/org_eclipse_elk_core_util_ElkSpacings.swift",
+    "sha256": "a4fee06e8a22bdc5fbeb6674278df60bfbcb85aaef2ed7aeda840f71ea4d054e"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/util/org_eclipse_elk_core_util_ElkUtil.swift",
+    "sha256": "9e2128363e28325170e9cce86e6da6e8e1d75818c1a29b04d0139bd087f83ef5"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/util/org_eclipse_elk_core_util_ExclusiveBounds.swift",
+    "sha256": "00bc5869276a2d89fc12dc7ce41909e97ad5dd1927080167deca78e8c394f516"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/util/org_eclipse_elk_core_util_IDataObject.swift",
+    "sha256": "6fcadc8ff26db6ae29a4136d0628184963d13364580012f6b913e7b25a577ab6"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/util/org_eclipse_elk_core_util_IElkCancelIndicator.swift",
+    "sha256": "810450dddd64e4e854c8d8e064f5df6195c5b376425f4472556b58518219b4b7"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/util/org_eclipse_elk_core_util_IElkProgressMonitor.swift",
+    "sha256": "e0dcab1fc47199e0c3aa1aea8e77eb399f2d9b81dccc4cfd47fe6e0220aa2ed2"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/util/org_eclipse_elk_core_util_IFactory.swift",
+    "sha256": "6f6fee3da577ee04f7563f6db089ef07b951ccf30ff0bf4b61bd1ffbda538aa0"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/util/org_eclipse_elk_core_util_IGraphElementVisitor.swift",
+    "sha256": "7ab37d20f1690880ea28f4ad70b7bb3c7efac7505f06b37884f55366ea1818dc"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/util/org_eclipse_elk_core_util_IndividualSpacings.swift",
+    "sha256": "82db45c736c05a77c2f056ff3ee9e83018b5f19630b7a134dd6e945c2e8c29d0"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/util/org_eclipse_elk_core_util_InstancePool.swift",
+    "sha256": "f70a76d917004dd629eb9217744568173a539122372eec08c72f3430aaa05c88"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/util/org_eclipse_elk_core_util_Maybe.swift",
+    "sha256": "a349f0b0e6e7a73f0c0ed09bca6e7e09e7c1cb9b6a0f685820cf46dec1af5daa"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/util/org_eclipse_elk_core_util_NullElkProgressMonitor.swift",
+    "sha256": "deb8e831abb0987cefd5fde0a243ca973c524cc3da9d2f2827b47fb025c358a5"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/util/org_eclipse_elk_core_util_Pair.swift",
+    "sha256": "95dcfc2c28a3303ae2149b65a497aa229761534c239937fce4d5d6fd5d14246b"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/util/org_eclipse_elk_core_util_PropertyConstantsDelegator.swift",
+    "sha256": "ff39e50e4d516bf45c7f89fd67f6ea1f93f6a0e284d5a3a2fc2feb9e2dfad9e1"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/util/org_eclipse_elk_core_util_Quadruple.swift",
+    "sha256": "409c887120e456f1a83738f17c36b3e525f6b5478168bec3becaceafeace0efa"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/util/org_eclipse_elk_core_util_Triple.swift",
+    "sha256": "a376600e24b0271124b7046a7b123201d9d4ba7f1a2c88180aea599401e679fb"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/core/util/org_eclipse_elk_core_util_WrappedException.swift",
+    "sha256": "0889e5d3e2683ff24edbbbc46672f45a4e2f71016f2af2f78e42cec63e002489"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/graph/org_eclipse_elk_graph_EMapPropertyHolder.swift",
+    "sha256": "61eb509b578905ad9576138a6f4610d6f43b12101f6399fb7822b54b4aba4847"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/graph/org_eclipse_elk_graph_ElkBendPoint.swift",
+    "sha256": "e5ce8d38fc1013f0b03a64133a0b692b1970da7ab2ba80cc9e1021db23a6570c"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/graph/org_eclipse_elk_graph_ElkConnectableShape.swift",
+    "sha256": "7f8f81a511074aca4a7dce7c4389e9b3c17710adac93dc45034bb064e49b4e8a"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/graph/org_eclipse_elk_graph_ElkEdge.swift",
+    "sha256": "a7bbfad2e3bac982dc551d714b900814957629377e5402970ca83c2ecf939f7b"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/graph/org_eclipse_elk_graph_ElkEdgeSection.swift",
+    "sha256": "73878bb9bafa06accf5385dbbac4cb6bb1d36991be22a2794a852136de45d8a2"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/graph/org_eclipse_elk_graph_ElkGraphElement.swift",
+    "sha256": "6539bc1252886b90f4d4896ab2cf5e2d206cd5cc8a1624687801789643cf617a"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/graph/org_eclipse_elk_graph_ElkGraphFactory.swift",
+    "sha256": "1b20ac66e58df1bedfa945fab9401abf632a587688a5b15c8ddde69369aa483a"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/graph/org_eclipse_elk_graph_ElkGraphPackage.swift",
+    "sha256": "00dab5d5b1771806a7f1b4587d5fd8aa4857bdc27b4f10b6ece94de2665cfeaa"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/graph/org_eclipse_elk_graph_ElkLabel.swift",
+    "sha256": "7beecee25c785eba3097798ff4ef81d8918abfdd70a7f44b866c48fb32880245"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/graph/org_eclipse_elk_graph_ElkNode.swift",
+    "sha256": "295124233329de1fd64948f3fdfd7df36b889f39cca14d1642a7549abc86fe5b"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/graph/org_eclipse_elk_graph_ElkPersistentEntry.swift",
+    "sha256": "9f085e3a64ea5d46e1170123029b215514ebeb10f8e059e31204b2f3150be410"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/graph/org_eclipse_elk_graph_ElkPort.swift",
+    "sha256": "7cc468ff52e569564ecdf7876ad1c51bf2c037f3ba4cfc5aea9ce67e9474ca6e"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/graph/org_eclipse_elk_graph_ElkShape.swift",
+    "sha256": "5d282cba92845aa8a9e045343798b04fcf0d6d02a17f4d32d4050943475a0afd"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/graph/properties/org_eclipse_elk_graph_properties_AdvancedPropertyValue.swift",
+    "sha256": "51cb48047486770c72cfa8ff3f7e66f84392bcdec48c03b74eca987e9410a1ab"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/graph/properties/org_eclipse_elk_graph_properties_ExperimentalPropertyValue.swift",
+    "sha256": "6951dfec964b38510d4fbac83c9dfeef779957784551478e715241dbccc929d0"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/graph/properties/org_eclipse_elk_graph_properties_GraphFeature.swift",
+    "sha256": "88dd2c3c71d3592ef623c4a72c38823dc3a9ddd6f171b65d0c36af4f77a0f8cb"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/graph/properties/org_eclipse_elk_graph_properties_IProperty.swift",
+    "sha256": "5e8c4fb839968df6927b6fa26f69476127c4dbd632d754f694dcd932f5a14838"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/graph/properties/org_eclipse_elk_graph_properties_IPropertyHolder.swift",
+    "sha256": "e6697d40fd0279f4b728454ad37d14d9d4eed7c23cf927b9c195c4c2ed37c7cd"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/graph/properties/org_eclipse_elk_graph_properties_IPropertyValueProxy.swift",
+    "sha256": "72ac6b7f207a842c4f57846797ac337471ae9fd74ee4b53985cd5ad453f34de5"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/graph/properties/org_eclipse_elk_graph_properties_MapPropertyHolder.swift",
+    "sha256": "404ba3a22c43f86a3164fea0b6c62178e0ef9acbd81711063c4a455cd086add2"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/graph/properties/org_eclipse_elk_graph_properties_Property.swift",
+    "sha256": "7307bb244533336b10f862749722beb51adafe9d396fbda9840ff1d890cf8c6f"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ELK/org/eclipse/elk/graph/properties/org_eclipse_elk_graph_properties_PropertyHolderComparator.swift",
+    "sha256": "1fc4bf66e59fcea72eb7e4c3296616b526b7545c964137aa9e7d9345f45c68c0"
+  },
+  {
+    "path": "ElkSwift/Sources/ElkSwift/ElkSwift.swift",
+    "sha256": "928c49a87561e6325fad1068ed55f74e78dde331d3d1415b84623695e6f79271"
+  },
+  {
+    "path": "ElkSwift/WASI-PATCHES.md",
+    "sha256": "458cdd7d55d55fb732bc7cb884b3f1f37e14fc6ab700fea5d93b710b77faf315"
+  }
+]

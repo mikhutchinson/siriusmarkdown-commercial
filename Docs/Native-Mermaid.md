@@ -109,6 +109,19 @@ subgraphs retain source instead of drawing an incomplete graph. State, sequence,
 class and ER diagrams also retain source for completed unrecognized statements and unclosed
 structures; a successfully prepared diagram does not silently omit those lines.
 
+Class namespaces support nested blocks, dotted names, display labels and
+reopening an existing namespace. Set `class.hierarchicalNamespaces` to `false`
+in Mermaid configuration for compact projection. Class identity remains global;
+namespace ownership follows the authored declarations. Native PDF/SVG,
+accessibility descriptions and native text exports retain namespace labels and
+membership. Static and abstract member classifiers retain their underline or
+italic presentation.
+
+PDF text extraction can normalize composed Unicode. Some color emoji lose
+joiners or modifiers in copied PDF text, although their painted appearance is
+retained. Source and SVG preserve the authored Unicode; use Copy Source when
+exact source text is required.
+
 Flowchart links do not require spaces around their operators: `A-->B[Browser]`
 keeps two nodes and one edge. Embedded labels such as `A--Review required-->B`
 retain their text, and identifiers such as `release-2026` remain intact.

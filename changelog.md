@@ -1,5 +1,29 @@
 # Changelog
 
+## Browser 0.2.8 - 2026-10-21
+
+- Render class namespace hierarchies, display labels and cross-namespace
+  relationships through the shared native/WASM layout.
+- Share the document palette with native diagrams and retain engine caption,
+  header and outline colors through the browser viewer and SVG export.
+- Improve default and bundled diagram palette contrast while preserving
+  explicit custom colors and translucent artwork.
+
+## 0.7.10 - 2026-10-21
+
+- Render nested and reopened class namespaces, qualified display labels and
+  compact namespace projection. Preserve their hierarchy in native vectors,
+  accessibility descriptions and native text exports.
+- Route class relationships normally into their node boundaries, with visible
+  arrowheads and captions clear of connector ink and namespace headers.
+- Preserve static and abstract member styles and improve Unicode member sizing
+  and native text-export cell alignment.
+- Improve default and bundled diagram palettes so labels, connectors and node
+  outlines remain readable in light and dark appearances. Preserve explicit
+  custom colors and translucent artwork.
+- Match native relationship-caption colors to SVG while preserving semantic
+  shape outlines, including double circles and subroutine dividers.
+
 ## Unreleased
 
 ## Browser 0.2.7 - 2026-10-20
