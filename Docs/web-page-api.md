@@ -25,9 +25,9 @@ worker session when the source is retired.
 `literalFind(root, query, options)` searches prepared document text and the
 shared diagram engine's visible logical labels. Pass its returned matches to
 `setFind(matches, currentIndex)` and `revealRange(matches[currentIndex])`.
-Diagram matches highlight their painted SVG glyphs and retain the complete
-fence as their atomic source range. Search paint is temporary and is excluded
-from SVG downloads and readable exports. Listen for the bubbling
+Diagram matches highlight their painted SVG glyphs, follow their text baseline
+and retain the complete fence as their atomic source range. Search paint is
+temporary and is excluded from SVG downloads and readable exports. Listen for the bubbling
 `sm-diagram-find-change` event to refresh an active search when an asynchronous
 diagram mounts or its responsive SVG changes; the supplied playground shows
 this wiring.

@@ -1,5 +1,14 @@
 # Changelog
 
+## Browser 0.2.9 - 2026-10-21
+
+- Align diagram Find highlights with painted text baselines in Firefox, including
+  wrapped labels. Reuse glyph geometry and refresh it when fonts or bounds change.
+- Coalesce diagram fitting after resize-observer delivery, preventing WebKit
+  resize loops while preserving explicit Fit, viewer navigation and vector export.
+
+[Release notes](release-notes/browser-0.2.9.md).
+
 ## Browser 0.2.8 - 2026-10-21
 
 - Render class namespace hierarchies, display labels and cross-namespace
