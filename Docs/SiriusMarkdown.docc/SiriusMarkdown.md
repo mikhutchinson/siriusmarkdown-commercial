@@ -19,7 +19,7 @@ For task-oriented examples, start with the [integration guides](https://siriusma
 ### Install the SDK
 
 Add `https://github.com/mikhutchinson/siriusmarkdown-commercial.git` in Xcode
-and select version 0.7.11 or later. Link the `SiriusMarkdown` product. The binary
+and select version 0.7.12 or later. Link the `SiriusMarkdown` product. The binary
 package requires Swift 6.3 and includes macOS 13, iOS/iPadOS 16 and visionOS 1
 slices; individual features have platform-specific availability.
 
@@ -110,7 +110,7 @@ Source-backed document selection is the default on macOS and touch platforms. On
 bounded AppKit event surface; native leaf selection is an explicit compatibility option. The two
 selection owners are mutually exclusive. Prepared source mappings also support Find, navigation,
 copy-as-Markdown and opt-in formatting commands.
-Find keeps the rendered destination visible as lazy layout settles after resizing,
+Find keeps the rendered destination visible as document layout settles after resizing,
 including navigation following readable chart export.
 
 The default inline rendering mode is `coreTextPaintedLines`. `preparedNativeLines` and `systemText`

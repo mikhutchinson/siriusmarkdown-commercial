@@ -26,6 +26,12 @@ identity with each snapshot generation remounts content unnecessarily.
 
 ## Long documents and active tails
 
+On macOS, `MarkdownDocumentView` mounts native content around its viewport and
+keeps lightweight offscreen items with stable scroll destinations and measured
+heights. This bounds mounted row content; it does not release the prepared
+snapshot or source held by the host. Explicitly started video sessions stay
+mounted until their source is removed or the reader closes.
+
 [Preparation windows](Document-Preparation.md#viewport-windows) let a host prepare
 visible portions of a document and release them after they leave the viewport.
 Source and semantic models still cover the complete document. A single large

@@ -55,14 +55,14 @@ table results also reveal content within their horizontal scrollers.
 
 Each Find command reveals the source-backed rendered occurrence, including when
 Next or Previous wraps back to the only result. Navigation keeps that destination
-aligned while lazy blocks settle, the reader resizes, or prepared content updates.
+aligned while document blocks settle, the reader resizes, or prepared content updates.
 Scrolling or selecting in the document supersedes the pending reveal. A newer
 command, closing Find, replacing the document or removing the view cancels obsolete
 navigation. A host should give independent documents independent Find controllers.
 Find uses source-backed document highlights while presented, including configurations
 that enable native leaf selection or ordinarily disable document selection.
 Readable chart export does not interrupt subsequent Find navigation; matches
-remain visible as the reader's lazy layout settles at a new width.
+remain visible as the reader's layout settles at a new width.
 
 Heading links such as `#installation` reveal their matching block. Generated
 slugs are lowercase and Unicode-aware, with numeric suffixes for duplicates.
