@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.7.16 - 2026-10-24
+
+Ignore late input-geometry callbacks from older document generations, preserving
+current list, task and quote geometry and pending native command completion.
+
+[Release notes](release-notes/0.7.16.md).
+
 ## 0.7.15 - 2026-10-24
 
 - Reuse completed native list groups and measured heights while the active list grows, preserving source selection and normal width/style invalidation.
