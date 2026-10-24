@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.7.13
+
+macOS prepared native text preserves the final letters of bold paragraphs.
+Native text allocation now includes TextKit’s presentation-intent font
+substitutions, keeping the painted glyphs inside their text container.
+
+Swift Package products and minimum platforms are unchanged: macOS 13,
+iOS/iPadOS 16 and visionOS 1. The separate browser package remains at 0.2.11.
+
 ## 0.7.12
 
 macOS document readers remain responsive when selected text stays active during
