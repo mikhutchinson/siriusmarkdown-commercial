@@ -44,6 +44,12 @@ fences, tables and reference links as well as ordinary paragraphs. Custom
 highlighters may receive the whole active code block on successive updates;
 their cost matters even when surrounding blocks are unchanged.
 
+Native lists reuse completed groups of prepared items and their measured heights
+while the active list grows. A changed item, width, theme, resource or live style
+still updates the mounted content. Selection and exact source mappings remain
+available. This reduces repeated view and text-geometry work; it does not make
+parsing an unsealed semantic list constant-time.
+
 Network requests and image decoding have their own bounds. Bounded caches do
 not bound the total memory of a document: source, snapshots, visible prepared
 content and decoded images can remain retained by the host. Release closed

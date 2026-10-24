@@ -48,6 +48,22 @@ a source selection through the callback. An unknown direction returns false.
 composed characters and skipping hidden formatting delimiters. The host validates and
 applies any deletion as its own native Undo transaction.
 
+Route rendered-mode native events through `performEditingOperation(requiresCurrentGeometry:_:)`
+to preserve their order while a changed document is being prepared. Arrow movement,
+visible-grapheme deletion, selection replacement and semantic Return commands require
+current geometry. Ordinary insertion at an empty native selection can use
+`requiresCurrentGeometry: false`; it proceeds immediately unless an earlier event is
+waiting. Each closure performs the host's normal native transaction, so input methods,
+source storage and Undo remain host-owned. Capture native hosts weakly.
+
+`hasPendingEditingOperations` reports accepted events that have not run. Finish those
+events before saving, exporting or changing editor modes. If the host replaces the
+document or abandons an input sequence, call `cancelPendingEditingOperations()`.
+Geometry from a replacement snapshot becomes current after its matching layout pass;
+the previous layout is never relabeled with the new source generation. Caret painting
+uses one native surface and does not reflow the document when only the insertion point
+moves.
+
 For an empty document or source gaps between semantic blocks, the host can describe
 the insertion point with `emptyParagraphOffset`, `emptyParagraphAnchor`,
 `emptyParagraphLines`, `emptyQuoteOffset` and `paragraphGapLines`.

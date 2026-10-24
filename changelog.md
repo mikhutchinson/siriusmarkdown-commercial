@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.7.15 - 2026-10-24
+
+- Reuse completed native list groups and measured heights while the active list grows, preserving source selection and normal width/style invalidation.
+
+- Fix rendered editing deleting from the first line of a wrapped paragraph instead of the caret line. Preserve visible graphemes and directional wrap boundaries.
+- Paint the insertion point through one native surface, independently from document layout; keep empty-paragraph layout observation separate from caret movement.
+- Preserve native input order while a source revision waits for current prepared geometry. Hosts can finish accepted input before save/export and cancel an abandoned sequence.
+- Reset vertical movement’s preferred column after explicit caret placement, and publish input geometry with its completed layout generation.
+
+[Release notes](release-notes/0.7.15.md).
+
 ## Browser 0.2.12
 
 Rebuild both WebAssembly reactors with the shared engine from native SDK 0.7.14.
