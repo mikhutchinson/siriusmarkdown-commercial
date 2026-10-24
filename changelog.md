@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.7.14
+
+Fix native paragraphs repeating raw Markdown around inline equations and source line breaks.
+Mac and iPad share CoreText text-flow PDF pagination, preserving selectable table cells across pages.
+
+Native input and task activation are available through ordinary public interfaces. Hosts retain
+source storage, revision checks, input methods and Undo; stale geometry cannot authorize deletion.
+Read-only diagram analysis uses the native semantic parser and SDK-owned inspection values.
+Outline controls can reveal block IDs through native navigation without opening Find.
+
+Products and minimum platforms are unchanged; the browser package remains at 0.2.11.
+
 ## 0.7.13
 
 macOS prepared native text preserves the final letters of bold paragraphs.

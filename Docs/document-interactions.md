@@ -170,14 +170,15 @@ renderers use their supplied PDF, SVG or ASCII representation.
 
 ## Native print and PDF
 
-On macOS, prepare a fixed pagination result outside view evaluation:
+On macOS and iPadOS, prepare a fixed PDF pagination result outside view evaluation:
 
 ```swift
 let output = try MarkdownDocumentPrintExporter.prepare(prepared)
 try output.writePDF(to: destination)
-let operation = try output.makePrintOperation()
-// The host presents and runs the print operation.
 ```
+
+On macOS, `output.makePrintOperation()` also creates a native print operation for
+the host to present. Both platforms share the same CoreText text-flow pagination.
 
 `MarkdownDocumentPrintOptions` supplies page size, margins, title and font size.
 Text-flow output preserves selectable ordinary text and table-cell text, with

@@ -1,0 +1,105 @@
+# Native authoring
+
+Connect a host's native text editor and source transactions to prepared Markdown rendering.
+
+## Keep the host in charge of editing
+
+`MarkdownTextInputController` maps mounted native glyph geometry to UTF-8 source-byte
+offsets. The host continues to own text storage, input methods, persistence, revision
+validation and its native Undo manager. The SDK does not replace the text editor or
+mutate its source. Ordinary readers remain read-only unless the host supplies input
+or task-activation hooks.
+
+Keep one controller for the document and attach it before preparing the reader:
+
+```swift
+import Foundation
+import SiriusMarkdown
+
+@MainActor
+func makeInputConfiguration(
+    snapshot: MarkdownSnapshot,
+    placeSelection: @escaping (Range<Int>) -> Bool
+) -> (MarkdownRendererConfiguration, MarkdownTextInputController) {
+    let input = MarkdownTextInputController()
+    input.documentGeneration = snapshot.generation
+    input.placeSelection = placeSelection
+    var configuration = MarkdownRendererConfiguration()
+    configuration.textInputController = input
+    return (configuration, input)
+}
+```
+
+The selection callback must validate the current source revision and translate UTF-8
+byte ranges to the host editor's native indexing. Return false if the selection cannot
+be applied. `canPlaceSelection` can reject proposals before that callback. Feed native
+selection changes back through `updateSelection(_:)`, and update `isFocused` when the
+native editor gains or loses focus. `caretScreenRectChanged` reports the painted caret
+in native screen coordinates for input-method positioning.
+
+Update `documentGeneration` when replacing the prepared snapshot. Geometry from other
+generations cannot drive movement or deletion, including nonempty selected ranges.
+Nil accepts all mounted generations; editing hosts should always supply their current
+generation. Source ranges supplied by the host must use valid UTF-8 boundaries within
+its current source.
+`move(_:extending:byWord:toEdge:)` accepts `left`, `right`, `up` and `down` and proposes
+a source selection through the callback. An unknown direction returns false.
+`deletionRange(backward:)` returns source ranges for visible graphemes, preserving
+composed characters and skipping hidden formatting delimiters. The host validates and
+applies any deletion as its own native Undo transaction.
+
+For an empty document or source gaps between semantic blocks, the host can describe
+the insertion point with `emptyParagraphOffset`, `emptyParagraphAnchor`,
+`emptyParagraphLines`, `emptyQuoteOffset` and `paragraphGapLines`.
+`MarkdownTextInputParagraph` reserves the empty insertion row between the supplied
+source offsets; the normal document reader handles mounted semantic blocks.
+The anchor is the preceding block's source-end offset, or zero at the document start.
+Gap-map keys use those same boundaries. Supply positive line counts for reserved gaps.
+
+Set `MarkdownRendererConfiguration.taskInputHandler` to receive an AST-backed task
+range and requested state. The host checks its revision, edits that range and records
+Undo. Nil retains read-only task markers.
+
+## Inspect diagram source without importing parser internals
+
+`MarkdownDiagramSourceAnalysis` validates complete Mermaid input through the same
+native semantic parser used for rendering. Run it on a preparation worker or in a
+source transaction, never in a SwiftUI body or width-change callback.
+
+```swift
+let analysis = try MarkdownDiagramSourceAnalysis(
+    source: "flowchart LR\nDraft --> Review",
+    referenceDate: Date(timeIntervalSince1970: 1_767_225_600)
+)
+if case .flowchart(let flow) = analysis.content {
+    let identifiers = flow.nodes.map(\.id) // ["Draft", "Review"]
+    let connections = flow.edges
+}
+```
+
+All sixteen native families have a `kind`. Read-only `content` projections expose
+flow/state graph identities and labels, sequence participants/messages/notes, chart
+axes and series, timeline periods/events, mind-map parentage and Gantt tasks/calendars.
+Other content cases identify validated syntax without exposing vendor parser models.
+These projections are inspection values, not a source serializer: preserve the original
+source, apply bounded source edits and validate the complete result before committing.
+Comments, styles, identifiers and unrelated syntax can therefore remain untouched.
+
+Analysis accepts at most 128,000 UTF-8 bytes and rejects unsupported or incomplete
+completed input with `Failure.invalidDiagram`; it never repairs a streaming frontier.
+Oversized input throws `Failure.sourceTooLarge`. Task cancellation propagates as
+`CancellationError`. Rendering and progressive diagram APIs keep their existing
+separate contracts.
+
+Gantt analysis captures one `referenceDate`. Its calendar's `parse(_:)` and `format(_:)`
+reuse the native calendar, and partial-date parsing uses that same captured instant.
+Pass an explicit instant when reproducible date interpretation matters.
+
+## Reveal an outline destination
+
+Supply the same `MarkdownDocumentFindController` to the document and call
+`reveal(blockID:)` with a block ID from its current prepared snapshot. The SDK's
+native document navigation mounts the target and aligns its source-backed geometry to the reading edge,
+including when requested before the view appears. Repeating an ID issues a new
+command. This leaves Find closed, preserves its query and selection, and does not
+build a search index. Unknown block IDs are ignored.

@@ -19,7 +19,7 @@ For task-oriented examples, start with the [integration guides](https://siriusma
 ### Install the SDK
 
 Add `https://github.com/mikhutchinson/siriusmarkdown-commercial.git` in Xcode
-and select version 0.7.13 or later. Link the `SiriusMarkdown` product. The binary
+and select version 0.7.14 or later. Link the `SiriusMarkdown` product. The binary
 package requires Swift 6.3 and includes macOS 13, iOS/iPadOS 16 and visionOS 1
 slices; individual features have platform-specific availability.
 
@@ -154,6 +154,21 @@ text-selection and pagination properties.
 - ``SiriusMarkdownSwiftUI/MarkdownMermaidDiagramAffordances``
 - ``SiriusMarkdownSwiftUI/MarkdownMermaidDiagramGeometry``
 - ``SiriusMarkdownSwiftUI/MarkdownMermaidViewBox``
+
+### Streaming presentation and renderers
+
+- ``SiriusMarkdownSwiftUI/MarkdownRenderPresentation``
+- ``SiriusMarkdownSwiftUI/MarkdownStreamingMathRenderer``
+- ``SiriusMarkdownSwiftUI/MarkdownProgressiveMermaidRenderer``
+- ``SiriusMarkdownSwiftUI/MarkdownStreamingMermaidResult``
+- ``SiriusMarkdownMathEngine/MarkdownMathPreparationOutcome``
+
+### Native authoring
+
+- <doc:NativeAuthoring>
+- ``SiriusMarkdownSwiftUI/MarkdownTextInputController``
+- ``SiriusMarkdownSwiftUI/MarkdownTextInputParagraph``
+- ``SiriusMarkdownSwiftUI/MarkdownDiagramSourceAnalysis``
 
 ### Block styles
 
