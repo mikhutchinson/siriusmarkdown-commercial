@@ -4,6 +4,13 @@ A browser page hosts the SiriusMarkdown reactor in a module worker. The page sen
 
 ## Hosting and integration
 
+Browser 0.2.12 includes the shared engine from native SDK 0.7.14. The download
+manifest records `nativeSDKVersion` and `engineSourceSHA256`; retain these with
+your runtime pin and update the complete distribution together. This includes
+the inline-equation line-break and HTML list source-mapping fixes. AppKit/UIKit
+input and CoreText PDF APIs remain native integrations; browser editing and
+printing use the APIs described below.
+
 Serve the browser bundle over HTTPS, or localhost during development. Keep its
 `js`, `assets`, `dist` and `playground` directories together. Serve `.wasm` as
 `application/wasm`, JavaScript modules as `text/javascript`, and the supplied
@@ -61,6 +68,47 @@ await diagrams.ready;
 const diagram = await diagrams.render(block, publication, abortSignal);
 if (diagram && diagram.status !== "cancelled") mountMermaid(slot, diagram);
 ```
+
+Text exports use the same parser and worker. Call
+`diagrams.exportText(source, { format: "unicode", id: block.id }, abortSignal)`
+with `format: "ascii"` for ASCII connectors. Authored Unicode labels remain intact
+in either format. A successful response has `output`, `text` and
+`textGeometry: { columns, rows }` in terminal cells; it has no SVG geometry.
+The default `render()` result remains SVG. Both formats support all sixteen
+families within the documented Mermaid syntax subset. Text layouts are simplified
+projections: colors and typographic styling are omitted, while labels, values and
+relationships remain text. XY charts honor `showDataLabel: false` in text exports
+as well as SVG. Multiline flow captions use a complete reference key
+beside the diagram so their text cannot cover an arrow or be clipped. Pie labels
+retain multiline rows; CRLF and carriage returns become LF, and tabs expand to
+eight-column stops before terminal measurement. The response retains the exact
+authored source. Terminal font and emoji presentation can vary by host.
+
+To enable the mounted diagram's **Export Unicode text** and **Export ASCII** menu
+items, supply an exporter bound to the current source and preparation context:
+
+```js
+mountMermaid(slot, diagram, {
+  exportText: ({ source, format, signal }) => diagrams.exportText(source, {
+    id: block.id, format, streaming: block.isSealed === false,
+    referenceTime: publication.referenceTime,
+  }, signal),
+});
+```
+
+An update or destroyed mount cancels its pending export. Exporting retains the
+viewer position and painted SVG. Unsupported input returns its exact source and
+a diagnostic; the menu offers source fallback instead of downloading partial text.
+Reverse subgraph direction overrides are not supported by the text projection;
+these return source and a diagnostic. For drafts, pass `streaming: true` to export only the parser-approved statements;
+the response retains the complete authored source and frontier metadata. SVG and
+text requests use separate cancellation and cache identities. Pass the same `id`
+to replace a pending export for that diagram; omitting it creates an independent
+request. The lower-level
+`loadMermaid().render()` accepts `output: "ascii"` or `"unicode"`; omit `output`
+for the existing SVG response. Unknown formats are rejected. Source is capped at
+256 KiB, completed text at 4 MiB and four million terminal cells, with tighter
+preallocation limits for graph canvases. Oversized text exports return diagnostics.
 
 For date-dependent Gantt diagrams, the client captures `referenceTime` once as
 Unix milliseconds. Supply `referenceTime` in the constructor for reproducible
@@ -269,7 +317,7 @@ only while creating the export. The returned `tables` array describes each
 table's `columnGroups`, `rowRanges` and sheet count. Keep the reader and its
 resource owner alive until printing completes.
 
-The playground's **Readable print** action previews these sheets and opens
+The included playground's **Readable print** action previews these sheets and opens
 the browser's Print / Save PDF dialog. Its print container uses normal document
 flow, with Letter paper and half-inch margins, then restores the preview when
 printing finishes or is cancelled. Custom hosts own paper settings and must

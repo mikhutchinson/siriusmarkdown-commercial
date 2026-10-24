@@ -1,5 +1,13 @@
 # Changelog
 
+## Browser 0.2.12
+
+Rebuild both WebAssembly reactors with the shared engine from native SDK 0.7.14.
+Preserve exact inline-equation line breaks and HTML list source occurrences.
+The consumer manifest records the native SDK version and engine source hash.
+
+[Release notes](release-notes/browser-0.2.12.md).
+
 ## 0.7.14
 
 Fix native paragraphs repeating raw Markdown around inline equations and source line breaks.
