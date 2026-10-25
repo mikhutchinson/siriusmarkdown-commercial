@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.7.17 - 2026-10-24
+
+- Preserve completed render regions and native list groups when Find is attached
+  to a streaming view but closed. Navigation no longer changes the render
+  configuration on every append.
+- Keep retained link routes current when a host replaces its public callback,
+  including replacement through a nested `linkAction.open` assignment.
+
+[Release notes](release-notes/0.7.17.md).
+
 ## 0.7.16 - 2026-10-24
 
 Ignore late input-geometry callbacks from older document generations, preserving

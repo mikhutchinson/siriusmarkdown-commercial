@@ -24,6 +24,12 @@ snapshots but does not make full-source parsing incremental. See
 Use stable block and prepared-item IDs in host views. Replacing the whole view's
 identity with each snapshot generation remounts content unnecessarily.
 
+Retain the `MarkdownDocumentFindController` when attaching Find to a stream.
+With Find closed, navigation retains its forwarding link action and reuses
+completed render regions across appends. Fragment links remain available.
+Changing the public renderer configuration, including its host link callback,
+still invalidates the affected render content.
+
 ## Long documents and active tails
 
 On macOS, `MarkdownDocumentView` mounts native content around its viewport and
