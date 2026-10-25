@@ -37,6 +37,9 @@ content around the enclosing viewport. Offscreen items keep stable scroll
 destinations and measured heights. This bounds mounted row content; it does not
 release the prepared snapshot or source held by the host. Explicitly started
 video sessions stay mounted until their source is removed or the reader closes.
+Known heights remain scroll-space estimates across prepared revisions until
+current native geometry replaces them. Late geometry from an older revision or
+width cannot replace those estimates.
 
 Streaming host-boundary content stays mounted. SDK code-collapse, diagram and
 selection state follow source identity across viewport changes. A custom style
