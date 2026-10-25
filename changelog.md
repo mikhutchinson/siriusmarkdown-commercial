@@ -5,7 +5,7 @@
 - Bound native content in read-only macOS streams around the host viewport,
   reducing repeated historical layout while new text arrives.
 - Preserve mounted host-boundary content and complete rendered-input geometry.
-- Keep unchecked task markers unchanged when body text contains `[x]` or `[X]`.
+- Retain known scroll-space heights across prepared revisions and stream completion.
 - Add `StreamingMarkdownView.offscreenContent(.retained)` for custom styles
   that need every offscreen view mounted.
 
