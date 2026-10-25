@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.7.19 - 2026-10-25
+
+- Keep unchecked task items unchecked when their body contains `[x]` or `[X]`,
+  preserving AST-owned task recognition, source ranges and streamed state.
+
+[Release notes](release-notes/0.7.19.md).
+
 ## 0.7.18 - 2026-10-24
 
 - Compose `==highlight==` with bold, italic, strikethrough, links and inline code
