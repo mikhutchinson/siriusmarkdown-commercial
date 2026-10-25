@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.7.20 - 2026-10-25
+
+- Bound native content in read-only macOS streams around the host viewport,
+  reducing repeated historical layout while new text arrives.
+- Preserve mounted host-boundary content and complete rendered-input geometry.
+- Keep unchecked task markers unchanged when body text contains `[x]` or `[X]`.
+- Add `StreamingMarkdownView.offscreenContent(.retained)` for custom styles
+  that need every offscreen view mounted.
+
+[Release notes](release-notes/0.7.20.md).
+
 ## 0.7.18 - 2026-10-24
 
 - Compose `==highlight==` with bold, italic, strikethrough, links and inline code

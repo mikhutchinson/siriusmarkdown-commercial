@@ -79,6 +79,14 @@ document and reject work from replaced documents. Requiring every result to matc
 the newest append can prevent progress during continuous input.
 `MarkdownRenderSession` manages these rules for its queued operations.
 
+On macOS, read-only `StreamingMarkdownView` bounds native view content around
+the host's scroll viewport. Its prepared source and semantic model still cover
+the complete stream, and Find can materialize an offscreen destination. The
+view adds no vertical scroller. Host-boundary views remain mounted; rendered
+editing keeps complete input geometry. For custom styles whose own state must
+stay mounted offscreen, apply `.offscreenContent(.retained)`. The default
+automatic lifecycle is unchanged on other platforms.
+
 ## Incomplete input
 
 The tail can change structure while it is incomplete. An open code fence,

@@ -32,11 +32,18 @@ still invalidates the affected render content.
 
 ## Long documents and active tails
 
-On macOS, `MarkdownDocumentView` mounts native content around its viewport and
-keeps lightweight offscreen items with stable scroll destinations and measured
-heights. This bounds mounted row content; it does not release the prepared
-snapshot or source held by the host. Explicitly started video sessions stay
-mounted until their source is removed or the reader closes.
+On macOS, `MarkdownDocumentView` and read-only `StreamingMarkdownView` mount native
+content around the enclosing viewport. Offscreen items keep stable scroll
+destinations and measured heights. This bounds mounted row content; it does not
+release the prepared snapshot or source held by the host. Explicitly started
+video sessions stay mounted until their source is removed or the reader closes.
+
+Streaming host-boundary content stays mounted. SDK code-collapse, diagram and
+selection state follow source identity across viewport changes. A custom style
+that owns additional offscreen view state can use
+`StreamingMarkdownView.offscreenContent(.retained)` to keep every item mounted.
+Rendered editing automatically retains complete input geometry. On other
+platforms, automatic streaming presentation keeps its existing lifecycle.
 
 [Preparation windows](Document-Preparation.md#viewport-windows) let a host prepare
 visible portions of a document and release them after they leave the viewport.

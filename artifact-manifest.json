@@ -1,20 +1,21 @@
 {
-  "version": "0.7.18",
+  "version": "0.7.20",
   "artifacts": [
     {
       "module": "SiriusMarkdownSupport",
       "filename": "SiriusMarkdownSupport.xcframework.zip",
-      "sha256": "56a9970b1ef905f068f4e91527c2b1e784aebd4988f09263d0c8ccca6131d759",
-      "bytes": 52146763,
+      "sha256": "999be14aedef5c0bb3c0b1e1be2b5f23bd70cc044aed44a2fb538cd024ea7e13",
+      "bytes": 52146720,
       "slices": [
         {
           "BinaryPath": "SiriusMarkdownSupport.framework/SiriusMarkdownSupport",
-          "LibraryIdentifier": "xros-arm64",
+          "LibraryIdentifier": "xros-arm64-simulator",
           "LibraryPath": "SiriusMarkdownSupport.framework",
           "SupportedArchitectures": [
             "arm64"
           ],
-          "SupportedPlatform": "xros"
+          "SupportedPlatform": "xros",
+          "SupportedPlatformVariant": "simulator"
         },
         {
           "BinaryPath": "SiriusMarkdownSupport.framework/SiriusMarkdownSupport",
@@ -27,13 +28,23 @@
         },
         {
           "BinaryPath": "SiriusMarkdownSupport.framework/SiriusMarkdownSupport",
-          "LibraryIdentifier": "xros-arm64-simulator",
+          "LibraryIdentifier": "ios-arm64_x86_64-simulator",
+          "LibraryPath": "SiriusMarkdownSupport.framework",
+          "SupportedArchitectures": [
+            "arm64",
+            "x86_64"
+          ],
+          "SupportedPlatform": "ios",
+          "SupportedPlatformVariant": "simulator"
+        },
+        {
+          "BinaryPath": "SiriusMarkdownSupport.framework/SiriusMarkdownSupport",
+          "LibraryIdentifier": "xros-arm64",
           "LibraryPath": "SiriusMarkdownSupport.framework",
           "SupportedArchitectures": [
             "arm64"
           ],
-          "SupportedPlatform": "xros",
-          "SupportedPlatformVariant": "simulator"
+          "SupportedPlatform": "xros"
         },
         {
           "BinaryPath": "SiriusMarkdownSupport.framework/Versions/A/SiriusMarkdownSupport",
@@ -44,37 +55,15 @@
             "x86_64"
           ],
           "SupportedPlatform": "macos"
-        },
-        {
-          "BinaryPath": "SiriusMarkdownSupport.framework/SiriusMarkdownSupport",
-          "LibraryIdentifier": "ios-arm64_x86_64-simulator",
-          "LibraryPath": "SiriusMarkdownSupport.framework",
-          "SupportedArchitectures": [
-            "arm64",
-            "x86_64"
-          ],
-          "SupportedPlatform": "ios",
-          "SupportedPlatformVariant": "simulator"
         }
       ]
     },
     {
       "module": "SiriusMarkdownCore",
       "filename": "SiriusMarkdownCore.xcframework.zip",
-      "sha256": "6c2f8660d534cbfe5aad2afc0cc351b9a03eba04d06ce1cef3829239018fd209",
-      "bytes": 4781690,
+      "sha256": "196878cfc02eb0376f3fdc04c0cef9f7841165e8041f4d8b1348ae3c18e23594",
+      "bytes": 4785750,
       "slices": [
-        {
-          "BinaryPath": "SiriusMarkdownCore.framework/SiriusMarkdownCore",
-          "LibraryIdentifier": "ios-arm64_x86_64-simulator",
-          "LibraryPath": "SiriusMarkdownCore.framework",
-          "SupportedArchitectures": [
-            "arm64",
-            "x86_64"
-          ],
-          "SupportedPlatform": "ios",
-          "SupportedPlatformVariant": "simulator"
-        },
         {
           "BinaryPath": "SiriusMarkdownCore.framework/Versions/A/SiriusMarkdownCore",
           "LibraryIdentifier": "macos-arm64_x86_64",
@@ -87,63 +76,8 @@
         },
         {
           "BinaryPath": "SiriusMarkdownCore.framework/SiriusMarkdownCore",
-          "LibraryIdentifier": "xros-arm64",
-          "LibraryPath": "SiriusMarkdownCore.framework",
-          "SupportedArchitectures": [
-            "arm64"
-          ],
-          "SupportedPlatform": "xros"
-        },
-        {
-          "BinaryPath": "SiriusMarkdownCore.framework/SiriusMarkdownCore",
-          "LibraryIdentifier": "xros-arm64-simulator",
-          "LibraryPath": "SiriusMarkdownCore.framework",
-          "SupportedArchitectures": [
-            "arm64"
-          ],
-          "SupportedPlatform": "xros",
-          "SupportedPlatformVariant": "simulator"
-        },
-        {
-          "BinaryPath": "SiriusMarkdownCore.framework/SiriusMarkdownCore",
-          "LibraryIdentifier": "ios-arm64",
-          "LibraryPath": "SiriusMarkdownCore.framework",
-          "SupportedArchitectures": [
-            "arm64"
-          ],
-          "SupportedPlatform": "ios"
-        }
-      ]
-    },
-    {
-      "module": "SiriusMarkdownMathEngine",
-      "filename": "SiriusMarkdownMathEngine.xcframework.zip",
-      "sha256": "2cd482a8d77970364b1f45b4730e4ac3ba0838575db9ebc1f5da1e638e52a0fb",
-      "bytes": 438320,
-      "slices": [
-        {
-          "BinaryPath": "SiriusMarkdownMathEngine.framework/SiriusMarkdownMathEngine",
-          "LibraryIdentifier": "xros-arm64-simulator",
-          "LibraryPath": "SiriusMarkdownMathEngine.framework",
-          "SupportedArchitectures": [
-            "arm64"
-          ],
-          "SupportedPlatform": "xros",
-          "SupportedPlatformVariant": "simulator"
-        },
-        {
-          "BinaryPath": "SiriusMarkdownMathEngine.framework/SiriusMarkdownMathEngine",
-          "LibraryIdentifier": "ios-arm64",
-          "LibraryPath": "SiriusMarkdownMathEngine.framework",
-          "SupportedArchitectures": [
-            "arm64"
-          ],
-          "SupportedPlatform": "ios"
-        },
-        {
-          "BinaryPath": "SiriusMarkdownMathEngine.framework/SiriusMarkdownMathEngine",
           "LibraryIdentifier": "ios-arm64_x86_64-simulator",
-          "LibraryPath": "SiriusMarkdownMathEngine.framework",
+          "LibraryPath": "SiriusMarkdownCore.framework",
           "SupportedArchitectures": [
             "arm64",
             "x86_64"
@@ -152,6 +86,42 @@
           "SupportedPlatformVariant": "simulator"
         },
         {
+          "BinaryPath": "SiriusMarkdownCore.framework/SiriusMarkdownCore",
+          "LibraryIdentifier": "ios-arm64",
+          "LibraryPath": "SiriusMarkdownCore.framework",
+          "SupportedArchitectures": [
+            "arm64"
+          ],
+          "SupportedPlatform": "ios"
+        },
+        {
+          "BinaryPath": "SiriusMarkdownCore.framework/SiriusMarkdownCore",
+          "LibraryIdentifier": "xros-arm64-simulator",
+          "LibraryPath": "SiriusMarkdownCore.framework",
+          "SupportedArchitectures": [
+            "arm64"
+          ],
+          "SupportedPlatform": "xros",
+          "SupportedPlatformVariant": "simulator"
+        },
+        {
+          "BinaryPath": "SiriusMarkdownCore.framework/SiriusMarkdownCore",
+          "LibraryIdentifier": "xros-arm64",
+          "LibraryPath": "SiriusMarkdownCore.framework",
+          "SupportedArchitectures": [
+            "arm64"
+          ],
+          "SupportedPlatform": "xros"
+        }
+      ]
+    },
+    {
+      "module": "SiriusMarkdownMathEngine",
+      "filename": "SiriusMarkdownMathEngine.xcframework.zip",
+      "sha256": "54ec9bb1bc3470a4250848df1673fa8b9b8fec0629314f324a748bdd3bcc5b10",
+      "bytes": 438306,
+      "slices": [
+        {
           "BinaryPath": "SiriusMarkdownMathEngine.framework/SiriusMarkdownMathEngine",
           "LibraryIdentifier": "xros-arm64",
           "LibraryPath": "SiriusMarkdownMathEngine.framework",
@@ -159,6 +129,25 @@
             "arm64"
           ],
           "SupportedPlatform": "xros"
+        },
+        {
+          "BinaryPath": "SiriusMarkdownMathEngine.framework/SiriusMarkdownMathEngine",
+          "LibraryIdentifier": "xros-arm64-simulator",
+          "LibraryPath": "SiriusMarkdownMathEngine.framework",
+          "SupportedArchitectures": [
+            "arm64"
+          ],
+          "SupportedPlatform": "xros",
+          "SupportedPlatformVariant": "simulator"
+        },
+        {
+          "BinaryPath": "SiriusMarkdownMathEngine.framework/SiriusMarkdownMathEngine",
+          "LibraryIdentifier": "ios-arm64",
+          "LibraryPath": "SiriusMarkdownMathEngine.framework",
+          "SupportedArchitectures": [
+            "arm64"
+          ],
+          "SupportedPlatform": "ios"
         },
         {
           "BinaryPath": "SiriusMarkdownMathEngine.framework/Versions/A/SiriusMarkdownMathEngine",
@@ -169,26 +158,26 @@
             "x86_64"
           ],
           "SupportedPlatform": "macos"
-        }
-      ]
-    },
-    {
-      "module": "SiriusMarkdownSwiftUI",
-      "filename": "SiriusMarkdownSwiftUI.xcframework.zip",
-      "sha256": "57ffc6e544d4ce050c92ea2fc2d67afde29117fd1140b0d063afdedf2b8ad968",
-      "bytes": 29617446,
-      "slices": [
+        },
         {
-          "BinaryPath": "SiriusMarkdownSwiftUI.framework/SiriusMarkdownSwiftUI",
+          "BinaryPath": "SiriusMarkdownMathEngine.framework/SiriusMarkdownMathEngine",
           "LibraryIdentifier": "ios-arm64_x86_64-simulator",
-          "LibraryPath": "SiriusMarkdownSwiftUI.framework",
+          "LibraryPath": "SiriusMarkdownMathEngine.framework",
           "SupportedArchitectures": [
             "arm64",
             "x86_64"
           ],
           "SupportedPlatform": "ios",
           "SupportedPlatformVariant": "simulator"
-        },
+        }
+      ]
+    },
+    {
+      "module": "SiriusMarkdownSwiftUI",
+      "filename": "SiriusMarkdownSwiftUI.xcframework.zip",
+      "sha256": "d4635fa9dec317145cd55af626acae5443cf4efefba2f6f07405d3abe311bcb5",
+      "bytes": 29650243,
+      "slices": [
         {
           "BinaryPath": "SiriusMarkdownSwiftUI.framework/SiriusMarkdownSwiftUI",
           "LibraryIdentifier": "xros-arm64",
@@ -197,6 +186,16 @@
             "arm64"
           ],
           "SupportedPlatform": "xros"
+        },
+        {
+          "BinaryPath": "SiriusMarkdownSwiftUI.framework/SiriusMarkdownSwiftUI",
+          "LibraryIdentifier": "xros-arm64-simulator",
+          "LibraryPath": "SiriusMarkdownSwiftUI.framework",
+          "SupportedArchitectures": [
+            "arm64"
+          ],
+          "SupportedPlatform": "xros",
+          "SupportedPlatformVariant": "simulator"
         },
         {
           "BinaryPath": "SiriusMarkdownSwiftUI.framework/Versions/A/SiriusMarkdownSwiftUI",
@@ -210,49 +209,32 @@
         },
         {
           "BinaryPath": "SiriusMarkdownSwiftUI.framework/SiriusMarkdownSwiftUI",
+          "LibraryIdentifier": "ios-arm64_x86_64-simulator",
+          "LibraryPath": "SiriusMarkdownSwiftUI.framework",
+          "SupportedArchitectures": [
+            "arm64",
+            "x86_64"
+          ],
+          "SupportedPlatform": "ios",
+          "SupportedPlatformVariant": "simulator"
+        },
+        {
+          "BinaryPath": "SiriusMarkdownSwiftUI.framework/SiriusMarkdownSwiftUI",
           "LibraryIdentifier": "ios-arm64",
           "LibraryPath": "SiriusMarkdownSwiftUI.framework",
           "SupportedArchitectures": [
             "arm64"
           ],
           "SupportedPlatform": "ios"
-        },
-        {
-          "BinaryPath": "SiriusMarkdownSwiftUI.framework/SiriusMarkdownSwiftUI",
-          "LibraryIdentifier": "xros-arm64-simulator",
-          "LibraryPath": "SiriusMarkdownSwiftUI.framework",
-          "SupportedArchitectures": [
-            "arm64"
-          ],
-          "SupportedPlatform": "xros",
-          "SupportedPlatformVariant": "simulator"
         }
       ]
     },
     {
       "module": "SiriusMarkdownMath",
       "filename": "SiriusMarkdownMath.xcframework.zip",
-      "sha256": "be9ca9a65ab5602f0d87db180e67c3a2b65435b58f6bef79151c4754b14b26f8",
-      "bytes": 43963,
+      "sha256": "2f577f591e00c7d2b79a0a4ada4724536d5c527e7f3fc5f86455a965d74a4d01",
+      "bytes": 43960,
       "slices": [
-        {
-          "BinaryPath": "SiriusMarkdownMath.framework/SiriusMarkdownMath",
-          "LibraryIdentifier": "ios-arm64",
-          "LibraryPath": "SiriusMarkdownMath.framework",
-          "SupportedArchitectures": [
-            "arm64"
-          ],
-          "SupportedPlatform": "ios"
-        },
-        {
-          "BinaryPath": "SiriusMarkdownMath.framework/SiriusMarkdownMath",
-          "LibraryIdentifier": "xros-arm64",
-          "LibraryPath": "SiriusMarkdownMath.framework",
-          "SupportedArchitectures": [
-            "arm64"
-          ],
-          "SupportedPlatform": "xros"
-        },
         {
           "BinaryPath": "SiriusMarkdownMath.framework/SiriusMarkdownMath",
           "LibraryIdentifier": "ios-arm64_x86_64-simulator",
@@ -265,6 +247,15 @@
           "SupportedPlatformVariant": "simulator"
         },
         {
+          "BinaryPath": "SiriusMarkdownMath.framework/SiriusMarkdownMath",
+          "LibraryIdentifier": "ios-arm64",
+          "LibraryPath": "SiriusMarkdownMath.framework",
+          "SupportedArchitectures": [
+            "arm64"
+          ],
+          "SupportedPlatform": "ios"
+        },
+        {
           "BinaryPath": "SiriusMarkdownMath.framework/Versions/A/SiriusMarkdownMath",
           "LibraryIdentifier": "macos-arm64_x86_64",
           "LibraryPath": "SiriusMarkdownMath.framework",
@@ -273,6 +264,15 @@
             "x86_64"
           ],
           "SupportedPlatform": "macos"
+        },
+        {
+          "BinaryPath": "SiriusMarkdownMath.framework/SiriusMarkdownMath",
+          "LibraryIdentifier": "xros-arm64",
+          "LibraryPath": "SiriusMarkdownMath.framework",
+          "SupportedArchitectures": [
+            "arm64"
+          ],
+          "SupportedPlatform": "xros"
         },
         {
           "BinaryPath": "SiriusMarkdownMath.framework/SiriusMarkdownMath",
@@ -289,18 +289,9 @@
     {
       "module": "SiriusMarkdownPretextSupport",
       "filename": "SiriusMarkdownPretextSupport.xcframework.zip",
-      "sha256": "cc6c4058bb7cc89257cfdc76bf574a3219a90f0891aa48fb48f83decd4d026ae",
-      "bytes": 324003,
+      "sha256": "05488fc7d9d9b9ac7d4ce7581fddd50809ca1c2d67c0a61a70a565cd60d82673",
+      "bytes": 324010,
       "slices": [
-        {
-          "BinaryPath": "SiriusMarkdownPretextSupport.framework/SiriusMarkdownPretextSupport",
-          "LibraryIdentifier": "xros-arm64",
-          "LibraryPath": "SiriusMarkdownPretextSupport.framework",
-          "SupportedArchitectures": [
-            "arm64"
-          ],
-          "SupportedPlatform": "xros"
-        },
         {
           "BinaryPath": "SiriusMarkdownPretextSupport.framework/SiriusMarkdownPretextSupport",
           "LibraryIdentifier": "xros-arm64-simulator",
@@ -319,6 +310,15 @@
             "arm64"
           ],
           "SupportedPlatform": "ios"
+        },
+        {
+          "BinaryPath": "SiriusMarkdownPretextSupport.framework/SiriusMarkdownPretextSupport",
+          "LibraryIdentifier": "xros-arm64",
+          "LibraryPath": "SiriusMarkdownPretextSupport.framework",
+          "SupportedArchitectures": [
+            "arm64"
+          ],
+          "SupportedPlatform": "xros"
         },
         {
           "BinaryPath": "SiriusMarkdownPretextSupport.framework/Versions/A/SiriusMarkdownPretextSupport",
@@ -346,9 +346,28 @@
     {
       "module": "SiriusMarkdown",
       "filename": "SiriusMarkdown.xcframework.zip",
-      "sha256": "7bf8a4b32210f391df638293c6f55d2803c2c4a3326f3ecf93958717fbbb5be4",
-      "bytes": 25014,
+      "sha256": "a5a1154150b38e8a3f0696445ebca86d089c851c079ea132e33bced1b3fb41c3",
+      "bytes": 25013,
       "slices": [
+        {
+          "BinaryPath": "SiriusMarkdown.framework/SiriusMarkdown",
+          "LibraryIdentifier": "ios-arm64",
+          "LibraryPath": "SiriusMarkdown.framework",
+          "SupportedArchitectures": [
+            "arm64"
+          ],
+          "SupportedPlatform": "ios"
+        },
+        {
+          "BinaryPath": "SiriusMarkdown.framework/Versions/A/SiriusMarkdown",
+          "LibraryIdentifier": "macos-arm64_x86_64",
+          "LibraryPath": "SiriusMarkdown.framework",
+          "SupportedArchitectures": [
+            "arm64",
+            "x86_64"
+          ],
+          "SupportedPlatform": "macos"
+        },
         {
           "BinaryPath": "SiriusMarkdown.framework/SiriusMarkdown",
           "LibraryIdentifier": "xros-arm64",
@@ -370,25 +389,6 @@
           "SupportedPlatformVariant": "simulator"
         },
         {
-          "BinaryPath": "SiriusMarkdown.framework/Versions/A/SiriusMarkdown",
-          "LibraryIdentifier": "macos-arm64_x86_64",
-          "LibraryPath": "SiriusMarkdown.framework",
-          "SupportedArchitectures": [
-            "arm64",
-            "x86_64"
-          ],
-          "SupportedPlatform": "macos"
-        },
-        {
-          "BinaryPath": "SiriusMarkdown.framework/SiriusMarkdown",
-          "LibraryIdentifier": "ios-arm64",
-          "LibraryPath": "SiriusMarkdown.framework",
-          "SupportedArchitectures": [
-            "arm64"
-          ],
-          "SupportedPlatform": "ios"
-        },
-        {
           "BinaryPath": "SiriusMarkdown.framework/SiriusMarkdown",
           "LibraryIdentifier": "xros-arm64-simulator",
           "LibraryPath": "SiriusMarkdown.framework",
@@ -403,7 +403,7 @@
     {
       "module": "SiriusMarkdownQuickLook",
       "filename": "SiriusMarkdownQuickLook.xcframework.zip",
-      "sha256": "09328604473fa5bfffd1f8c55b3a72379157f85214a1d564f9a6a778ebcc37e4",
+      "sha256": "e522903c9c82f25b7544a4448a00f9eae670e68171b4c9a28a27248ebe0ba7b1",
       "bytes": 176016,
       "slices": [
         {
