@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.7.18 - 2026-10-24
+
+- Compose `==highlight==` with bold, italic, strikethrough, links and inline code
+  across semantic inline nodes, preserving authored content ranges.
+- Render strikethrough in macOS prepared native text, including bold text.
+- Finish macOS drag selections at the mouse-release position when intermediate
+  mouse moves are coalesced.
+
+[Release notes](release-notes/0.7.18.md).
+
 ## 0.7.17 - 2026-10-24
 
 - Preserve completed render regions and native list groups when Find is attached
