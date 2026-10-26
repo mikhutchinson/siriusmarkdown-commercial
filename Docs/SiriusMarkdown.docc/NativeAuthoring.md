@@ -76,6 +76,31 @@ Set `MarkdownRendererConfiguration.taskInputHandler` to receive an AST-backed ta
 range and requested state. The host checks its revision, edits that range and records
 Undo. Nil retains read-only task markers.
 
+## Preserve authored inline styles
+
+`MarkdownInlineRun.textColor` carries an optional opaque sRGB `MarkdownTextColor`.
+The HTML adapter recognizes literal `color: #RGB`, `color: #RRGGBB` and
+`color: initial` declarations on supported inline elements. `initial` restores the theme's
+text color inside an inherited color. Style attributes are limited to 4,096 UTF-8
+bytes and the first 64 declarations. Named colors, alpha, CSS functions, resource
+URLs, selectors and layout properties are ignored. Links retain native link color.
+Prepared native rendering, rich copy and text-flow PDF export preserve text colors.
+A fixed authored color may need adjustment for contrast in different appearances.
+
+Each run's `styleSources` contains exact opening and closing source ranges for
+supported authored inline styles. These ranges come from Markdown or HTML semantic
+nodes. A missing semantic node range supplies no delimiter pair; this includes
+multiline strikethrough in the current Markdown parser. An HTML element with an
+implied closing tag also supplies no pair.
+The SDK also withholds delimiter pairs when a normalized or container-stripped HTML
+projection cannot be reconciled with the exact authored source. Rendering retains
+the semantic style even when source ownership cannot be established.
+Hosts can use the pairs to balance source transactions across hidden delimiters
+when handling Return, selection replacement or deletion. Check both ranges against
+the current source revision, and use the semantic visible-text ranges to preserve
+grapheme deletion. These values describe source ownership; the SDK does not perform
+host edits or grant permission to modify unrelated markup.
+
 ## Inspect diagram source without importing parser internals
 
 `MarkdownDiagramSourceAnalysis` validates complete Mermaid input through the same

@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.7.21 - 2026-10-25
+
+- Preserve bounded opaque sRGB text colors from supported HTML through native
+  preparation, rich copy and text-flow PDF export. CoreText keeps authored ink within
+  its span; links and selections retain their native foreground styling.
+- Expose exact authored inline style delimiter ranges for host source transactions,
+  withholding HTML delimiter pairs when the tree relies on implied recovery or its
+  source projection cannot be reconciled with the authored bytes.
+- Carry shared inline text colors and authored style ranges through the WASM
+  publication bridge. Browser paint, rich copy and readable print retain the
+  colors, while source relocation preserves unchanged styled content and selection.
+
+[Release notes](release-notes/0.7.21.md).
+
+## Browser 0.2.13 - 2026-10-25
+
+- Rebuild both WebAssembly reactors from the shared engine in native SDK 0.7.21.
+- Retain sanitized text colors and exact authored style ranges through publications, mounted text, rich copy and readable print.
+- Preserve styled paragraph identity and selection as preceding UTF-8 source and line offsets change.
+- Carry forward composed highlight and task semantics plus the released math-break and HTML list source-mapping regressions.
+
+[Release notes](release-notes/browser-0.2.13.md).
+
 ## 0.7.20 - 2026-10-25
 
 - Bound native content in read-only macOS streams around the host viewport,

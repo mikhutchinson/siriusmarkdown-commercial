@@ -1,20 +1,20 @@
 # SiriusMarkdown for the browser
 
-Browser 0.2.12 is the SiriusMarkdown browser/WASM MVP. It is distributed
+Browser 0.2.13 is the SiriusMarkdown browser/WASM MVP. It is distributed
 separately from the native Swift XCFramework SDK in this repository.
-Both reactors include the shared engine from native SDK 0.7.14, including inline
-math line-break and HTML list source-mapping fixes. `MANIFEST.json` records
+Both reactors include the shared engine from native SDK 0.7.21, including composed inline
+highlights, task semantics, text colors and exact authored style ranges. `MANIFEST.json` records
 `nativeSDKVersion` and `engineSourceSHA256` so hosts can retain the matching
 engine provenance with their complete runtime pin.
 
-- [Download browser 0.2.12](https://github.com/mikhutchinson/siriusmarkdown-commercial/releases/tag/browser-0.2.12)
+- [Download browser 0.2.13](https://github.com/mikhutchinson/siriusmarkdown-commercial/releases/tag/browser-0.2.13)
 - [Interactive playground](https://siriusmarkdown.com/playground/)
 - [Integration guide](https://siriusmarkdown.com/docs/browser/)
-- [Page and worker API](0.2.12/Browser-API.md)
-- [Runtime notices](0.2.12/NOTICE.md)
-- [Archive checksums](0.2.12/SHA256SUMS.txt)
+- [Page and worker API](0.2.13/Browser-API.md)
+- [Runtime notices](0.2.13/NOTICE.md)
+- [Archive checksums](0.2.13/SHA256SUMS.txt)
 
-Extract `SiriusMarkdown-browser-0.2.12.zip` and serve its `site/` directory over
+Extract `SiriusMarkdown-browser-0.2.13.zip` and serve its `site/` directory over
 HTTPS, or localhost for development. Keep `js`, `assets`, `dist` and `playground`
 together. Serve `.wasm` as `application/wasm`, module JavaScript as
 `text/javascript`, and fonts with appropriate font MIME types. Open the included
@@ -52,6 +52,11 @@ worker API's `exportText()` accepts the format, source revision context and abor
 signal. Downloads are cancelled when their diagram changes. Unsupported or
 oversized text exports retain source and report a diagnostic. See the page API
 for terminal-cell geometry and limits.
+
+Supported HTML literal text colors remain within their spans in the reader,
+rich clipboard and readable print. Semantic links retain theme ink. Inline
+`styleSources` expose exact authored opening/closing byte and line bounds; hosts
+must validate the source revision before using those ranges for an edit.
 
 ## Browser limits
 
@@ -114,8 +119,8 @@ Preserve Commercial SDK License 1.0, prior MIT grants, third-party notices and
 font/runtime licenses. They are included in the download and retain their own
 terms. The download includes the modified ElkSwift source under
 `third-party-source/ElkSwift-WASI.tar.gz`; the release also supplies it as a
-separate `ElkSwift-WASI-0.2.12.tar.gz` asset with a source-file manifest. It is
+separate `ElkSwift-WASI-0.2.13.tar.gz` asset with a source-file manifest. It is
 available under EPL-2.0 and belongs outside the hosted `site/` directory.
 
-The [distribution manifest](0.2.12/MANIFEST.json) records every consumer-package
+The [distribution manifest](0.2.13/MANIFEST.json) records every consumer-package
 file. No engine or app Swift source is part of the browser runtime.

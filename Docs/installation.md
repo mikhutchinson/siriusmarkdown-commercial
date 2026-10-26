@@ -1,7 +1,7 @@
 # Installation and packaging
 
 Add `https://github.com/mikhutchinson/siriusmarkdown-commercial.git` in Xcode,
-select version 0.7.20 or later, and link the `SiriusMarkdown` product. Product
+select version 0.7.21 or later, and link the `SiriusMarkdown` product. Product
 and import names match the source SDK. Narrower products are listed in the
 [architecture guide](architecture.md#choose-a-product).
 
@@ -13,7 +13,7 @@ This binary distribution does not include tvOS or watchOS slices.
 
 ## Browser distribution
 
-Download [browser 0.2.12](https://github.com/mikhutchinson/siriusmarkdown-commercial/releases/tag/browser-0.2.12)
+Download [browser 0.2.13](https://github.com/mikhutchinson/siriusmarkdown-commercial/releases/tag/browser-0.2.13)
 separately from the native Swift package. Extract the ZIP and serve its `site/`
 directory over HTTPS, or localhost during development. Keep its JavaScript,
 workers, fonts and WASM modules together. Follow the [web page API](web-page-api.md)
@@ -23,7 +23,7 @@ The [public playground](https://siriusmarkdown.com/playground/) uses static
 hosting and direct browser requests. Cross-origin resources require readable
 CORS responses. The optional Node gateway in the download is for self-hosted
 integrations. Browser tags do not update the native XCFrameworks or Swift package
-version, which is 0.7.20.
+version, which is 0.7.21.
 
 ## Resources
 

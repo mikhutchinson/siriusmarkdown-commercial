@@ -4,10 +4,10 @@ A browser page hosts the SiriusMarkdown reactor in a module worker. The page sen
 
 ## Hosting and integration
 
-Browser 0.2.12 includes the shared engine from native SDK 0.7.14. The download
+Browser 0.2.13 includes the shared engine from native SDK 0.7.21. The download
 manifest records `nativeSDKVersion` and `engineSourceSHA256`; retain these with
 your runtime pin and update the complete distribution together. This includes
-the inline-equation line-break and HTML list source-mapping fixes. AppKit/UIKit
+composed inline highlighting, task semantics, text colors and authored style ranges. AppKit/UIKit
 input and CoreText PDF APIs remain native integrations; browser editing and
 printing use the APIs described below.
 
@@ -55,6 +55,19 @@ text, and install the supplied math face before enabling prepared math. Width
 changes request `relayout` on the prepared session; they do not append or replace
 the source. The playground demonstrates the worker, font, Mermaid, resource and
 revision wiring together.
+
+Inline publications preserve the shared engine's optional `textColor` as opaque
+sRGB bytes (`{ red, green, blue }`). Supported HTML accepts only literal `#RGB`
+or `#RRGGBB` foreground colors; `color:initial` restores theme ink. Arbitrary
+CSS, layout rules and CSS resource URLs are never passed to the browser renderer.
+Semantic links retain their theme color. The supplied renderer, rich clipboard
+and readable-print snapshots preserve authored text colors.
+
+An inline run's optional `styleSources` array contains exact `openingRange` and
+`closingRange` pairs, each with UTF-8 byte and line bounds. These pairs describe
+authored semantic delimiters; recovered or ambiguous HTML does not grant new
+source-edit authority. Hosts must check the current document revision before
+using any source range. Missing color or style fields remain valid publications.
 
 For interactive Mermaid diagrams, import `MermaidWorkerClient` from
 `js/mermaid/worker-client.js` and present its results with `mountMermaid`:
