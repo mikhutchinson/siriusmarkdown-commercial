@@ -4,7 +4,7 @@ A browser page hosts the SiriusMarkdown reactor in a module worker. The page sen
 
 ## Hosting and integration
 
-Browser 0.2.13 includes the shared engine from native SDK 0.7.21. The download
+Browser 0.2.14 includes the shared engine from native SDK 0.7.22. The download
 manifest records `nativeSDKVersion` and `engineSourceSHA256`; retain these with
 your runtime pin and update the complete distribution together. This includes
 composed inline highlighting, task semantics, text colors and authored style ranges. AppKit/UIKit
@@ -68,6 +68,20 @@ An inline run's optional `styleSources` array contains exact `openingRange` and
 authored semantic delimiters; recovered or ambiguous HTML does not grant new
 source-edit authority. Hosts must check the current document revision before
 using any source range. Missing color or style fields remain valid publications.
+
+Inline-code pairs include the authored backtick fences and adjacent padding the
+semantic parser omits. Their prefix and suffix may differ; the code run's own
+source range continues to cover its whole token. Keep other formatting outside
+code syntax and preserve literal code contents. These pairs do not authorize
+rewriting link destinations or inferring missing delimiter boundaries.
+
+The optional `sourceTextMappings` array describes non-identity atoms with a
+document `sourceRange` and run-relative UTF-8 `textByteStart` and `textByteEnd`.
+Empty text ranges represent consumed delimiters or padding. Gaps map byte for
+byte. The supplied renderer uses these shared-engine mappings for DOM selection,
+partial semantic copy and selection restoration after source relocation; it
+does not reparse Markdown or interpolate positions across code fences or
+entities. Missing mappings retain compatibility with earlier publications.
 
 For interactive Mermaid diagrams, import `MermaidWorkerClient` from
 `js/mermaid/worker-client.js` and present its results with `mountMermaid`:

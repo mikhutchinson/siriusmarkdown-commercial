@@ -120,6 +120,27 @@ the document selection and rendering APIs.
 
 ## Reader formatting
 
+For source transactions, `MarkdownInlineRun.styleSources` supplies exact authored
+opening and closing ranges for reconciled semantic inline styles. Validate the
+current source revision before using them. Inline-code boundaries include the
+backtick fences and any adjacent padding omitted by the semantic parser, while
+the run's `sourceRange` retains the whole code token. Prefix and suffix spellings
+need not match. Keep style changes outside literal code; a boundary pair does
+not grant authority to rewrite link destinations or reconstruct ambiguous HTML.
+
+`MarkdownInlineRun.sourceTextMappings` records non-identity source atoms such as
+entities, escapes, normalized line endings and invisible code boundaries. Its
+text ranges are UTF-8 offsets within the run; source ranges are document bytes.
+`textByteRange(forSourceByteRange:)` and `sourceByteRange(forTextByteRange:)`
+map partial selections without estimating positions from token lengths. Entity
+expansions are indivisible and code fences and ignored padding are excluded
+from visible text. Unreconciled or host-created runs can return `nil` when no
+exact mapping is available. Prepare selection geometry with `sourceTextSegments`
+when a complete list of identity gaps and non-identity atoms is needed.
+Read-only code dragging retains whole-token selection. Configuring
+`MarkdownTextInputController` enables exact character positions for rendered
+editing, including movement and deletion within code bodies.
+
 Set `MarkdownRendererConfiguration.selectionFormatting` to a
 `MarkdownSelectionFormattingConfiguration` with a `MarkdownFormattingHandler`.
 It is `nil` by default. The handler receives a command rather than an automatic edit.

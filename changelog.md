@@ -1,5 +1,29 @@
 # Changelog
 
+## 0.7.22 - 2026-10-26
+
+- Preserve complete authored text ranges across entities and escapes, including
+  URL decoration and partial highlight source spans.
+- Decode literal references once, retain entity-created syntax as text, and
+  reconcile source positions after the parser normalizes NUL bytes.
+- Expose exact AST-owned inline-code fences and omitted padding in existing
+  style-source metadata without changing the code run's whole-token range.
+- Add exact source/text atom mappings for partial copy and native caret geometry
+  across entities, escapes, code syntax and normalized line endings.
+- Bound per-line text-input mapping records for paragraphs containing many entities.
+
+[Release notes](release-notes/0.7.22.md).
+
+## Browser 0.2.14 - 2026-10-26
+
+- Rebuild both reactors from the shared engine in native SDK 0.7.22.
+- Preserve entity text, code boundary authority and source positions through
+  browser publications, semantic copy and readable print.
+- Use shared source/text mappings for partial DOM selection and copy, including
+  wrapped spans and retained content after source relocation.
+
+[Release notes](release-notes/browser-0.2.14.md).
+
 ## 0.7.21 - 2026-10-25
 
 - Preserve bounded opaque sRGB text colors from supported HTML through native
