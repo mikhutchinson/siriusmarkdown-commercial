@@ -4,7 +4,7 @@ A browser page hosts the SiriusMarkdown reactor in a module worker. The page sen
 
 ## Hosting and integration
 
-Browser 0.2.14 includes the shared engine from native SDK 0.7.22. The download
+Browser 0.2.15 includes the shared engine from native SDK 0.7.23. The download
 manifest records `nativeSDKVersion` and `engineSourceSHA256`; retain these with
 your runtime pin and update the complete distribution together. This includes
 composed inline highlighting, task semantics, text colors and authored style ranges. AppKit/UIKit
@@ -359,6 +359,12 @@ the displayed publication. Rich paste preserves headings, inline formatting,
 safe links, lists and tables. It excludes decoration icons and controls; images
 copy their alternate text without loading resources. Equations copy their TeX
 text, and code copies its body.
+
+Partial semantic copies omit unselected paragraph terminators while retaining
+selected spaces and authored line breaks. List markers appear only when their
+source start is selected. Nonempty semantic fragments from
+disjoint ranges join with a newline. Whole-document and readable-print
+serialization retain their paragraph structure.
 
 Exact authored source is a separate `text/markdown` representation. The selection
 toolbar's **Copy Markdown** action also writes that source as plain text for

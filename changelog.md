@@ -17,6 +17,15 @@
 
 [Release notes](release-notes/0.7.23.md).
 
+## Browser 0.2.15 - 2026-10-27
+
+- Rebuild both reactors from the shared engine in native SDK 0.7.23.
+- Match native partial semantic Copy without an extra paragraph terminator,
+  retaining selected spaces, line breaks and disjoint-range separators.
+- Preserve document and readable-print paragraph separation.
+
+[Release notes](release-notes/browser-0.2.15.md).
+
 ## 0.7.22 - 2026-10-26
 
 - Preserve complete authored text ranges across entities and escapes, including

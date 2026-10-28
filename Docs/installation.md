@@ -13,7 +13,7 @@ This binary distribution does not include tvOS or watchOS slices.
 
 ## Browser distribution
 
-Download [browser 0.2.14](https://github.com/mikhutchinson/siriusmarkdown-commercial/releases/tag/browser-0.2.14)
+Download [browser 0.2.15](https://github.com/mikhutchinson/siriusmarkdown-commercial/releases/tag/browser-0.2.15)
 separately from the native Swift package. Extract the ZIP and serve its `site/`
 directory over HTTPS, or localhost during development. Keep its JavaScript,
 workers, fonts and WASM modules together. Follow the [web page API](web-page-api.md)
