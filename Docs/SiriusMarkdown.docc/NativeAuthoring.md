@@ -72,6 +72,73 @@ source offsets; the normal document reader handles mounted semantic blocks.
 The anchor is the preceding block's source-end offset, or zero at the document start.
 Gap-map keys use those same boundaries. Supply positive line counts for reserved gaps.
 
+For persistent authored rows, publish exact insertion positions with
+`updateParagraphSourceOffsets(_:emptyLeaves:generation:)` after parsing. The first
+map groups strictly increasing UTF-8 offsets by the preceding block's source end;
+zero owns leading rows and an empty document. The `emptyLeaves` map uses the AST's
+source ranges for empty headings, list items or trailing empty quotation paragraphs. Positions
+may include marker whitespace omitted from a semantic range, but must stay within
+the host's current source. Derive these positions from the parsed structure and
+source line map on the preparation worker.
+
+For example, `First.\n\n` has a paragraph ending at byte 6 and an empty insertion
+row at byte 8:
+
+```swift
+input.updateParagraphSourceOffsets([6: [8]], generation: snapshot.generation)
+```
+
+The document keeps that row mounted with its source owner when the caret moves
+away, so Up, Down and horizontal movement can return to it without changing page
+layout. Long gaps use one geometry surface with indexed positions. A standalone
+`MarkdownTextInputParagraph` can also receive the matching `generation` explicitly.
+The earlier offset/count properties remain available for hosts describing only
+an active insertion point.
+
+To retain caret positions within an otherwise empty row, prepare its spaces and
+tabs with the reader's current font configuration on the preparation worker:
+
+```swift
+// In the host's asynchronous preparation flow, outside view evaluation:
+let row = await Task.detached {
+    configuration.prepareTextInputParagraph(
+        whitespace: "  ", atSourceByteOffset: 8
+    )
+}.value
+// Publish alongside the matching snapshot on the main actor.
+if let row {
+    input.updateParagraphSourceOffsets(
+        [6: [10]], paragraphContent: [row], generation: snapshot.generation
+    )
+}
+```
+
+Each prepared row ends at one canonical position in the gap or `emptyLeaves`
+map. Its source range excludes newlines and list/quotation markers. The SDK
+rejects other text, negative offsets and overflowing ranges. Keep the native
+selection at its actual source position within those spaces/tabs; do not snap
+it to the row end. Regenerate the row when its source or paragraph font changes.
+Painting, pointer placement, horizontal movement, deletion and width changes
+reuse its prepared stops without source scanning or font measurement.
+The factory measures the configuration's paragraph font. For a row in a heading,
+use a configuration copy whose paragraph font size and profiles match that
+heading's style before preparing its whitespace.
+The preparation cache shares identical whitespace/font measurements across
+source offsets, coalesces concurrent requests, and retains at most 256 entries
+with a 1 MiB payload budget. `preparationCache.removeAll()` clears these entries.
+Publish rows again after layout-configuration changes even if the source
+generation is unchanged. A new publication revokes older mounted row geometry.
+
+Native movement and pointer placement retain visual-row affinity at a soft wrap,
+where one source byte can identify both the preceding row's end and the next
+row's start. Consecutive vertical arrows follow the row actually selected.
+
+Keyboard focus and source-selection changes reveal the insertion point in the
+native scroller. An offscreen source owner is mounted before its exact caret is
+revealed. Scrolling by hand retains control until the next caret action. Vertical
+movement keeps its horizontal column across scrolling and resets that column when
+horizontal layout changes, such as a width or font change.
+
 Set `MarkdownRendererConfiguration.taskInputHandler` to receive an AST-backed task
 range and requested state. The host checks its revision, edits that range and records
 Undo. Nil retains read-only task markers.

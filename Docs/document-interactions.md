@@ -59,6 +59,11 @@ aligned while document blocks settle, the reader resizes, or prepared content up
 Scrolling or selecting in the document supersedes the pending reveal. A newer
 command, closing Find, replacing the document or removing the view cancels obsolete
 navigation. A host should give independent documents independent Find controllers.
+
+For readers retained in separate native hosting views, also apply `.disabled(true)`
+to covered reader content. Find key bindings follow that enabled state, allowing
+the presented reader to own the window’s search commands.
+
 Find uses source-backed document highlights while presented, including configurations
 that enable native leaf selection or ordinarily disable document selection.
 Readable chart export does not interrupt subsequent Find navigation; matches
@@ -104,6 +109,11 @@ Document Copy supplies exact Markdown and semantic plain text, with derived HTML
 and macOS RTF where available. Decorations are excluded; allowed link destinations
 and sanitized HTML semantics are retained. Programmatic callers can use
 `MarkdownSelectionController.selectedPasteboardPayload(in:copyProvider:)`.
+Partial rich copies preserve selected spaces and authored line breaks without
+adding an unselected paragraph terminator. List markers appear only when their
+source start is selected. Disjoint selected ranges retain a
+newline between their nonempty semantic fragments. Document and print layout
+keep their ordinary paragraph separation.
 
 For separate preparation windows, create
 `MarkdownSelectionDocument(snapshot:copyProvider:)` from the complete semantic

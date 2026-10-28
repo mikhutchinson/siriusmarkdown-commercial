@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.7.23 - 2026-10-27
+
+- Keep native arrows and painted caret affinity on the same visual row at soft wraps.
+- Limit repeated Backspace range lookup to the prepared caret line in long paragraphs.
+- Preserve authored empty paragraph, heading, list and quotation rows across source updates,
+  image-flow groups and caret movement. Add prepared space/tab caret stops with
+  bounded, font-aware caching and stale-layout callback rejection.
+- Reveal focused insertion points while preserving subsequent manual scrolling;
+  reset the preferred vertical caret column when horizontal layout changes.
+- Reuse sealed native text while rendered-input geometry stays current, and withdraw
+  Find shortcuts when a retained reader is disabled.
+- Keep partial semantic Copy and native RTF free of unselected paragraph terminators,
+  preserving selected spaces, authored line breaks and joins between disjoint ranges.
+  Partial words in lists omit unselected bullets, numbers and checkboxes.
+
+[Release notes](release-notes/0.7.23.md).
+
 ## 0.7.22 - 2026-10-26
 
 - Preserve complete authored text ranges across entities and escapes, including
