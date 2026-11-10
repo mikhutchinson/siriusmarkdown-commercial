@@ -7,6 +7,8 @@
 - Continue to separate statements at semicolons outside labels.
 - Resolve document-relative raster images from host-selected macOS roots such as
   `/private/tmp` while continuing to refuse symlinked image paths.
+- Grow only the row containing a tall inline image in macOS CoreText painted
+  paragraphs, keeping ordinary text visible in clipped previews.
 
 [Release notes](release-notes/0.7.24.md).
 

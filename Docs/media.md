@@ -13,6 +13,11 @@ chosen directory to its filesystem path, including roots such as
 `/private/tmp` on macOS. Relative image paths cannot traverse above that
 directory or follow symlinks. Raster type, byte and pixel limits still apply.
 
+On macOS, a tall inline image in the CoreText painted renderer increases only
+the height of its own row. A host can clip a message preview without pushing
+the preceding text below the clip. The image and nearby text retain their
+authored selection and copy ranges.
+
 ## Local video
 
 The SDK can present a prepared video attachment on macOS, iOS/iPadOS and visionOS.
