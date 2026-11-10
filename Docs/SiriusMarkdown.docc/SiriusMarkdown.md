@@ -88,6 +88,7 @@ children appear inside unfinished containers; parser-owned draft metadata identi
 and unfinished frontier. Finished unsupported syntax retains source fallback. The supported
 families include flowchart, sequence, class, state, ER, XY chart, quadrant, pie, journey,
 timeline, mind map, Gantt, Sankey, GitGraph, radar and treemap.
+In flowcharts, `A[Draft; review]` keeps the semicolon in the label.
 
 Expanded diagrams use the whole canvas with unfilled overlay controls: Diagram/Source
 on the left, export and close on the right, and zoom along the bottom. Fit includes the

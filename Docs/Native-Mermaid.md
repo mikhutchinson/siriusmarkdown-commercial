@@ -62,6 +62,10 @@ radar and treemap. Support covers a
 subset of Mermaid syntax. Completed unsupported or malformed input retains the source
 fence instead of displaying a partial diagram.
 
+Flowchart labels keep semicolons within their delimiters: `A[Draft; review]`
+is one node, and `A -->|Ready; proceed| B` is one labeled edge. Semicolons
+between complete statements still separate them.
+
 While an unsealed fence is streaming, the default renderer can display native
 statements inside an open semantic container. `streamingProgress` records how
 much authored source has been interpreted and whether a frontier or container

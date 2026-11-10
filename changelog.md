@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.7.24 - 2026-11-10
+
+- Keep semicolons inside delimited Mermaid flowchart labels in native diagrams,
+  including streamed drafts and PDF, SVG and text exports.
+- Continue to separate statements at semicolons outside labels.
+
+[Release notes](release-notes/0.7.24.md).
+
 ## 0.7.23 - 2026-10-27
 
 - Keep native arrows and painted caret affinity on the same visual row at soft wraps.
