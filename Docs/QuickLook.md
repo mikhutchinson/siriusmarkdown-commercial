@@ -148,8 +148,9 @@ sanitization; scripts, active embeds and arbitrary CSS do not execute.
 
 Document-relative raster images load during preparation when sandbox access
 permits. `DefaultMarkdownImageResolver(documentURL:)` combines this local path
-with the default remote loader. The local resolver rejects absolute paths,
-URL schemes, parent traversal and symlinks in referenced components.
+with the default remote loader. The resolver uses the canonical host directory
+when it is available. Referenced paths must stay relative and cannot contain
+URL schemes, parent traversal or symlinks.
 
 Accepted images are single-frame PNG, JPEG, GIF and TIFF, subject to all of these
 limits: 8 MiB encoded size, 12,000 pixels per axis, and 50,000,000 total pixels.

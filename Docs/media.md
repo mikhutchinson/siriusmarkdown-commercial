@@ -5,6 +5,14 @@ attributes. See [image interaction and wrapping](document-interactions.md#contex
 for responsive layout and host-owned edits. Native HTML figures share image and
 caption preparation; arbitrary CSS layout is not interpreted.
 
+## Local raster images
+
+Hosts can assign `LocalMarkdownImageResolver` as both the image policy and
+resolver to allow relative raster paths in a document. It resolves the host's
+chosen directory to its filesystem path, including roots such as
+`/private/tmp` on macOS. Relative image paths cannot traverse above that
+directory or follow symlinks. Raster type, byte and pixel limits still apply.
+
 ## Local video
 
 The SDK can present a prepared video attachment on macOS, iOS/iPadOS and visionOS.

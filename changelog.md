@@ -5,6 +5,8 @@
 - Keep semicolons inside delimited Mermaid flowchart labels in native diagrams,
   including streamed drafts and PDF, SVG and text exports.
 - Continue to separate statements at semicolons outside labels.
+- Resolve document-relative raster images from host-selected macOS roots such as
+  `/private/tmp` while continuing to refuse symlinked image paths.
 
 [Release notes](release-notes/0.7.24.md).
 
