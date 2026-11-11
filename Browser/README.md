@@ -1,20 +1,20 @@
 # SiriusMarkdown for the browser
 
-Browser 0.2.15 is the SiriusMarkdown browser/WASM MVP. It is distributed
+Browser 0.2.16 is the SiriusMarkdown browser/WASM MVP. It is distributed
 separately from the native Swift XCFramework SDK in this repository.
-Both reactors include the shared engine from native SDK 0.7.23, including composed inline
+Both reactors include the shared engine from native SDK 0.7.24, including composed inline
 highlights, task semantics, text colors and exact authored style ranges. `MANIFEST.json` records
 `nativeSDKVersion` and `engineSourceSHA256` so hosts can retain the matching
 engine provenance with their complete runtime pin.
 
-- [Download browser 0.2.15](https://github.com/mikhutchinson/siriusmarkdown-commercial/releases/tag/browser-0.2.15)
+- [Download browser 0.2.16](https://github.com/mikhutchinson/siriusmarkdown-commercial/releases/tag/browser-0.2.16)
 - [Interactive playground](https://siriusmarkdown.com/playground/)
 - [Integration guide](https://siriusmarkdown.com/docs/browser/)
-- [Page and worker API](0.2.15/Browser-API.md)
-- [Runtime notices](0.2.15/NOTICE.md)
-- [Archive checksums](0.2.15/SHA256SUMS.txt)
+- [Page and worker API](0.2.16/Browser-API.md)
+- [Runtime notices](0.2.16/NOTICE.md)
+- [Archive checksums](0.2.16/SHA256SUMS.txt)
 
-Extract `SiriusMarkdown-browser-0.2.15.zip` and serve its `site/` directory over
+Extract `SiriusMarkdown-browser-0.2.16.zip` and serve its `site/` directory over
 HTTPS, or localhost for development. Keep `js`, `assets`, `dist` and `playground`
 together. Serve `.wasm` as `application/wasm`, module JavaScript as
 `text/javascript`, and fonts with appropriate font MIME types. Open the included
@@ -26,7 +26,9 @@ streamed documents, sanitized rich HTML, native-engine vector equations and the
 documented Mermaid subset, including Sankey, GitGraph, radar and treemap. Images,
 tables, highlighted code, selection, rich
 copy, exact-source Copy Markdown and host-owned formatting use the same authored
-source. Unsupported completed diagram syntax retains its source fallback.
+source. Flowchart labels such as `A[Draft; review]` preserve semicolons
+through rendering and export. Unsupported completed diagrams retain their
+source fallback.
 
 The main reactor is about 58 MiB and the separate diagram reactor about 57 MiB
 before HTTP compression. Load them when needed and cache a complete version's
@@ -129,8 +131,8 @@ Preserve Commercial SDK License 1.0, prior MIT grants, third-party notices and
 font/runtime licenses. They are included in the download and retain their own
 terms. The download includes the modified ElkSwift source under
 `third-party-source/ElkSwift-WASI.tar.gz`; the release also supplies it as a
-separate `ElkSwift-WASI-0.2.15.tar.gz` asset with a source-file manifest. It is
+separate `ElkSwift-WASI-0.2.16.tar.gz` asset with a source-file manifest. It is
 available under EPL-2.0 and belongs outside the hosted `site/` directory.
 
-The [distribution manifest](0.2.15/MANIFEST.json) records every consumer-package
+The [distribution manifest](0.2.16/MANIFEST.json) records every consumer-package
 file. No engine or app Swift source is part of the browser runtime.

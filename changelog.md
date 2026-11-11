@@ -12,6 +12,14 @@
 
 [Release notes](release-notes/0.7.24.md).
 
+## Browser 0.2.16 - 2026-11-10
+
+- Rebuild both reactors from the shared engine in native SDK 0.7.24.
+- Preserve semicolons inside delimited Mermaid flowchart labels in the browser
+  viewer, streamed drafts and diagram exports.
+
+[Release notes](release-notes/browser-0.2.16.md).
+
 ## 0.7.23 - 2026-10-27
 
 - Keep native arrows and painted caret affinity on the same visual row at soft wraps.

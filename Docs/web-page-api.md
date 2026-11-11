@@ -4,7 +4,7 @@ A browser page hosts the SiriusMarkdown reactor in a module worker. The page sen
 
 ## Hosting and integration
 
-Browser 0.2.15 includes the shared engine from native SDK 0.7.23. The download
+Browser 0.2.16 includes the shared engine from native SDK 0.7.24. The download
 manifest records `nativeSDKVersion` and `engineSourceSHA256`; retain these with
 your runtime pin and update the complete distribution together. This includes
 composed inline highlighting, task semantics, text colors and authored style ranges. AppKit/UIKit
@@ -96,6 +96,8 @@ const diagram = await diagrams.render(block, publication, abortSignal);
 if (diagram && diagram.status !== "cancelled") mountMermaid(slot, diagram);
 ```
 
+Flowchart labels such as `A[Draft; review]` keep the semicolon in the
+displayed label. Semicolons between statements still separate them.
 Text exports use the same parser and worker. Call
 `diagrams.exportText(source, { format: "unicode", id: block.id }, abortSignal)`
 with `format: "ascii"` for ASCII connectors. Authored Unicode labels remain intact
