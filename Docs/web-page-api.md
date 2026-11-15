@@ -4,7 +4,7 @@ A browser page hosts the SiriusMarkdown reactor in a module worker. The page sen
 
 ## Hosting and integration
 
-Browser 0.2.16 includes the shared engine from native SDK 0.7.24. The download
+Browser 0.2.17 includes the shared engine from native SDK 0.7.25. The download
 manifest records `nativeSDKVersion` and `engineSourceSHA256`; retain these with
 your runtime pin and update the complete distribution together. This includes
 composed inline highlighting, task semantics, text colors and authored style ranges. AppKit/UIKit

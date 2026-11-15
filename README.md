@@ -11,7 +11,7 @@ regions are reused while incoming text updates the active tail.
 ## Browser MVP
 
 [Try the interactive playground](https://siriusmarkdown.com/playground/) or
-[download browser 0.2.16](https://github.com/mikhutchinson/siriusmarkdown-commercial/releases/tag/browser-0.2.16).
+[download browser 0.2.17](https://github.com/mikhutchinson/siriusmarkdown-commercial/releases/tag/browser-0.2.17).
 The browser/WASM package is separate from the native Swift SDK below. It runs
 Markdown parsing and preparation locally in a worker, with vector equations and
 diagrams, tables, highlighted code, sanitized HTML, images and source-backed
@@ -35,7 +35,7 @@ Add the package in Xcode using its repository URL, or declare a dependency in
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/mikhutchinson/siriusmarkdown-commercial.git", from: "0.7.24")
+    .package(url: "https://github.com/mikhutchinson/siriusmarkdown-commercial.git", from: "0.7.25")
 ],
 targets: [
     .target(
@@ -48,7 +48,7 @@ targets: [
 ```
 
 The SDK is distributed as compiled XCFrameworks through Swift Package Manager.
-This repository contains the integration material for [0.7.24](release-notes/0.7.24.md).
+This repository contains the integration material for [0.7.25](release-notes/0.7.25.md).
 Public interfaces accompany each platform slice; implementation source is not
 part of this distribution. Adding a product also links and embeds its required frameworks and resources.
 

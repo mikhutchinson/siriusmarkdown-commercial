@@ -21,6 +21,10 @@ the equation even when CommonMark would interpret them as emphasis or escapes.
 Code spans keep their literal text. Surrounding Markdown emphasis and link
 context remain available to the renderer.
 
+Currency can appear in ordinary prose and emphasis, as in
+`Pay $5 today or **$10 tomorrow**`. Use `\$` for a literal dollar sign in
+ambiguous input and `\(…\)` for equations beside prices.
+
 Display equations wider than their available space use horizontal scrolling.
 A paragraph containing an oversized inline equation also gains a horizontal
 viewport, keeping the complete equation accessible at its native font size.

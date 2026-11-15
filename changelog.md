@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.7.25 - 2026-11-15
+
+- Preserve prices, Markdown emphasis and source ranges when currency appears
+  alongside other prices or inline equations.
+
+[Release notes](release-notes/0.7.25.md).
+
+## Browser 0.2.17 - 2026-11-15
+
+- Preserve prices and emphasis in streamed and completed browser documents.
+- Rebuild both reactors from the shared engine in native SDK 0.7.25.
+
+[Release notes](release-notes/browser-0.2.17.md).
+
 ## 0.7.24 - 2026-11-10
 
 - Keep semicolons inside delimited Mermaid flowchart labels in native diagrams,
