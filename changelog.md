@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.7.26 - 2026-11-23
+
+- Wrap long Mermaid timeline headings within their period cards and section bands.
+
+[Release notes](release-notes/0.7.26.md).
+
+## Browser 0.2.18 - 2026-11-23
+
+- Wrap long Mermaid timeline headings and keep expanded timelines readable by default.
+- Rebuild both reactors from the shared engine in native SDK 0.7.26.
+
+[Release notes](release-notes/browser-0.2.18.md).
+
 ## 0.7.25 - 2026-11-15
 
 - Preserve prices, Markdown emphasis and source ranges when currency appears

@@ -206,6 +206,9 @@ after their headers.
 | `radar-beta` | Ordered axis IDs with optional labels; named curves with positional or axis-keyed values; `min`, `max`, integral `ticks`, `graticule circle`/`polygon` and `showLegend true`/`false`. Entries can span lines. | Fewer than three axes; duplicate or unknown IDs; missing/extra values; negative/nonfinite data; invalid options or values outside the scale. |
 | `treemap`, `treemap-beta` | Single/double quoted section and leaf labels; indented hierarchy or multiple roots; colon/comma followed by a positive decimal weight, including grouped thousands commas. Inert `classDef` and `:::class` styles as described below. | Empty completed sections, children of leaves, a dedent without an authored ancestor, malformed weights, unknown classes and unsupported styles/configuration. |
 
+Timeline period and section headings wrap within their cards and bands. The
+timeline preserves the authored period order and full heading text.
+
 Pie percentages use compact whole-number labels. A positive share below 1% is
 reported as `<1%`, and a partial share that would round to 100% is reported as
 `>99%`. Unconfigured full-circle labels sit at the centre. Exact quantity text

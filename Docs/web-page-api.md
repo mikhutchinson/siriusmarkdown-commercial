@@ -4,7 +4,7 @@ A browser page hosts the SiriusMarkdown reactor in a module worker. The page sen
 
 ## Hosting and integration
 
-Browser 0.2.17 includes the shared engine from native SDK 0.7.25. The download
+Browser 0.2.18 includes the shared engine from native SDK 0.7.26. The download
 manifest records `nativeSDKVersion` and `engineSourceSHA256`; retain these with
 your runtime pin and update the complete distribution together. This includes
 composed inline highlighting, task semantics, text colors and authored style ranges. AppKit/UIKit
@@ -18,6 +18,9 @@ fonts from the same origin. The playground runs its parsing, preparation and
 math engine locally in a module worker; it does not require a rendering server.
 Its live document and feature gallery both pass authored Markdown through that
 engine. The gallery remains editable and can be streamed.
+
+Wide timelines open at a readable scale with scrolling. Choose **Fit** in the
+expanded viewer to see the full timeline at once.
 
 Load `js/theme/theme.css` and import `mountMarkdownDocument` from
 `js/render/index.js` to mount a prepared publication. The document handle accepts
