@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.7.27 - 2026-11-25
+
+- Keep native document selection from scrolling its host transcript when the selected document is fully visible.
+- Preserve selection across viewport changes and paint complete wrapped inline-code highlights in tables.
+
+[Release notes](release-notes/0.7.27.md).
+
+## Browser 0.2.19 - 2026-11-25
+
+- Keep wrapped inline-code selection endpoints within each painted line’s source range.
+- Limit math drag autoscroll to the scroll viewport edge and rendered document bounds.
+- Build both reactors from the shared engine in native SDK 0.7.27.
+
+[Release notes](release-notes/browser-0.2.19.md).
+
 ## 0.7.26 - 2026-11-23
 
 - Wrap long Mermaid timeline headings within their period cards and section bands.
