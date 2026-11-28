@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.7.28 - 2026-11-27
+
+- Keep bottom-line glyph descenders (`g`, `p`, `q`, `y`, parentheses, and commas) unclipped across native CoreText-painted and AppKit selectable inline surfaces at 1x and 2x scales, including multi-line paragraphs, nested lists, mixed inline-code/bold runs, and compact or tight theme line heights.
+- Align AppKit TextKit line baselines vertically with CoreText inside fixed line boxes, reserve cross-style typographic and glyph-ink headroom with integer-ceiled surface heights, and clamp CoreText fallback baselines to preserve descenders within the line box.
+
+[Release notes](release-notes/0.7.28.md).
+
+## Browser 0.2.20 - 2026-11-27
+
+- Enforce a typographic line-height floor when browser hosts omit explicit font ascent/descent metrics, and preserve CSS line-height centering when published `lineDescent` is zero instead of anchoring baselines to the bottom edge of the row.
+- Build both reactors from the shared engine in native SDK 0.7.28.
+
+[Release notes](release-notes/browser-0.2.20.md).
+
 ## 0.7.27 - 2026-11-25
 
 - Keep native document selection from scrolling its host transcript when the selected document is fully visible.
